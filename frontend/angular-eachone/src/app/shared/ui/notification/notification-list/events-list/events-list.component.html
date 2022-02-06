@@ -1,0 +1,51 @@
+<div class="filter">
+  <h2>Filtros</h2>
+  <form class="form_busca" onsubmit="return false">
+    <div class="row center col_wrap">
+      <div class="col">
+        <app-input label="Palavra de busca" id="query" name="query" [formControl]="formGroup.controls['query']"
+          type="text" placeholder="Palavra" class="bordered">
+          <i class="fal fa-font input"></i>
+        </app-input>
+      </div>
+      <div class="col flex-2">
+        <button class="btn default" (click)="handleSearch()">
+          <i class="fas fa-search"></i> Buscar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<table>
+  <thead>
+    <tr *ngIf="eventsCount != 0">
+      <th class="center high">Categoria</th>
+      <th class="center high">Nome</th>
+      <th class="center high" colspan="2">Descrição</th>
+      <th class="center low">Cadastro</th>
+      <th class="center medium">Feito por</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let event of eventsList">
+
+      <td class="center high">{{event.category}}</td>
+      <td class="center ultra-high"> {{ event.name }} </td>
+      <td class="center high" colspan="2">
+        <div class="description" [innerHTML]="event.description"></div>
+      </td>
+      <td class="center low"> {{ event.createdAt | date: "dd/MM/yyyy HH:mm:ss" }} </td>
+      <td class="center medium"> {{ event.userName }} </td>
+
+    </tr>
+
+    <tr *ngIf="eventsCount == 0">
+      <td class="center" colspan="10">
+        Ainda não temos nenhum evento para esta empresa
+      </td>
+    </tr>
+  </tbody>
+</table>
+<app-pagination *ngIf="eventsList && eventsCount > limit" [actualPage]="page" [totalCount]="eventsCount" [limit]="limit"
+  [range]="4" (goToPageEmitter)="onChangePage($event)"></app-pagination>

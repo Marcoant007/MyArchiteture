@@ -1,0 +1,54 @@
+@import "../../../../../variable.scss";
+
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  width: 10rem;
+  height: auto;
+  left: 50%;
+  transform: translate(-50%);
+  .title {
+    color: gray;
+    width: auto;
+  }
+
+  .contentContainer {
+    position: absolute;
+    min-width: 15rem;
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .modal-t {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      margin-top: 0.5rem;
+      background-color: $secundary-color;
+      padding: 15px;
+      z-index: 5;
+      width: 20rem;
+      visibility: hidden;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+      -webkit-box-shadow: 0px 10px 10px 0px $box-shadow-box;
+      -moz-box-shadow: 0px 10px 10px 0px $box-shadow-box;
+      box-shadow: 0px 10px 10px 0px $box-shadow-box;
+    }
+  }
+
+  &:hover .contentContainer .modal-t {
+    visibility: visible;
+  }
+}
+@media only screen and(max-width: $max-md) {
+  .tooltip {
+    .contentContainer {
+      .modal-t {
+        width: 15rem;
+      }
+    }
+  }
+}

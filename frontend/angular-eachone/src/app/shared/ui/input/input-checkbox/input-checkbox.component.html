@@ -1,0 +1,22 @@
+<div class="container" [ngClass]="{'inline': inline}">
+  <label class="label">
+    {{label}}
+    <span *ngIf="formGroup.get(this.controlName).hasError('required') && showRequired" class="required_field">
+      *
+    </span>
+  </label>
+
+  <div class="description" *ngIf="description">
+    {{description}}
+  </div>
+
+  <div *ngFor="let element of data; let i=index" class="options">
+    <label class="option">
+      <input [type]="type" id="{{element[atributeValue]}}" name="{{controlName}}" [value]="element[atributeValue]"
+        [checked]="isChecked(element)" (change)="changeInputValue($event)" />
+      {{ element[textValue] }}
+    </label>
+  </div>
+</div>
+<p *ngIf="touched && formGroup.get(this.controlName).errors?.required" class="error-message">
+  {{requirementMessage}}</p>

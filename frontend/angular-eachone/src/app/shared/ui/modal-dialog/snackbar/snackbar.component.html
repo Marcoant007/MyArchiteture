@@ -1,0 +1,23 @@
+<div class="snack container" [ngClass]="{'on': this.message.show, 'transparent': this.message.transparent}">
+  <div class="body" [ngClass]="{
+    'error': messageTypes.error === this.message.type,
+    'success': messageTypes.success === this.message.type,
+    'info': messageTypes.info === this.message.type,
+    'warn': messageTypes.warn === this.message.type,
+    'fatal': messageTypes.fatal === this.message.type,
+    'on': this.message.show
+  }">
+    <div class="box">
+      <div class="contentContainer flex">
+        <div class="icon"
+          [ngClass]="{'error': messageTypes.error === this.message.type, 'success': messageTypes.success === this.message.type}">
+          <i class="far" [class]="this.typeToIcon()"></i>
+        </div>
+        <div class="message">
+          <h1 class="title"> {{ this.message.title }} </h1>
+          {{ this.message.message }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

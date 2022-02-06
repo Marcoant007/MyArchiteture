@@ -1,0 +1,51 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:frontend/angular-eachone/src/app/acesso/pages/wrapper-page/charge/charge/charge.component.spec.ts
+import { ChargeComponent } from './charge.component';
+
+describe('ChargeComponent', () => {
+  let component: ChargeComponent;
+  let fixture: ComponentFixture<ChargeComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ ChargeComponent ]
+=======
+>>>>>>> e2be991cada6cbc613a1e11ab9025147a3313c24
+import { NotificationCardComponent } from './notification-card.component';
+
+describe('NotificationCardComponent', () => {
+  let component: NotificationCardComponent;
+  let fixture: ComponentFixture<NotificationCardComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ NotificationCardComponent ]
+<<<<<<< HEAD
+=======
+>>>>>>> e2be991cada6cbc613a1e11ab9025147a3313c24:frontend/angular-eachone/src/app/shared/ui/notification/notification-card/notification-card.component.spec.ts
+>>>>>>> e2be991cada6cbc613a1e11ab9025147a3313c24
+    })
+    .compileComponents();
+  });
+
+  beforeEach(() => {
+<<<<<<< HEAD
+    fixture = TestBed.createComponent(NotificationCardComponent);
+=======
+<<<<<<< HEAD:frontend/angular-eachone/src/app/acesso/pages/wrapper-page/charge/charge/charge.component.spec.ts
+    fixture = TestBed.createComponent(ChargeComponent);
+=======
+    fixture = TestBed.createComponent(NotificationCardComponent);
+>>>>>>> e2be991cada6cbc613a1e11ab9025147a3313c24:frontend/angular-eachone/src/app/shared/ui/notification/notification-card/notification-card.component.spec.ts
+>>>>>>> e2be991cada6cbc613a1e11ab9025147a3313c24
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

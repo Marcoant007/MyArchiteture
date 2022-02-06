@@ -1,0 +1,589 @@
+@import "../../../../../variable.scss";
+
+.wrapperLogin {
+  &.loginBox {
+    position: relative;
+    background-color: var(--login-light-white);
+    text-align: center;
+    min-height: 65vh;
+    min-width: 40vw;
+    margin-right: 10rem;
+    a {
+      color: var(--hiperlink-color);
+    }
+    .titleFirstAccess {
+      color: var(--subtitle-color);
+      font-size: 2.2rem;
+      padding-top: 2rem;
+      width: 90%;
+      margin: auto;
+    }
+    .infoUser {
+      text-align: left;
+      border-bottom: 1px var(--info-user-border) solid;
+      width: 80%;
+      height: 3rem;
+      margin: 1.5rem auto;
+
+      .imgContainer {
+        position: relative;
+        width: 3rem;
+        height: 100%;
+        margin: auto 0.5rem 1rem 0px;
+        top: -5%;
+        .imgPeople {
+          position: relative;
+          height: 100%;
+          width: 100%;
+          left: 50%;
+          transform: translate(-50%);
+        }
+      }
+      .infoText {
+        display: grid;
+        color: var(--subtitle-color);
+        width: 88%;
+        flex-wrap: nowrap;
+        b {
+          width: 1rem;
+          white-space: normal;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    .formContainer {
+      width: 80%;
+      height: 15%;
+      margin: 1rem auto 2rem auto;
+      form i.input {
+        color: var(--icon-key);
+      }
+      .passMin {
+        position: relative;
+        width: 100%;
+        height: auto;
+        .createPassContainer {
+          position: relative;
+          width: 100%;
+          height: 50%;
+          .createPasswordInput {
+            width: 100%;
+            height: 50%;
+            margin: auto;
+            margin-left: 0px;
+            i {
+              position: absolute;
+              margin: auto;
+              margin-left: 0px;
+            }
+            ::ng-deep {
+              display: block;
+              .input{
+                i{
+                  margin-left: 10px;
+                }
+              }
+            }
+          }
+        }
+        .confirmPassContainer {
+          position: relative;
+          width: 100%;
+          height: 50%;
+          top: 70%;
+          color: var(--subtitle-color);
+          .confirmPasswordInput {
+            width: 100%;
+            height: 2.5rem;
+            margin: auto;
+            i {
+              position: absolute;
+              margin: auto;
+              margin-left: 0px;
+            }
+            ::ng-deep {
+              display: block;
+              .input{
+                i{
+                  margin-left: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .passRequired {
+      margin-top: 3rem;
+      width: 100%;
+      height: auto;
+      color: var(--required-pass-info-color);
+      .textStyle {
+        .passRequiredTooltip {
+          visibility: hidden;
+          &::ng-deep {
+            .tooltip {
+              position: absolute;
+              modal-t {
+                border: none;
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%);
+              }
+            }
+          }
+        }
+      }
+    }
+    .requiredPassContainer {
+      width: 80%;
+      height: auto;
+      margin: auto;
+      font-size: 1rem;
+      color: var(--required-pass-info-color);
+      .mustHave {
+        &.requiredPassList {
+          text-align: left;
+          list-style-position: inside;
+        }
+      }
+    }
+    .buttonContainer {
+      position: absolute;
+      top: 65%;
+      width: 100%;
+      margin-top: 1rem;
+      .confirmBtn {
+        position: relative;
+        margin-top: 1.2rem;
+        width: 15rem;
+        height: 3.5rem;
+        color: var(--login-light-white);
+        background-color: var(--btn-confirm);
+        border: 0px;
+        border-radius: 0.2rem;
+        font-size: 1rem;
+
+        b {
+          padding: 0.2rem;
+        }
+      }
+    }
+    .footerInfosContainer {
+      position: absolute;
+      top: 82%;
+      left: 50%;
+      transform: translate(-50%);
+      width: 90%;
+      font-size: 1rem;
+      margin: 2rem auto;
+      color: var(--subtitle-color);
+    }
+    .rightsContainer {
+      .rights {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        font-size: 0.6rem;
+        padding-top: 1.2rem;
+        margin: auto auto;
+        width: 80%;
+        bottom: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $max-ltl) {
+  .wrapperLogin {
+    &.loginBox {
+      .titleFirstAccess {
+        font-size: 1.8rem;
+      }
+      .passRequired {
+        margin-top: 1rem;
+        .textStyle {
+          margin-top: 2rem;
+        }
+      }
+      .buttonContainer {
+        .confirmBtn {
+          height: 3rem;
+        }
+      }
+      .footerInfosContainer {
+        .footerInfos {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $max-ltl) {
+  .wrapperLogin {
+    &.loginBox {
+      .titleFirstAccess {
+        font-size: 1.8rem;
+      }
+      .passRequired {
+        .textStyle {
+          top: 80%;
+          margin-top: 8rem;
+        }
+      }
+      .buttonContainer {
+        .confirmBtn {
+          height: 3rem;
+        }
+      }
+      .footerInfosContainer {
+        .footerInfos {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $max-xmd) {
+  .wrapperLogin {
+    &.loginBox {
+      position: absolute;
+      width: 85vw;
+      height: 80%;
+      top: 13%;
+      left: 50%;
+      transform: translate(-50%);
+      .titleFirstAccess {
+        width: 80%;
+        margin: auto;
+        font-size: 1.6rem;
+      }
+      .passRequired {
+        margin-top: 0px;
+        .textStyle {
+          margin-top: 2rem;
+          top: 55%;
+        }
+      }
+      .requiredPassContainer {
+        .mustHave {
+          position: relative;
+          display: none;
+          &.requiredPassList {
+            .requiredPassContentLeft {
+              width: 49%;
+              height: auto;
+            }
+            .requiredPassContentRight {
+              position: absolute;
+              margin-left: 1%;
+              width: 49%;
+              height: auto;
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $max-sm) {
+  .wrapperLogin {
+    &.loginBox {
+      .infoUser {
+        font-size: 0.8rem;
+      }
+      .footerInfosContainer{
+        .footerInfos{
+          font-size: 0.6rem;
+        }
+      }
+      .buttonContainer{
+        .confirmBtn{
+          width: 10rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-height: $max-xmd) {
+  .wrapperLogin {
+    &.loginBox {
+      .titleFirstAccess {
+        font-size: 2rem;
+        padding-top: 2rem;
+      }
+      .infoUser {
+        margin-top: 2rem;
+        height: 4rem;
+        .imgContainer {
+          width: 4rem;
+        }
+        .infoText {
+          font-size: 1rem;
+        }
+      }
+      .formContainer {
+        margin-top: -1rem;
+        .passMin {
+          height: 4rem;
+          .createPassContainer {
+            .createPasswordInput {
+              height: 4rem;
+              ::ng-deep {
+                input {
+                  height: 3rem;
+                }
+              }
+            }
+          }
+          .confirmPassContainer {
+            margin-top: 1rem;
+            .confirmPasswordInput {
+              height: 4rem;
+              ::ng-deep {
+                input {
+                  height: 3rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      .passRequired {
+        margin-top: 5rem;
+        .textStyle {
+          font-size: 0.9rem;
+          .passRequiredTooltip {
+            visibility: hidden;
+          }
+        }
+      }
+      .requiredPassContainer {
+        height: 10rem;
+        .mustHave {
+          display: flex;
+          font-size: 1rem;
+        }
+      }
+      .buttonContainer {
+        top: 70%;
+      }
+      .footerInfosContainer {
+        top: 78%;
+        font-size: 1rem;
+      }
+      .rightsContainer {
+        font-size: 1rem;
+        .rights {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-height: $max-xmd) {
+  .wrapperLogin {
+    &.loginBox {
+      .requiredPassContainer {
+        font-size: 0.9rem;
+      }
+      .buttonContainer {
+        top: 67%;
+        .confirmBtn {
+          height: 2.8rem;
+        }
+      }
+      .formContainer {
+        margin-top: -1rem;
+        .passMin {
+          height: 4rem;
+          .createPassContainer {
+            .createPasswordInput {
+              height: 2rem;
+              ::ng-deep {
+                input {
+                  height: 2.5rem;
+                }
+              }
+            }
+          }
+          .confirmPassContainer {
+            margin-top: 1rem;
+            .confirmPasswordInput {
+              height: 2rem;
+              ::ng-deep {
+                input {
+                  height: 2.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      .passRequired {
+        .textStyle {
+          position: absolute;
+          z-index: 5;
+          left: 50%;
+          transform: translate(-50%);
+          top: 59%;
+          font-size: 0.9rem;
+          margin-top: 0.5rem;
+
+          .passRequiredTitle {
+            .spanControl {
+              visibility: hidden;
+            }
+          }
+          .passRequiredTooltip {
+            visibility: visible;
+            &:hover {
+              cursor: pointer;
+            }
+            &::ng-deep {
+              .tooltip {
+                position: absolute;
+                .modal-t {
+                  border: none;
+                  left: 81%;
+                  transform: translate(-81%);
+                  top: 85%;
+                }
+              }
+            }
+          }
+        }
+      }
+      .requiredPassContainer {
+        .mustHave {
+          display: none;
+          &.requiredPassList {
+            .requiredPassContentLeft {
+              width: 49%;
+              height: auto;
+            }
+            .requiredPassContentRight {
+              margin-left: 1%;
+              width: 49%;
+              height: auto;
+              right: 0;
+            }
+          }
+        }
+      }
+      .footerInfosContainer {
+        top: 79%;
+        font-size: 0.6rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-height: $min-xmd) {
+  .wrapperLogin {
+    &.loginBox {
+      .formContainer {
+        .passMin {
+          .createPassContainer {
+            .createPasswordInput {
+              height: 2rem;
+              ::ng-deep {
+                input {
+                  height: 3rem;
+                }
+              }
+            }
+          }
+          .confirmPassContainer {
+            margin-top: 1rem;
+            .confirmPasswordInput {
+              height: 2rem;
+              ::ng-deep {
+                input {
+                  height: 3rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-height: $max-md) {
+  .wrapperLogin {
+    &.loginBox {
+      .titleFirstAccess {
+        font-size: 1.1rem;
+        padding-top: 1rem;
+      }
+      .infoUser {
+        margin-top: 1rem;
+      }
+      .formContainer {
+        margin-top: -2rem;
+        .passMin {
+          height: 2.5rem;
+          .createPassContainer {
+            .createPasswordInput {
+              height: 2rem;
+              ::ng-deep {
+                input {
+                  height: 2.5rem;
+                }
+              }
+            }
+          }
+          .confirmPassContainer {
+            margin-top: 1rem;
+            .confirmPasswordInput {
+              height: 2rem;
+              ::ng-deep {
+                input {
+                  height: 2.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      .requiredPassContainer {
+        .mustHave {
+          &.requiredPassList {
+            display: none;
+          }
+        }
+      }
+      .buttonContainer {
+        top: 67%;
+        height: 2rem;
+        .confirmBtn {
+          margin-top: 0px;
+          position: absolute;
+          font-size: 0.8rem;
+          height: 2rem;
+          transform: translate(-50%);
+        }
+      }
+      .footerInfosContainer {
+        top: 72%;
+      }
+      .rightsContainer {
+        .rights {
+          font-size: 0.6rem;
+          bottom: 0.8rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@import "../../../../../variable.scss";
+
+.container{
+  margin: 0.5rem 0px;
+  color: var(--font-color) ;
+  padding: 5px 1rem;
+  min-height: 5.5rem;
+  background-color: #b9acad81;
+  border-left: 0.4rem solid #42d59500;
+  cursor: pointer;
+  height: fit-content;
+}
+
+.title{
+  font-size: 1.5rem;
+  margin: auto 0px auto 2rem;
+}
+
+.unseen{
+  font-style: bold;
+  font-weight: 800;
+}
+
+.status1{
+  background-color: rgba(67, 214, 150, 0.3);
+  &.unseen{
+    border-left: 0.4rem solid #42D595  ;
+  }
+  &.active{
+    background-color: rgba(67, 214, 150, 1);
+    animation-name: blink;
+    animation-duration: 0.2s;
+  }
+}
+.status2{
+  background-color: rgba(250, 150, 0, 0.3);
+  &.unseen{
+    border-left: 0.4rem solid #FA9600  ;
+  }
+  &.active{
+    background-color:  rgba(250, 150, 0, 1);
+    animation-name: blink;
+    animation-duration: 0.2s;
+  }
+}
+.status3{
+  background-color: rgba(235, 27, 41, 0.3);
+  &.unseen{
+    border-left: 0.4rem solid red  ;
+  }
+  &.active{
+    background-color: rgba(235, 27, 41, 1);
+    animation-name: blink;
+    animation-duration: 0.2s;
+  }
+}
+
+@keyframes blink {
+  from {opacity: 1;}
+  to {opacity: 0.8;}
+}
+
+
+
+@media only screen and (max-width : $min-xmd){
+  .title{
+    margin: auto 0px auto 0rem;
+  }
+
+}
+
+
+@media only screen and (max-width : $min-md){
+
+  .title{
+    font-size: 1rem;
+    margin: auto 0px auto 0rem;
+  }
+
+}

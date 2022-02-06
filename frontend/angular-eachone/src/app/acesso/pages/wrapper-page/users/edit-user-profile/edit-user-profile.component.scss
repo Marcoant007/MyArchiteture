@@ -1,0 +1,151 @@
+@import "../../../../../../variable.scss";
+
+.allContainer {
+  .titleContainer {
+    margin: 3rem auto 3rem auto;
+    .title {
+      color: var(--title-color);
+    }
+  }
+  .box {
+    position: relative;
+    background-color: var(--background-color-2);
+    min-height: calc(100vh - 14rem);
+    border-radius: 0.31rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+
+    .backContainer {
+      position: relative;
+      width: 100%;
+      height: 10%;
+      .backImg {
+        position: absolute;
+        right: 2rem;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .formsContainer {
+      padding: 1rem;
+      margin-top: 5rem;
+      .leftForm {
+        width: 40%;
+        .attachArea {
+          width: 90%;
+        }
+      }
+      .rigthForm {
+        width: 40%;
+        .fieldset {
+          border: none;
+          padding: 0px;
+          margin-bottom: 1rem;
+          .label {
+            color: var(--label-color);
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+          }
+        }
+      }
+    }
+
+    .footer {
+      width: 100%;
+      height: 10vh;
+      margin-top: 1rem;
+
+      .divContainer {
+        position: relative;
+        padding: 1rem;
+        .btn {
+          color: var(--white-text);
+          margin: auto;
+          width: 10rem;
+          height: 3rem;
+          border: none;
+          border-radius: 0.3rem;
+        }
+        .confirm {
+          margin-right: 5%;
+          background-color: var(--confirm-button);
+        }
+        .cancel {
+          margin-left: 5%;
+          background-color: var(--cancel-button);
+        }
+      }
+    }
+    .buttonsForm {
+      display: flex;
+      justify-content: center;
+      height: 3rem;
+      margin-top: 3rem;
+      margin-right: 2rem;
+      @media only screen and (max-width: 500px) {
+        margin: auto;
+        margin-top: 5rem;
+      }
+      .btnCancel {
+        margin-left: 4rem;
+        @media only screen and (max-width: 500px) {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $max-md) {
+  .allContainer {
+    .box {
+      .formsContainer {
+        position: relative;
+        display: block;
+        margin-top: 3rem;
+        .leftForm {
+          width: 90%;
+          .attachArea {
+            position: absolute;
+            height: 27rem;
+            left: 50%;
+            transform: translate(-50%);
+          }
+        }
+        .rigthForm {
+          margin: 30rem auto 0px auto;
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $max-sm) {
+  .allContainer {
+    .box {
+      .formsContainer {
+        .leftForm {
+          .attachArea {
+            &::ng-deep {
+              .attachText {
+                width: 90%;
+              }
+            }
+          }
+        }
+        .rigthForm {
+          width: 90%;
+          margin: auto;
+          margin-top: 30rem;
+          .input {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

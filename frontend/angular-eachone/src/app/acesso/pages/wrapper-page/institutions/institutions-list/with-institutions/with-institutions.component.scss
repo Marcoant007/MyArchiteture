@@ -1,0 +1,26 @@
+@import "../../../../../../../variable.scss";
+
+.body {
+  color: var(--font-color);
+}
+
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color-2);
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  height: auto;
+  min-height: calc(100vh - 14rem);
+}
+
+.listContainer {
+  margin-top: 2rem;
+}
+
+.paginationContainer {
+  margin-top: auto;
+  margin-bottom: 1rem;
+}

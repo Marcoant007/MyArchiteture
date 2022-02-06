@@ -1,0 +1,94 @@
+<div class="wrapper">
+    <div class="left">
+        <div class="logo">
+        </div>
+        <div class="card login">
+            <div class="title">CRIE SUA CONTA</div>
+            <form [formGroup]="formGroup">
+                <app-input id="nome" label="Nome completo" name="nome" type="text"
+                    [formControl]="formGroup.controls['name']" [showRequired]="false"
+                    maxLengthMessage="O nome não pode ter mais que 256 caracteres" placeholder="meu nome">
+                    <i class="fal fa-user input"></i>
+                </app-input>
+                <app-input id="cpf_cnpj" label="CPF/CNPJ" name="cpf" type="text"
+                    [formControl]="formGroup.controls['cpf_cnpj']" requirementMessage="O CPF ou o CNPJ é obrigatório"
+                    notEquivalentMessage="Valor inválido"
+                    maxLengthMessage="O  CPF ou o CNPJ não pode ter mais que 256 caracteres"
+                    mask="000.000.000-00||00.000.000/0000-00" placeholder="000.000.000-00" [showRequired]="false">
+                    <i class="fal fa-id-card input"></i>
+                    <p *ngIf="formGroup.controls['cpf_cnpj'].touched && formGroup.controls['cpf_cnpj'].errors?.cnpjNotValid"
+                        class="error-message" erros>CNPJ inválido</p>
+                    <p *ngIf="formGroup.controls['cpf_cnpj'].touched && formGroup.controls['cpf_cnpj'].errors?.cpfNotValid"
+                        class="error-message" erros>CPF inválido</p>
+                </app-input>
+                <app-input id="email" label="E-mail" name="email" type="text"
+                    pattern="^[a-zA-Z0-9_+&*-]+(?:.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+.)+[a-zA-Z]{2,7}$"
+                    [formControl]="formGroup.controls['email']" requirementMessage="O e-mail é obrigatório"
+                    maxLengthMessage="O e-mail não pode ter mais que 256 caracteres" placeholder="meuemail@email.com"
+                    [showRequired]="false">
+                    <i class="fal fa-envelope input"></i>
+                </app-input>
+                <app-input #password id="password" class="password input" label="Senha" name="Senha" type="password"
+                    [formControl]="formGroup.controls['password']"
+                    maxLengthMessage="A senha não pode ter mais que 256 caracteres"
+                    minLengthMessage="A senha não pode ter menos que 8 caracteres" placeholder="minha senha"
+                    [showRequired]="false" [tooltip]="true"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                    <i class="fal fa-unlock-alt input"></i>
+                    <i class="fas fa-eye right-i input" (click)="viewPassword(password)"></i>
+                    <div class="tooltip" tooltip>
+                        <span class="strong">
+                            Sua senha deve conter:
+                        </span>
+                        <span class="item">Pelo menos 8 caracteres;</span>
+                        <span class="item">Pelo menos uma letra maiúscula;</span>
+                        <span class="item">Pelo menos uma letra minúscula;</span>
+                        <span class="item">Pelo menos um número;</span>
+                        <span>Pelo menos um caractere especial.</span>
+                    </div>
+                </app-input>
+                <app-input #password_confirm id="password_confirm" class="password input" label="Confirmar Senha"
+                    name="Senha" type="password" [formControl]="formGroup.controls['password_confirm']"
+                    requirementMessage="É preciso confirmar a senha para prosseguir"
+                    maxLengthMessage="A senha não pode ter mais que 256 caracteres"
+                    minLengthMessage="A senha não pode ter menos que 8 caracteres" placeholder="confirmar senha"
+                    [showRequired]="false">
+                    <i class="fal fa-unlock-alt input"></i>
+                    <i class="fas fa-eye right-i input" (click)="viewPassword(password_confirm)"></i>
+                    <p *ngIf="formGroup.controls['password_confirm'].touched && formGroup.controls['password_confirm'].errors?.differentPasswords"
+                        class="error-message" erros>Senhas estão diferentes</p>
+                </app-input>
+                <app-checkbox label="Li e concordo com os " [formControl]="formGroup.controls['accept_contract']">
+                    <div class="termos_uso" customLabel>
+                        <a (click)="openModalUseTerms()">Termos de Uso</a>
+                    </div>
+                </app-checkbox>
+
+
+                <p *ngIf="formGroup.controls['accept_contract'].touched && formGroup.controls['accept_contract'].errors?.required"
+                    class="error-message">Confirme os termos para prosseguir</p>
+
+                <span class="error-message">{{errorMessage}}</span>
+
+                <button (click)="submit()">CRIAR CONTA</button>
+                <div class="register">
+                    Já possui uma conta? <span (click)="redirectToLogin()">Login</span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="right">
+      <div class="box-img">
+      </div>
+      <div class="box-right">
+        <div class="title">Lorem Impsum</div>
+        <div class="text">
+          <p>
+            "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+            "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+          </p>
+        </div>
+      </div>
+      <div _ngcontent-nnc-c85="" class="bg"></div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+@import '../../../../variable.scss';
+
+
+.imgDiv{
+  margin: auto;
+  width: 40%;
+}
+
+.title{
+  font-size: 3rem;
+  margin: 2rem 0px;
+}
+
+.spanTitle{
+  margin-top: 0.8rem;
+}
+
+.text{
+  width: 40%;
+  margin: 5vh auto ;
+  overflow-y: scroll;
+  max-height: 80vh;
+}
+
+
+.back{
+  padding: 2.5rem 0rem 0rem 3rem;
+  :hover{
+    cursor: pointer;
+    color: var(--button-active);
+  }
+}
+
+
+.simpleText{
+  margin-right: 1rem;
+}
+
+.wrapperr{
+  max-height: 100vh;
+}

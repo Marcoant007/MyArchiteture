@@ -1,0 +1,301 @@
+@import "../../../../../variable.scss";
+
+.wrapperLogin {
+  min-height: 65vh;
+  min-width: 40vw;
+  position: relative;
+  a {
+    color: var(--hiperlink-color);
+  }
+  &.loginBox {
+    background-color: var(--login-light-white);
+    text-align: center;
+    .loginTitle {
+      color: var(--subtitle-color);
+      font-size: 2rem;
+      padding-top: 2rem;
+      font-weight: 100;
+      margin: auto;
+      width: 90%;
+      b {
+        font-weight: 500;
+      }
+    }
+
+    .loginSubTitle {
+      color: var(--subtitle-color);
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    .inputs {
+      input[type="checkbox"] {
+        margin-right: 1rem;
+        /* Double-sized Checkboxes */
+        -ms-transform: scale(1.4); /* IE */
+        -moz-transform: scale(1.4); /* FF */
+        -webkit-transform: scale(1.4); /* Safari and Chrome */
+        -o-transform: scale(1.4); /* Opera */
+        transform: scale(1.4);
+        padding: 3px;
+      }
+
+      .loginMin {
+        height: auto;
+        .inputLogin {
+          margin: auto;
+          max-width: 70%;
+          ::ng-deep {
+            input {
+              height: 3rem;
+            }
+          }
+        }
+      }
+    }
+    .checkboxContainer {
+      width: 90%;
+      margin: auto;
+      margin-top: -1.5rem;
+      .labelcheckBox {
+        opacity: 0.5;
+      }
+    }
+
+    .buttonContainer {
+      position: relative;
+      width: 90%;
+      height: auto;
+      margin: auto;
+      margin-top: 2rem;
+      .loginBtn {
+        width: 70%;
+        height: 3rem;
+        color: var(--login-light-white);
+        background-color: var(--btn-confirm);
+        border: 0px;
+        border-radius: 0.2rem;
+        font-size: 1rem;
+      }
+    }
+    .forgotten {
+      margin: auto;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      width: 90%;
+    }
+    .rightsContainer {
+      position: absolute;
+      bottom: 2rem;
+      height: 3rem;
+      width: 100%;
+      text-align: center;
+      .rights {
+        font-size: 0.8rem;
+        margin: auto;
+        max-width: 75%;
+      }
+    }
+  }
+}
+
+
+@media only screen and(max-width: $max-lg) {
+  .wrapperLogin {
+    &.loginBox {
+      padding: 0rem;
+      width: 50vw;
+      .inputs {
+        .loginMin {
+          .inputLogin {
+            .margin-disable{
+              margin-top: 10rem;
+            }
+          }
+        }
+      }
+      .forgotten {
+        margin: auto;
+        font-size: 0.8rem;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and(max-width: $max-xmd) {
+  .wrapperLogin {
+    &.loginBox {
+      position: absolute;
+      width: 85vw;
+      height: 80%;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%);
+      .loginTitle {
+        position: relative;
+      }
+      .inputs {
+        .loginMin {
+          .inputLogin {
+            .margin-disable{
+              margin-top: 10rem;
+            }
+            ::ng-deep {
+              input {
+                height: 3rem;
+              }
+            }
+          }
+        }
+      }
+      .forgotten {
+        font-size: 0.8rem;
+        margin-top: 3rem;
+      }
+      .rightsContainer {
+        .rights {
+          width: 75%;
+          font-size: 0.8rem;
+          margin-top: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and(max-width: $max-sm) {
+  .wrapperLogin {
+    &.loginBox {
+      transform: translate(-50%);
+      .loginTitle {
+        margin-top: -1rem;
+        font-size: 1.6rem;
+      }
+
+      .inputs {
+        .loginMin {
+          .inputLogin {
+            ::ng-deep {
+              input {
+                height: 3rem;
+              }
+            }
+          }
+        }
+      }
+      .forgotten {
+        margin-top: 3rem;
+      }
+      .rightsContainer {
+        .rights {
+          width: 75%;
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and(min-height: $max-xmd) {
+  .wrapperLogin {
+    &.loginBox {
+      .loginTitle {
+        margin-top: 3rem;
+        font-size: 3rem;
+        width: 90%;
+      }
+
+      .inputs {
+        .loginMin {
+          height: 7rem;
+          .inputLogin {
+            ::ng-deep {
+              input {
+                height: 5rem;
+              }
+            }
+          }
+        }
+      }
+      .checkboxContainer {
+        margin-top: 1rem;
+      }
+
+      .buttonContainer {
+        .loginBtn {
+          margin-top: 4rem;
+          height: 4rem;
+        }
+      }
+      .forgotten {
+        position: absolute;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      .rightsContainer {
+        .rights {
+          width: 75%;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and(max-height: $max-md) {
+  .wrapperLogin {
+    &.loginBox {
+      margin-top: 1rem;
+      .loginTitle {
+        font-size: 1.5rem;
+        width: 90%;
+      }
+      .inputs {
+        margin-top: -1rem;
+        .loginMin {
+          margin-top: -0.5rem;
+          height: 5rem;
+          .inputLogin {
+            ::ng-deep {
+              input {
+                height: 2.6rem;
+              }
+            }
+          }
+        }
+      }
+      .checkboxContainer {
+        margin-top: -1rem;
+      }
+
+      .buttonContainer {
+        .loginBtn {
+          position: relative;
+          height: 2rem;
+          margin-top: -2.5rem;
+        }
+      }
+      .forgotten {
+        position: absolute;
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      .rightsContainer {
+        bottom: 0px;
+        .rights {
+          top: 0%;
+          margin-top: 0px;
+          width: 90%;
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}
+

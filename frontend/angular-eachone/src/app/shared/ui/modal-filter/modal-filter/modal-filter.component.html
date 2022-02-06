@@ -1,0 +1,35 @@
+<div *ngIf="life" class="modal">
+  <div class="modalContent">
+    <div class="modalBody">
+      <h1>Filtros</h1>
+      <div class="flex displayColumn">
+        <form class="form" [formGroup]="formFilter" (ngSubmit)="submit()">
+          <p class="optionTitle">Número por página:</p>
+          <div class="flex">
+            <select formControlName="nPages" name="nPages" class="selectNPages">
+              <option selected="selected" value='5'>5</option>
+              <option *ngFor="let optionNPage of optionNPages" value={{optionNPage}}>
+                {{ optionNPage }}
+              </option>
+            </select>
+          </div>
+          <p class="optionTitle">Filtrar por:</p>
+          <div class="flex">
+            <select formControlName="filter" name="filter" class="selectFilter">
+              <option selected="selected" value="">nenhum</option>
+              <option *ngFor="let optionFilter of optionFilters" value={{optionFilter}}>
+                {{ optionFilter }}
+              </option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="flex">
+        <div class="wrapperBtn">
+          <button class="btnClass cancel" (click)="modal()">Cancelar</button>
+          <button class="btnClass confirm" (click)="submit()">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

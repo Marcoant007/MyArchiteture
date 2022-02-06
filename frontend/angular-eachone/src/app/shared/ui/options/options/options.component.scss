@@ -1,0 +1,37 @@
+.options{
+  font-size: 1.6rem;
+  transform: rotate(90deg);
+  position: relative;
+  left: 0.4rem;
+  top: 0.9rem;
+  font-weight: 600;
+  color: var(--button-grey-1);
+  user-select: none;
+  margin: auto auto;
+}
+
+.space{
+  min-height: 3rem;
+  min-width: 3rem;
+}
+
+.options-on,
+.options-off{
+  position: relative;
+}
+.options-on > .tools{
+  position: relative;
+  transform: rotate(-90deg);
+  display: block;
+}
+
+
+.options-off > .tools {
+  display: none;
+  transform: rotate(-90deg);
+  transform-origin: top center;
+}
+
+.options:hover{
+  cursor: pointer;
+}

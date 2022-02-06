@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <div class="left">
+    <div class="title">Selecione a clínica</div>
+    <div class="subtitle" *ngFor="let clinic of clinics">
+      <p (click)="handleSelectClinic(clinic)" style="cursor: pointer;">{{clinic.name}}</p>
+    </div>
+  </div>
+</div>

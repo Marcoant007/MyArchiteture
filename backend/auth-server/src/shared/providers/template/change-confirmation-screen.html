@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senha alterada com sucesso</title>
+</head>
+
+<body style="
+  color: #929090;
+  font-family: Helvetica, Arial,  sans-serif;
+  text-align: center;
+
+  display: grid;
+  flex-direction: row;
+  justify-content: center;
+
+  align-items: center;
+
+  margin-top: 1.5rem;
+
+  line-height: 260%;
+
+  margin: 0px auto;
+  max-width: 65%;">
+
+  <header style="background-color: rgb(231, 230, 230); padding: 1rem; font-size: larger;">
+    <div>
+
+      <img src="https://i.ibb.co/Bz8sV7B/Key-1.png" alt="Chave verde">
+
+      <h1 style="color:#929090; font-size: 2.5rem;">Alteração de senha <span
+          style="font-weight: 300; font-size: 2.6rem;"> da conta EachONe </span> </h1>
+
+    </div>
+  </header>
+
+  <div style="
+      margin-top: 2.5rem;
+      margin-bottom: 2rem;
+
+      height: auto;
+
+      width: 60rem;
+      max-width: 80%;
+      margin: 0px auto;">
+
+    <p style="
+      text-align: left;
+      margin-top: 4rem;
+      margin-bottom: 5rem;
+      font-size: 1.2rem;
+      ">
+
+      <b>Olá {{ name }},</b>
+    </p>
+
+    <div style="
+      color: #448666d5;
+
+      width: auto;
+      height: 2rem;
+
+      background-color: #D9E9D1;
+      background-size: 1rem 1rem;
+
+      margin: 0px auto;
+      text-align: center;
+
+      padding: 1.6rem;
+
+      font-size: 2.6rem;
+
+      margin: 0px auto;
+      ">
+
+      <p style="margin: auto auto; font-weight: bolder;">Sua senha foi alterada</p>
+    </div>
+
+    <div style="
+
+      height: 3rem;
+
+      font-size: 1.5rem;
+
+      margin-top: 5rem;
+
+      text-align: left;
+      line-height: 150%;">
+
+      <b>Nome: </b>{{name}}
+      <br>
+      <b>Perfil do usuário: </b>{{user_type}}
+    </div>
+
+    <div
+      style=" font-size: 1.2rem; height: 5rem; margin-bottom: 15rem; margin-top: 5rem; text-align: left; max-width: 70%;">
+
+      A senha da sua conta EachOne acabou de ser alterada.
+      <br>
+      Se foi você, este email pode ser ignorado com segurança.
+      <br>
+      Se não foi você, sua conta foi comprometida.
+      <br>
+      Por favor, <a href="{{urlFrontEnd}}/passwordrecovery" style="color: #6F6EFF; font-weight: bolder;"> clique aqui
+        para criar uma nova senha</a>
+      <br>
+      Obrigado,
+      <br>
+      Equipe de contas -
+
+      <a href="https://www.google.com/search?channel=fs&client=ubuntu&q=google"
+        style="color: #6F6EFF;text-decoration: none; font-weight: bolder;"> plataforma de ensino EachOne
+      </a>
+
+    </div>
+
+    <div style="margin-top: 2.5rem; max-width: 100%;border-top: solid 1px gray;">
+      <div style="font-size:0.8rem; text-align: left; margin: 2rem 0px;">
+        Por favor, não responda esta mensagem. Em caso de dúvidas, acesse nossa
+
+        <a href="https://www.google.com/search?channel=fs&client=ubuntu&q=google"
+          style="color: #6F6EFF; text-decoration: none; font-weight: bolder;"> Central de Ajuda. </a>
+
+      </div>
+      <img src="https://i.ibb.co/DQC6RLq/Grupo-32.png" alt="EachOne logo"
+        style="margin: 25px auto; text-decoration: none;">
+    </div>
+
+  </div>
+
+
+</body>
+
+</html>

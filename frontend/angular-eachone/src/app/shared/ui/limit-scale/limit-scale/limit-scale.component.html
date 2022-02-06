@@ -1,0 +1,19 @@
+<div class="limit" [ngStyle]="{ 'background-color': backgroundColor }">
+    <div class="col-2" (click)="onClicked()">
+        <div>
+            <h3>{{ title }}</h3>
+            <div class="white-line"></div>
+            <p>{{ description }}</p>
+        </div>
+        <div>
+            <span class="number-border" *ngIf="upperLimit">{{ upperLimit }}pt</span>
+            <span class="number-border" *ngIf="!upperLimit">>= {{ lowerLimit }}pt</span>
+        </div>
+    </div>
+
+    <div class="box-right">
+        <div *ngIf="showIconDelete" class="box-icon-delete" (click)="onDeleted()">
+            <i class="fas fa-trash"></i>
+        </div>
+    </div>
+</div>

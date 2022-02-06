@@ -1,0 +1,26 @@
+@import "../../../../../variable.scss";
+
+.textInputBox {
+  background-image: -webkit-linear-gradient(left, transparent 10px, transparent 10px),
+    -webkit-linear-gradient(right, transparent 10px, transparent 10px),
+    -webkit-linear-gradient(transparent 30px, #ccc 30px, #ccc 31px, transparent 31px);
+  background-size: 100% 100%, 100% 100%, 100% 31px;
+  border: none;
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--inlineInputColor);
+  line-height: 31px;
+  padding: 8px;
+  resize: none;
+  font-weight: 300;
+  width: 100%;
+  &:disabled {
+    opacity: 0.2;
+    cursor: no-drop;
+  }
+}
+
+.textInputBox::placeholder {
+  color: var(--inlineInputColor);
+  font-weight: 300;
+}

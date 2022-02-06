@@ -1,0 +1,18 @@
+.body {
+  position: absolute;
+  background-color: var(--anchor-button-background);
+  cursor: pointer;
+
+  z-index: 99;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  bottom: 1rem;
+  right: 4rem;
+  border-radius: 0.3rem;
+}
+
+.icon {
+  margin: auto;
+  font-size: 1.2rem;
+  color: var(--anchor-button-text);
+}

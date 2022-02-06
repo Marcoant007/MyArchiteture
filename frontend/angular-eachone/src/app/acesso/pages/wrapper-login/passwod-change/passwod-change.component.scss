@@ -1,0 +1,546 @@
+@import "../../../../../variable.scss";
+
+.wrapperLogin {
+  position: relative;
+  min-height: 78vh;
+  min-width: 35vw;
+  &.loginBox {
+    position: relative;
+    background-color: var(--login-light-white);
+    .changePassTitle {
+      position: relative;
+      color: var(--subtitle-color);
+      font-size: 2rem;
+      margin: auto;
+      padding-top: 2rem;
+      width: 90%;
+      height: auto;
+      text-align: center;
+      b {
+        font-weight: 500;
+      }
+    }
+    .infoUser {
+      text-align: left;
+      width: 90%;
+      height: auto;
+      margin: auto;
+      border-bottom: 1px solid var(--info-user-border);
+      padding: 0.4rem;
+      .imgUser {
+        height: 3.4rem;
+        width: 3.4rem;
+        margin-top: 1rem;
+      }
+      .infoText {
+        margin-top: 2rem;
+        margin-left: 0.5rem;
+        font-weight: 400;
+        color: var(--subtitle-color);
+      }
+    }
+
+    .subNotification {
+      position: relative;
+      text-align: left;
+      color: var(--icon-key);
+      width: 90%;
+      height: 3rem;
+      margin: 1rem auto 1rem auto;
+      i {
+        position: relative;
+        right: 0%;
+        top: 10%;
+      }
+      .subNotificationText {
+        margin-left: 7%;
+        position: absolute;
+      }
+    }
+    .formContainer {
+      margin-top: -5rem;
+      .inputNewPassContainer {
+        max-width: 80%;
+        margin: auto;
+        margin-top: 4rem;
+      }
+      .inputConfirmPassContainer {
+        max-width: 80%;
+        margin: auto;
+      }
+      form i.input {
+        color: var(--icon-key);
+      }
+      input[type="checkbox"] {
+        margin-right: 1rem;
+        /* Double-sized Checkboxes */
+        -ms-transform: scale(1.4); /* IE */
+        -moz-transform: scale(1.4); /* FF */
+        -webkit-transform: scale(1.4); /* Safari and Chrome */
+        -o-transform: scale(1.4); /* Opera */
+        transform: scale(1.4);
+        padding: 3px;
+      }
+    }
+    .passRequired {
+      width: 80%;
+      margin: -2rem auto;
+      font-size: 1rem;
+      text-align: left;
+      color: var(--subtitle-color);
+      b {
+        font-weight: 500;
+      }
+      .infoTextStyleContainer {
+        margin-top: 1.5rem;
+        position: absolute;
+        width: 80%;
+        text-align: center;
+        .infoTextStyle {
+          height: auto;
+          .passRequiredTooltip {
+            display: none;
+            .requiredPassList {
+              list-style: none;
+            }
+          }
+        }
+      }
+      .textStyleContainer {
+        width: 80%;
+        .mustHave {
+          margin: auto;
+          &.textStyle {
+            text-align: left;
+            list-style-position: inside;
+          }
+        }
+      }
+    }
+    .buttonContainer {
+      position: absolute;
+      margin-top: 0px;
+      width: 80%;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%);
+      .backContainer {
+        position: relative;
+        color: var(--hiperlink-color);
+        display: flex;
+        width: 5rem;
+        margin-top: auto;
+        margin-bottom: auto;
+        .back {
+          cursor: pointer;
+          font-weight: 400;
+          font-size: 1rem;
+          margin-top: 1.5rem;
+        }
+        i {
+          margin-right: 0.5rem;
+        }
+      }
+      .loginBtn {
+        min-width: 15rem;
+        min-height: 3rem;
+        color: var(--login-light-white);
+        opacity: 1;
+        background-color: var(--btn-confirm);
+        border: 0px;
+        border-radius: 0.2rem;
+        span {
+          font-weight: 700;
+          font-size: 1rem;
+          margin-left: 2rem;
+          margin-right: 2rem;
+          i {
+            margin-left: 0.3rem;
+            width: 0.1rem;
+          }
+        }
+      }
+    }
+  }
+  .rightsContainer {
+    position: absolute;
+    font-size: 0.8rem;
+    width: 90%;
+    height: 3rem;
+    text-align: center;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%);
+    .rights {
+      position: absolute;
+      width: 100%;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+  a {
+    color: var(--hiperlink-color);
+  }
+}
+
+@media only screen and (min-width: $max-xmd) {
+  .wrapperLogin {
+    &.loginBox {
+      .passRequired {
+        .infoTextStyleContainer {
+          .infoTextStyle {
+            display: block;
+          }
+        }
+        .textStyleContainer {
+          .mustHave {
+            &.textStyle {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $max-xmd) {
+  .wrapperLogin {
+    &.loginBox {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%);
+      width: 80vw;
+      height: 83vh;
+    }
+  }
+}
+
+@media only screen and (max-width: $max-sm) {
+  .wrapperLogin {
+    &.loginBox {
+      font-size: 0.8rem;
+      .changePassTitle {
+        font-size: 1.3rem;
+        padding-top: 1.5rem;
+      }
+      .infoUser {
+        .imgUser {
+          transform: scale(0.8);
+        }
+      }
+
+      .subNotification {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      .formContainer {
+        .inputNewPassContainer {
+          margin-top: 4rem;
+        }
+        .inputConfirmPassContainer {
+          margin-top: -1rem;
+        }
+      }
+      .passRequired {
+        .infoTextStyleContainer {
+          .infoTextStyle {
+            width: 80%;
+            font-size: 1rem;
+          }
+        }
+        .textStyleContainer {
+          .mustHave {
+            &.textStyle {
+              margin-top: -0.5rem;
+            }
+          }
+        }
+      }
+      .buttonContainer {
+        display: table;
+        margin: auto;
+        .backContainer {
+          position: relative;
+          width: 15rem;
+          left: 50%;
+          transform: translate(-50%);
+          .back {
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+          }
+        }
+        .loginBtn {
+          left: 50%;
+          transform: translate(-50%);
+          min-height: 2.5rem;
+          min-width: 70%;
+          width: 70%;
+          span {
+            font-size: 0.8rem;
+            margin-left: 0rem;
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+    .rightsContainer {
+      .rights {
+        font-size: 0.6rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-height: $min-lg) {
+  .wrapperLogin {
+    &.loginBox {
+      .changePassTitle {
+        font-size: 2.7rem;
+      }
+      .infoUser {
+        margin-top: 2rem;
+        height: 5.7rem;
+        font-size: 0.8rem;
+        .imgUser {
+          transform: scale(1.3);
+          margin-top: 1rem;
+        }
+      }
+
+      .subNotification {
+        font-size: 1.2rem;
+        .subNotificationText {
+          margin-left: 7%;
+          position: absolute;
+        }
+      }
+      .formContainer {
+        margin-top: -2rem;
+        .inputNewPassContainer {
+          margin-top: 2rem;
+          height: 3.5rem;
+        }
+        .inputConfirmPassContainer {
+          margin-top: 3rem;
+          height: 3.5rem;
+        }
+      }
+      .passRequired {
+        font-size: 1.2rem;
+        text-align: left;
+        .infoTextStyleContainer {
+          top: 54%;
+        }
+        .textStyleContainer {
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translate(-50%);
+          .mustHave {
+            position: relative;
+            margin-top: 3rem;
+            font-size: 1rem;
+            &.textStyle {
+              display: flex;
+              text-align: left;
+              height: 5rem;
+              .leftItens {
+                width: 50%;
+              }
+              .rightsItens {
+                margin-left: 1rem;
+                width: 50%;
+              }
+            }
+          }
+        }
+      }
+      .buttonContainer {
+        margin-top: 1rem;
+        .backContainer {
+          width: 5rem;
+          font-size: 1.3rem;
+          .back {
+            font-size: 1.3rem;
+            margin-right: 1rem;
+          }
+        }
+        .loginBtn {
+          min-height: 4rem;
+        }
+      }
+    }
+    .rightsContainer {
+      .rights {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-height: $max-xmd) {
+  .wrapperLogin {
+    &.loginBox {
+      .passRequired {
+        .infoTextStyleContainer {
+          position: absolute;
+          height: 2rem;
+          left: 50%;
+          transform: translate(-50%);
+          margin-top: 1rem;
+          z-index: 10;
+          .infoTextStyle {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            .spanControl {
+              display: none;
+            }
+            .passRequiredTooltip {
+              text-align: center;
+              display: inline;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        .textStyleContainer {
+          .mustHave {
+            display: none;
+          }
+        }
+      }
+      .buttonContainer {
+        top: 75%;
+        width: 90%;
+        .backContainer {
+          position: relative;
+          display: flex;
+          width: 5rem;
+          .back {
+            display: flex;
+            margin-top: 0px;
+          }
+        }
+        .loginBtn {
+          position: relative;
+          min-height: 2.5rem;
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-height: $min-xmd) {
+  .wrapperLogin {
+    &.loginBox {
+      .changePassTitle {
+        font-size: 1.2rem;
+      }
+      .infoUser {
+        height: 3rem;
+        font-size: 0.8rem;
+        .imgUser {
+          transform: scale(0.6);
+          margin-top: -0.6rem;
+        }
+        .infoText {
+          margin-top: 0px;
+        }
+      }
+
+      .subNotification {
+        font-size: 0.8rem;
+      }
+      .formContainer {
+        .inputNewPassContainer {
+          margin-top: 4rem;
+          height: 2rem;
+          &::ng-deep {
+            input {
+              height: 2.5rem;
+            }
+          }
+        }
+        .inputConfirmPassContainer {
+          margin-top: 2rem;
+          height: 2rem;
+          &::ng-deep {
+            input {
+              height: 2.5rem;
+            }
+          }
+        }
+      }
+      .passRequired {
+        .infoTextStyleContainer {
+          height: 2rem;
+          top: 58%;
+          margin-top: 2rem;
+          .infoTextStyle {
+            font-size: 1rem;
+          }
+        }
+        .textStyleContainer {
+          .mustHave {
+            &.textStyle {
+              font-size: 0.8rem;
+              .leftItens {
+                position: absolute;
+                height: auto;
+                width: 44%;
+              }
+              .rightsItens {
+                position: absolute;
+                height: auto;
+                width: 44%;
+                right: 0%;
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+      .buttonContainer {
+        top: 75%;
+        width: 90%;
+        .backContainer {
+          display: flex;
+          position: relative;
+          width: 5rem;
+          .back {
+            display: flex;
+            margin-top: 0px;
+          }
+        }
+        .loginBtn {
+          position: relative;
+          min-height: 2.5rem;
+          font-size: 0.8rem;
+        }
+      }
+    }
+    .rightsContainer {
+      bottom: 0rem;
+      .rights {
+        font-size: 0.6rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-height: $max-md) {
+  .wrapperLogin {
+    &.loginBox {
+      .passRequired {
+        .infoTextStyleContainer {
+          margin-top: 2.5rem;
+        }
+      }
+    }
+  }
+}

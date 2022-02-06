@@ -1,0 +1,5 @@
+<div>
+    <span class="smallCircle"
+        [ngClass]="{'circleDisable' : disabled || !blocked, 'circleEnable' : !disabled, 'circleBlocked' : blocked}"></span>
+    <span [class]="class">{{statusText}}</span>
+</div>

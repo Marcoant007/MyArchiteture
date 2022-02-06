@@ -1,0 +1,15 @@
+<div class="container">
+  <body class="wrapper" (click)="this.calendarOpen = !this.calendarOpen">
+      <div class="flex diver">
+        <i  class="icon far fa-calendar"></i>
+          <div class="flex justifyCenter date">
+            <p class="date"> {{dayShowCase}}</p>
+          </div>
+      </div>
+  </body>
+  <div class="calendarRelative">
+    <mat-card class="calendarCard" *ngIf="calendarOpen">
+      <mat-calendar  (selectedChange)="selected = $event" (click)="newDate()" ></mat-calendar>
+    </mat-card>
+  </div>
+</div>

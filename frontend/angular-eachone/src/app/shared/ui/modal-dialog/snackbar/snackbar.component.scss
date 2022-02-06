@@ -1,0 +1,115 @@
+@import "../../../../../variable.scss";
+
+.snack {
+  &.container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 6rem;
+    margin-right: 4rem;
+    max-width: 33rem;
+    max-height: 7rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.8rem;
+    display: none;
+    &.transparent {
+      background-color: #AAAAAA00;
+    }
+    .body {
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      border-radius: 0.8rem;
+      border: 1px solid #9AE3CA;
+      &.on {
+        z-index: 100;
+        display: block;
+        .box {
+          padding: 0.8rem;
+          .message {
+            position: relative;
+            text-align: center;
+            width: 15.125rem;
+            margin: auto auto 0.5rem auto;
+  
+            .title {
+              margin-bottom: 0px;
+            }
+          }
+          .icon {
+            position: relative;
+            border: 0.15rem solid;
+            border-radius: 50% 50%;
+            background-color: $sucess-snackbar-color;
+            height: 4.75rem;
+            width: 4.75rem;
+            margin-top: 0.3rem;
+            i {
+              position: absolute;
+              color: $light-white;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%) scale(2);
+              -webkit-transform: translate(-50%, -50%) scale(2);
+              -moz-transform: translate(-50%, -50%) scale(2);
+              -ms-transform: translate(-50%, -50%) scale(2);
+              -o-transform: translate(-50%, -50%) scale(2);
+            }
+            &.error{
+              background-color: $color-btn-delete;
+            }
+            &.sucess{
+              background-color: $sucess-snackbar-color;
+            }
+          }
+        }
+      }
+      &.success {
+        color: $sucess-snackbar-color;
+        background-color: $sucess-snackbar-background;
+      }
+      &.error {
+        color: #F1142F;
+        background-color: var(--snackBarError);
+        border: 1px solid red;
+      }
+      &.info {
+        color: black;
+        background-color: blue;
+      }
+      &.warn {
+        color: black;
+        background-color: yellow;
+      }
+      &.fatal {
+        color: black;
+        background-color: red;
+      }
+    }
+    &.on {
+      display: block;
+    }
+  }
+}
+
+@media only screen and (max-width : $max-md) {
+  .snack{
+    &.container{
+      max-height: 13rem;
+      margin-left: 3rem;
+      margin: auto;
+      margin-top: 4rem;
+    }
+  }
+  .contentContainer{
+    flex-direction: column;
+  }
+  .icon{
+    margin: auto;
+  }
+}
+

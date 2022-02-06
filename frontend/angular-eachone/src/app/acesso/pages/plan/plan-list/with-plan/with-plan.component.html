@@ -1,0 +1,10 @@
+<body class="body">
+    <app-table-eachone (eventEditEmitter)="clickEdit($event)" (eventDeleteEmitter)="clickDelete($event)"
+        [editPermission]="['edit-plan']" [dataList]="planList" [isCharging]="true">
+    </app-table-eachone>
+    <div class="paginator">
+        <app-pagination *ngIf="planList && totalCount>limit" [actualPage]="actualPage"
+            (goToPageEmitter)="goToPage($event)" [totalCount]="totalCount" [limit]="limit" [range]="10">
+        </app-pagination>
+    </div>
+</body>

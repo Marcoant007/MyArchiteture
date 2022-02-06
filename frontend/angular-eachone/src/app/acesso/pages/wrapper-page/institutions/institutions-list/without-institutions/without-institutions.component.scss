@@ -1,0 +1,93 @@
+@import "../../../../../../../variable.scss";
+
+body {
+    color: var(--font-color);
+    .container {
+        min-height: calc(100vh - 14rem);
+        background-color: var(--background-color-2);
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-top: 2rem;
+        padding-bottom: 2rem;
+        .title {
+            text-align: end;
+            color: $color-title;
+            padding-top: 3rem;
+            letter-spacing: 0.11px;
+            padding-right: 4rem;
+            font-weight: 500;
+            font-size: 2rem;
+            @media only screen and (max-width: 951px) {
+                text-align: center;
+                margin: auto;
+                padding-right: 0rem;
+            }
+        }
+        .areaContent {
+            display: flex;
+            justify-content: space-between;
+            @media only screen and (max-width: 951px) {
+                justify-content: center;
+            }
+            .image {
+                height: 32rem;
+                width: 37%;
+                margin: auto;
+                @media only screen and (max-width: 951px) {
+                    display: none;
+                }
+            }
+            .itensContainer {
+                padding-top: 8rem;
+                .buttonDownModelArea {
+                    display: flex;
+                    justify-content: flex-end;
+                    @media only screen and (max-width: 1193px) {
+                        justify-content: center;
+                    }
+                    @media only screen and (max-width: $min-sm) {
+                        margin-left: 2rem;
+                    }
+                    .buttonDownModel {
+                        margin-bottom: 2rem;
+                        width: 18rem;
+                        margin-right: 4rem;
+                        cursor: pointer;
+                        &:hover {
+                            opacity: 0.8;
+                        }
+                        @media only screen and (max-width: 1193px) {
+                            width: 25vw;
+                        }
+                        @media only screen and (max-width: 951px) {
+                            width: 18rem;
+                            margin: auto;
+                            margin-bottom: 2rem;
+                        }
+                        @media only screen and (max-width: 431px) {
+                            width: 55vw;
+                        }
+                    }
+                }
+                .attachArea {
+                    width: 38vw;
+                    padding-right: 4rem;
+                    padding-bottom: 2rem;
+                    @media only screen and (max-width: 951px) {
+                        width: 70vw;
+                        padding-right: 0rem;
+                        margin: auto;
+                    }
+                    @media only screen and (max-width: $min-sm) {
+                        margin-left: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+::ng-deep.attachContent {
+    height: 21rem !important;
+}

@@ -1,0 +1,47 @@
+<div class="wrapperLogin loginBox">
+  <div class="loginTitle"><b>Recuperação</b> de acesso</div>
+  <p class="loginSubTitle">Informe seu CPF ou número de matrícula, para que seu <b>email cadastrado</b>
+    seja exibido na
+    tela.</p>
+
+  <div class="formContainer">
+    <form class="inputsContainer">
+      <div class="loginMin">
+        <div class="inputCPF">
+          <app-input class="password input margin-disable" name="cpf" [formControl]="formGroup.controls['cpf']"
+            maxLengthMessage="campo não pode ter mais que 256 caracteres" placeholder="Documento (CPF)"
+            [showRequired]="false">
+            <i class="fas fa-user input"></i>
+            <i class="fas fa-eye right-i input"></i>
+          </app-input>
+        </div>
+      </div>
+      <div class="flex lineOrLine">
+        <div class="dividerFirst"></div>
+        <b class="dividerText">OU</b>
+        <div class="dividerSecond"></div>
+      </div>
+      <div class="loginMin">
+        <div class="inputRegistration">
+          <app-input name="matricula" type="matricula" [formControl]="formGroup.controls['registration']"
+            requirementMessage="A Matricula  é obrigatório"
+            maxLengthMessage="O e-mail não pode ter mais que 256 caracteres" placeholder="Matrícula"
+            [showRequired]="false">
+            <i class="fas fa-envelope input"></i>
+          </app-input>
+        </div>
+      </div>
+    </form>
+    <div class="buttonContainer">
+      <button (click)="submit()" class="continueBtn">Continuar <i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p class="rights">
+      Todos os direitos reservados.EachOne é uma marca registrada. <a class="rightsLink" href=""> <u> Preferência,
+          privacidade e termos de
+          cookies.</u> </a>
+    </p>
+  </footer>
+</div>

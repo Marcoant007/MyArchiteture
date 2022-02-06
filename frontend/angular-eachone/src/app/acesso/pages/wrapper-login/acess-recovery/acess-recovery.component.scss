@@ -1,0 +1,314 @@
+@import "../../../../../variable.scss";
+
+.wrapperLogin {
+  position: relative;
+  min-height: 65vh;
+  min-width: 40vw;
+  margin-top: 1rem;
+  margin-bottom: 5vh;
+  &.loginBox {
+    position: relative;
+    background-color: var(--login-light-white);
+    text-align: center;
+    .loginTitle {
+      color: var(--subtitle-color);
+      font-size: 2.4rem;
+      padding-top: 2rem;
+      font-weight: 100;
+      margin: auto;
+      width: 90%;
+      b {
+        font-weight: 500;
+      }
+    }
+    .loginSubTitle {
+      color: var(--subtitle-color);
+      text-align: left;
+      font-size: 1rem;
+      margin: auto;
+      width: 70%;
+      font-weight: 100;
+      b {
+        font-weight: 500;
+      }
+    }
+    .formInputs {
+      position: relative;
+      .loginMin {
+        height: 10rem;
+        .inputEmail {
+          width: 70%;
+          margin: auto;
+          margin-bottom: 1.5rem;
+          ::ng-deep {
+            input {
+              height: 3rem;
+            }
+          }
+        }
+        .inputRegistration {
+          width: 70%;
+          margin: auto;
+          margin-bottom: 1.5rem;
+          ::ng-deep {
+            input {
+              height: 3rem;
+            }
+          }
+        }
+      }
+      .lineOrlineContainer {
+        position: absolute;
+        width: 70%;
+        margin: 2rem auto;
+        height: 2rem;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%);
+        .dividerFirst {
+          position: absolute;
+          width: 40%;
+          height: 0.1rem;
+          background-color: var(--divider-color);
+          margin: auto;
+          top: 50%;
+          right: 0%;
+        }
+        .dividerText {
+          position: absolute;
+          color: var(--divider-color);
+          width: 10%;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .dividerSecond {
+          position: absolute;
+          width: 40%;
+          height: 2px;
+          background-color: var(--divider-color);
+          margin: auto;
+          top: 50%;
+        }
+      }
+    }
+  }
+  .buttonContainer {
+    position: absolute;
+    height: 3rem;
+    left: 50%;
+    transform: translate(-50%);
+    top: 70%;
+    width: 70%;
+    margin-bottom: 1rem;
+    .continueBtn {
+      position: absolute;
+      font-weight: bold;
+      height: 3rem;
+      width: 9rem;
+      right: 0%;
+      color: var(--login-light-white);
+      background-color: var(--btn-confirm);
+      border: 0px;
+      border-radius: 0.2rem;
+      i {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+  .rights {
+    position: absolute;
+    font-size: 0.7rem;
+    padding-top: 1.5rem;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 1rem;
+    .rightsLink {
+      color: var(--hiperlink-color);
+    }
+  }
+}
+
+//até 1200
+
+@media only screen and (max-width: $max-xmd) {
+  .wrapperLogin {
+    &.loginBox {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%);
+      width: 85vw;
+      height: 80%;
+    }
+  }
+}
+
+@media only screen and (max-width: $max-md) {
+  .wrapperLogin {
+    &.loginBox {
+      max-width: 85vw;
+      max-height: 80%;
+      height: 100%;
+      width: 100%;
+      .loginTitle {
+        font-size: 1.5rem;
+      }
+      .loginSubTitle {
+        font-size: 0.6rem;
+        text-align: center;
+        margin: 2rem 1rem 0px 0px;
+        width: 80%;
+        height: 2rem;
+        margin: auto auto;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+@media only screen and(min-height: $max-xmd) {
+  .wrapperLogin {
+    &.loginBox {
+      .loginTitle {
+        font-size: 2.4rem;
+        margin-top: 2rem;
+      }
+      .formInputs {
+        .lineOrlineContainer {
+          top: 30%;
+        }
+        .loginMin {
+          .inputRegistration {
+
+            ::ng-deep {
+              input {
+                height: 3.5rem;
+              }
+            }
+          }
+          .inputEmail {
+            margin-top: 4rem;
+            ::ng-deep {
+              input {
+                height: 3.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    .buttonContainer {
+      top: 70%;
+      height: 4rem;
+      .continueBtn {
+        height: 4rem;
+        width: 10rem;
+      }
+    }
+    .rights {
+      font-size: 0.6rem;
+    }
+  }
+}
+
+@media only screen and (max-height: $max-xmd) {
+  .wrapperLogin {
+    &.loginBox {
+      .loginTitle {
+        font-size: 1.5rem;
+      }
+      .loginSubTitle {
+        text-align: center;
+      }
+      .formInputs {
+        .lineOrlineContainer {
+          margin-top: 1.5rem;
+          margin-bottom: 1rem;
+        }
+        .loginMin {
+          margin-top: 1rem;
+          height: 10rem;
+          .inputRegistration {
+            margin-top: -1rem;
+            ::ng-deep {
+              input {
+                height: 2.5rem;
+              }
+            }
+          }
+          .inputEmail {
+            margin-top: -0.5rem;
+            ::ng-deep {
+              input {
+                height: 2.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    .buttonContainer {
+      top: 73%;
+      margin-bottom: 2rem;
+      .continueBtn {
+        height: 2.5rem;
+      }
+    }
+    .rights {
+      font-size: 0.6rem;
+    }
+  }
+}
+
+
+
+@media only screen and(max-height: $max-md) {
+  .wrapperLogin {
+    &.loginBox {
+      .loginTitle {
+        font-size: 1.5rem;
+      }
+      .loginSubTitle {
+        text-align: center;
+      }
+      .formInputs {
+        .lineOrlineContainer {
+          margin-top: 1.5rem;
+          margin-bottom: 1rem;
+        }
+        .loginMin {
+          margin-top: 1rem;
+          height: 4.5rem;
+          .inputRegistration {
+            margin-top: -1rem;
+            ::ng-deep {
+              input {
+                height: 2.5rem;
+              }
+            }
+          }
+          .inputEmail {
+            margin-top: -0.5rem;
+            ::ng-deep {
+              input {
+                height: 2.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    .buttonContainer {
+      top: 73%;
+      margin-bottom: 2rem;
+      .continueBtn {
+        height: 2.5rem;
+      }
+    }
+    .rights {
+      font-size: 0.6rem;
+    }
+  }
+}

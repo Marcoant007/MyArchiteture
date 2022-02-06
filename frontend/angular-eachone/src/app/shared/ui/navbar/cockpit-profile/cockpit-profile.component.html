@@ -1,0 +1,17 @@
+<div class="flex wrapper">
+  <app-theme class="themeWrapper"></app-theme>
+  <div class="notifications"> <span *ngIf="(badge > 0)" class="badge">{{badge}} </span>
+    <i [ngClass]="{'notificationsOn': (badge > 0) }" (click)="newBadge()" class="far fa-bell"></i>
+  </div>
+  <div class="profile">
+    <div class="flex ">
+      <div class="flex"> <img class="perfilPhoto" [src]="profileImgUrl" alt=""> </div>
+      <div class="flex displayColumn spaceAround profileText">
+        <p class="profileName">{{profileName}}</p>
+        <p class="ProfileClass">• {{actualProfile}}</p>
+      </div>
+      <app-drop-menu-profile class="dropStyle" [actualProfile]='actualProfile' (onItemClick)="onDropDownClick($event)"
+        [itemsProfile]='itemsProfile'></app-drop-menu-profile>
+    </div>
+  </div>
+</div>

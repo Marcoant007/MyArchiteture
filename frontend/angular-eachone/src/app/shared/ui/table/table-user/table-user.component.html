@@ -1,0 +1,54 @@
+<div>
+  <table [ngClass]="{'error': error}" class="tableStyle">
+    <thead class="headerTable">
+      <th>Nome</th>
+      <th>Matrícula</th>
+      <th>Perfil</th>
+      <th>Instituição</th>
+      <th *ngIf="isExpandTable">Área</th>
+      <th *ngIf="isExpandTable">Status</th>
+      <th *ngIf="!isErrorWarningScreen"> <img (click)="expand()" src="../../../../../../assets/imgs/table_icon.svg">
+      </th>
+    </thead>
+    <tbody class="bodyTable">
+      <tr *ngFor="let user of usersList">
+        <td id="name">{{user.name}}</td>
+        <td id="matricula">{{user.registration}}</td>
+        <td id="perfil">{{user.userType}}</td>
+        <td id="institution"> {{user?.organization?.name === null ? 'N/A': user?.organization?.name }}</td>
+        <td id="area" *ngIf="isExpandTable">TI</td>
+        <td id="status" *ngIf="isExpandTable">
+          <app-status-user *ngIf="user.active && !user.blocked" statusText="Habilitado" [class]="'enable'"
+            disable="false">
+          </app-status-user>
+          <app-status-user *ngIf="!user.active && !user.blocked" statusText="Desabilitado" [class]="'disable'"
+            disabled="true">
+          </app-status-user>
+          <app-status-user *ngIf="user.blocked" statusText="Bloqueado" [class]="'blocked'" blocked="true">
+          </app-status-user>
+        </td>
+        <td *ngIf="!isErrorWarningScreen">
+          <div class="buttonsActions">
+            <div class="vd">
+            </div>
+            <div class="viewButton">
+              <app-button-radius (click)="update(user)" isView="true" [appAuthorized]="editPermission">
+                <i class="far fa-eye eye"></i>
+              </app-button-radius>
+            </div>
+            <div class="deleteButton">
+              <app-button-radius (click)="delete(user.id)" isDelete="true" [appAuthorized]="deletePermission">
+                <i class="far fa-trash trash"></i>
+              </app-button-radius>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr *ngIf="usersList.length == 0">
+        <td class="center" colspan="10">
+          Não existem usuários com este perfil
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

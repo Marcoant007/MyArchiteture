@@ -1,0 +1,73 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "lib": [
+      "es6"
+    ],
+    "types": ["es6", "dom", "node", "jest"],
+    "allowJs": true,
+    "outDir": "./dist",
+    "rootDirs": [
+      "./__tests__",
+      "./src"
+    ],
+    "removeComments": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/@types"
+    ],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
+    "paths": {
+      "@types": [
+        "src/shared/config/Types"
+      ],
+      "@container": [
+        "src/shared/config/Container"
+      ],
+      "@config/*": [
+        "src/shared/config/*"
+      ],
+      "@util/*": [
+        "./src/shared/util/*"
+      ],
+      "@database/*": [
+        "./src/shared/database/*"
+      ],
+      "@errors/*": [
+        "./src/shared/errors/*"
+      ],
+      "@providers/*": [
+        "./src/shared/providers/*"
+      ],
+      "@models/*": [
+        "src/main/models/*"
+      ],
+      "@useCases/*": [
+        "src/main/useCases/*"
+      ],
+      "@repositories/*": [
+        "src/main/repositories/*"
+      ],
+      "@controllers/*": [
+        "src/main/controllers/*"
+      ],
+      "@app": [
+        "./src/shared/http/app"
+      ],
+      "@server": [
+        "./src/server"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "__tests__/**/*"
+  ]  
+}

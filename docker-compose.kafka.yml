@@ -1,0 +1,38 @@
+version: "3.7"
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:6.0.1
+    restart: unless-stopped
+    networks:
+      - kafka_net
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+  
+  kafka:
+    image: wurstmeister/kafka:2.13-2.7.0
+    restart: unless-stopped
+    env_file: ./containers/kafka/kafka.dev.env
+    networks:
+      - kafka_net
+    depends_on:
+      - zookeeper
+    ports:
+      - 29092:9092
+  
+  kafdrop:
+    image: obsidiandynamics/kafdrop:latest
+    restart: unless-stopped
+    networks:
+      - kafka_net
+    depends_on:
+      - kafka
+    ports:
+      - 29000:9000
+    environment:
+      KAFKA_BROKERCONNECT: kafka:29092
+
+networks:
+  kafka_net:
+    driver: bridge

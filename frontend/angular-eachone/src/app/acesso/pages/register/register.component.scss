@@ -1,0 +1,33 @@
+@import "../../../../variable.scss";
+.wrapper {
+    overflow: hidden;
+    .left {
+        .logo {
+        margin: 40px auto 40px auto;
+        }
+    }
+}
+.strong {
+    font-weight: 500;
+}
+.item {
+    display: block;
+}
+.checkbox {
+    display: flex;
+    margin-top: 5px;
+
+    input {
+        margin-top: 3px;
+    }
+}
+.termos_uso {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-weight: 500;
+    color:$primary-color;
+    a {
+        margin-left: none;
+        margin-right: none;
+    }
+}

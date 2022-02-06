@@ -1,0 +1,12 @@
+FROM node:12-buster-slim
+
+RUN apt update \
+    && apt install netcat -y
+
+WORKDIR /home/node
+
+COPY ./package*.json ./
+
+RUN npm install
+
+COPY --chown=node:node . .

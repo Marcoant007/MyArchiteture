@@ -1,0 +1,5 @@
+<div class="avatar" (click)="openExplorer()" appDrag (fileDropped)="onFileDropped($event)">
+    <img *ngIf="isHaveLink" [src]="linkDownload" id="img" style="background-color: #fff;">
+</div>
+<input id="myFile" type="file" accept="image/*" (change)="loadFile($event.target.files)">
+<span class="error-message">{{errorMessage}}</span>

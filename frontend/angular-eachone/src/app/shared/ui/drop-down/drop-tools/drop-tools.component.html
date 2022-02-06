@@ -1,0 +1,13 @@
+<body class="containerAll">
+  <span class="seta-top"></span>
+  <div class="conteiner-drop-tools">
+    <ul class="list-drop-tools" id="list" *ngFor="let tool of tools">
+      <li class="item">
+        <div class="flex">
+          <span class="border"></span> <i class="{{tool.icon}}"></i>
+          <p class="itemName">{{ tool.tool }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>

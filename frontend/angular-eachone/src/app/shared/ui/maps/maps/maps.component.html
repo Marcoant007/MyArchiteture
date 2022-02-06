@@ -1,0 +1,4 @@
+<agm-map [ngClass]="{'open': isMapOpen}" [latitude]="lat" [longitude]="lng" [zoom]="zoom" [streetViewControl]="false"
+    (mapClick)="onMapClick($event)">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>

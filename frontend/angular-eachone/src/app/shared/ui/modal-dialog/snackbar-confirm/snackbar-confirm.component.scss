@@ -1,0 +1,123 @@
+@import "../../../../../variable.scss";
+
+.snackAction {
+  &.container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    max-width: 33rem;
+    max-height: 7rem;
+    height: 100%;
+    border-radius: 0.8rem;
+    display: none;
+    background-color: var(--background-main-snackbar-confirm);
+    .body {
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      border-radius: 0.8rem;
+      &.active {
+        z-index: 100;
+        display: block;
+        .box {
+          padding: 0.8rem;
+        }
+      }
+      &.delete {
+        color: #f1142f;
+        background-color: var(--snackBarError);
+        border: 1px solid red;
+      }
+      .buttonsActions {
+        display: flex;
+        justify-content: center;
+        .button {
+          color: $light-white;
+          width: 7.05rem;
+          height: 2rem;
+          margin-right: 11px;
+          font-size: 0.813rem;
+          border: none;
+          border-radius: 0.2rem;
+          &.confirm {
+            background-color: $confirm-snackbar-button;
+            margin-left: 11px;
+          }
+          &.cancel {
+            background-color: $cancel-snackbar-button;
+          }
+          .confirm:hover {
+            background-color: $confirm-snackbar-button-hover;
+          }
+          .cancel:hover {
+            background-color: $cancel-snackbar-button-hover;
+          }
+        }
+      }
+    }
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.contentContainer {
+  margin-left: 4rem;
+  .message {
+    position: relative;
+    text-align: center;
+    width: 15.125rem;
+    margin: auto auto 0.5rem auto;
+    .title {
+      margin-top: 15px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.icon {
+  position: relative;
+  border: 0.15rem solid;
+  border-radius: 50% 50%;
+  background-color: $color-btn-delete;
+  height: 4.75rem;
+  width: 4.75rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  i {
+    position: absolute;
+    color: $light-white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(2);
+    -webkit-transform: translate(-50%, -50%) scale(2);
+    -moz-transform: translate(-50%, -50%) scale(2);
+    -ms-transform: translate(-50%, -50%) scale(2);
+    -o-transform: translate(-50%, -50%) scale(2);
+  }
+}
+
+@media only screen and (max-width: $max-sm) {
+  .snackAction {
+    &.container {
+      max-height: 13rem;
+    }
+  }
+  .icon {
+    margin: auto;
+  }
+  .areaElement {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+  .contentContainer {
+    margin: auto;
+  }
+}

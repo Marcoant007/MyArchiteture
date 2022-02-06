@@ -1,0 +1,53 @@
+@import "../../../../../variable.scss";
+
+body{
+  color: var(--white-text);
+  height: 3rem;
+  background-color: var(--period-background);
+  border-radius: 5px;
+  margin-left: 1rem;
+  padding: 1rem;
+}
+
+.wrapper{
+  max-width: 15rem;
+  margin-left: auto;
+  display: flex;
+}
+
+.icon{
+  font-size: 1.3rem;
+  padding-right: 0.5rem;
+}
+
+.date{
+  text-align: center;
+  width: 100%;
+}
+
+.diver{
+  width: 100%;
+}
+
+.calendarCard{
+  position: sticky;
+}
+
+.container{
+  min-width: 15rem;
+  margin-left: 2rem;
+}
+
+@media only screen and (max-width : $max-md) {
+  body{
+    margin: 0px;
+  }
+
+  .calendarCard{
+    position: sticky;
+  }
+
+  .container{
+    margin: 0px;
+  }
+}

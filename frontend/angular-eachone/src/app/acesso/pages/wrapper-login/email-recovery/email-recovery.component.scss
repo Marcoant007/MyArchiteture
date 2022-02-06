@@ -1,0 +1,203 @@
+@import "../../../../../variable.scss";
+
+.wrapperLogin {
+  position: relative;
+  min-height: 65vh;
+  margin-top: 1rem;
+  min-width: 40vw;
+  &.loginBox {
+    position: relative;
+    background-color: var(--login-light-white);
+    text-align: center;
+
+    .loginTitle {
+      color: var(--subtitle-color);
+      width: 90%;
+      margin: auto;
+      font-size: 2rem;
+      padding-top: 2rem;
+      font-weight: 100;
+      b {
+        font-weight: 500;
+      }
+    }
+    .loginSubTitle {
+      font-size: 0.8rem;
+      color: var(--subtitle-color);
+      text-align: left;
+      width: 70%;
+      margin: 1rem auto;
+      b {
+        font-weight: 500;
+      }
+    }
+    .formContainer {
+      .inputsContainer {
+        position: relative;
+        height: 10rem;
+        width: 100%;
+
+        .lineOrLine {
+          position: absolute;
+          width: 70%;
+          margin: 2rem auto;
+          height: 2rem;
+          left: 50%;
+          transform: translate(-50%);
+          .dividerFirst {
+            position: absolute;
+            width: 40%;
+            height: 0.1rem;
+            background-color: var(--divider-color);
+            margin: auto;
+            top: 50%;
+            right: 0%;
+          }
+          .dividerText {
+            position: absolute;
+            color: var(--divider-color);
+            width: 10%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+
+          .dividerSecond {
+            position: absolute;
+            width: 40%;
+            height: 2px;
+            background-color: var(--divider-color);
+            margin: auto;
+            top: 50%;
+          }
+        }
+        .loginMin {
+          position: relative;
+          min-height: 5rem;
+          margin: auto;
+          width: 70%;
+          left: 0%;
+          .inputCPF {
+            position: absolute;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            left: 50%;
+            transform: translate(-50%);
+          }
+
+          .inputRegistration {
+            position: absolute;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            margin-top: 5rem;
+            left: 50%;
+            transform: translate(-50%);
+          }
+        }
+      }
+    }
+    .buttonContainer {
+      position: absolute;
+      width: 70%;
+      height: 3.7rem;
+      left: 50%;
+      transform: translate(-50%);
+      top: 74%;
+      .continueBtn {
+        position: absolute;
+        right: 0%;
+        font-weight: bold;
+        height: 3rem;
+        width: 9rem;
+        color: var(--login-light-white);
+        background-color: var(--btn-confirm);
+        border: 0px;
+        border-radius: 0.2rem;
+        i {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .footer {
+    position: absolute;
+    width: 70%;
+    height: 3rem;
+    left: 50%;
+    transform: translate(-50%);
+    top: 90%;
+    text-align: center;
+    .rights {
+      position: absolute;
+      font-size: 0.7rem;
+      .rightsLink {
+        color: var(--hiperlink-color);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $max-xmd) {
+  .wrapperLogin {
+    &.loginBox {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%);
+      width: 85vw;
+      height: 80%;
+      .loginTitle {
+        font-size: 1.5rem;
+      }
+      .formContainer {
+        .loginMin {
+          height: 2rem;
+          .inputCPF {
+            height: 2rem;
+          }
+        }
+      }
+    }
+    .footer {
+      .rights {
+        width: 100%;
+        left: 50%;
+        transform: translate(-50%);
+        font-size: 0.6rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-height: $max-md) {
+  .wrapperLogin {
+    &.loginBox {
+      .loginTitle {
+        padding-top: 1rem;
+      }
+      .formContainer {
+        .inputsContainer {
+          .lineOrLine {
+            top: 20%;
+          }
+          .loginMin {
+            margin-top: -1rem;
+            .inputCPF {
+              margin-top: -0.5rem;
+            }
+            .inputRegistration {
+              margin-top: 1rem;
+            }
+          }
+        }
+      }
+      .buttonContainer {
+        .continueBtn {
+          height: 3rem;
+          top: 10%;
+        }
+      }
+    }
+  }
+}

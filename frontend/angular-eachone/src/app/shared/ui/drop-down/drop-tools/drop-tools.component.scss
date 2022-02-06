@@ -1,0 +1,89 @@
+@import "../../../../../variable.scss";
+
+.containerAll {
+  margin-top: 2rem;
+  position: absolute;
+  right: 0px;
+  .seta-top {
+    &::before {
+      margin-left: 130px;
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 0.2rem;
+      width: 0;
+      height: 0;
+      margin-top: auto;
+      background-color: transparent;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 17px solid var(--droptools-background);
+    }
+  }
+  .conteiner-drop-tools {
+    color: var(--title-color);
+    min-width: 10.7rem;
+    height: auto;
+    position: absolute;
+    background-color: var(--droptools-background);
+    border-radius: 0.5rem;
+    line-height: 2.2rem;
+    font-size: initial;
+    display: grid;
+    .list-drop-tools {
+      margin-top: 0.62rem;
+      margin-bottom: 0.62rem;
+      display: contents;
+      .item {
+        text-align: center;
+        position: relative;
+        list-style: none;
+        padding: 0px;
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+        &:hover {
+          color: var(--drop-tools-text);
+          background-color: var(--drop-tools-item-background);
+          margin-right: 0.6rem;
+          .border {
+            width: 0.313rem;
+            height: 3rem;
+            display: inline;
+            background-color: var(--drop-tools-text);
+            border-radius: 1.56rem;
+          }
+        }
+        .itemName {
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        i {
+          font-size: 1.3rem;
+          margin-left: 1.3rem;
+          margin-right: 1.5rem;
+          margin-top: auto;
+          margin-bottom: auto;
+          width: 10%;
+          height: 100%;
+        }
+        .border {
+          background-color: transparent;
+          width: 0.3rem;
+          height: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $max-md) {
+  .containerAll {
+    top: -1rem;
+    right: 0rem;
+    .seta-top {
+      &:before {
+        margin-left: 9rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<div class="wrapperLogin loginBox">
+  <div class="loginTitle"><b>Recuperação</b> de acesso</div>
+  <p class="loginSubTitle">Informe os dados abaixo e receba em seu <strong>email cadastrado</strong> <br>
+    instruções
+    para recuperar seu
+    acesso.</p>
+  <form class="formInputs">
+    <div class="loginMin">
+      <div class="inputRegistration">
+        <app-input class="password input margin-disable" name="code" [formControl]="formGroup.controls['code']"
+          maxLengthMessage="campo não pode ter mais que 256 caracteres" placeholder="Documento (CPF) ou  Matrícula"
+          [showRequired]="false">
+          <i class="fas fa-user input"></i>
+          <i class="fas fa-eye right-i input"></i>
+        </app-input>
+      </div>
+    </div>
+    <div class="flex lineOrlineContainer">
+      <div class="dividerFirst"></div>
+      <b class="dividerText">OU</b>
+      <div class="dividerSecond"></div>
+    </div>
+    <div class="loginMin">
+      <div class="inputEmail">
+        <app-input name="email" type="email" [formControl]="formGroup.controls['email']"
+          requirementMessage="O e-mail é obrigatório" maxLengthMessage="O e-mail não pode ter mais que 256 caracteres"
+          placeholder="E-mail" [showRequired]="false">
+          <i class="fas fa-envelope input"></i>
+        </app-input>
+      </div>
+    </div>
+  </form>
+  <div class="buttonContainer">
+    <button (click)="submit()" class="continueBtn">
+      Continuar <i class="fas fa-chevron-right"></i></button>
+  </div>
+  <p class="rights">
+    Todos os direitos reservados.EachOne é uma marca registrada. <u></u> <a class="rightsLink" href="">
+      <u>
+        Preferência,privacidade e termos de
+        cookies.
+      </u>
+    </a>
+  </p>
+</div>

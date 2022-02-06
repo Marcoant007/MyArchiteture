@@ -1,0 +1,40 @@
+<div class="allContainer" id="body" [ngClass]="{ 'modalOn':openModal, 'modalOff': !openModal}">
+  <div class="containerControl" >
+    <div *ngIf="!isErrorMessage" class="sucessModalContainer">
+      <div class="xContainer">
+        <i class="far fa-times-circle exitIcon" (click)="closeModal()"></i>
+      </div>
+      <div class="titleContainer">
+        <h1 class="title">
+          {{ messageContent.title }}
+        </h1>
+      </div>
+      <div class="modalContentContainer">
+        <p class="terms">
+          {{ messageContent.message }}
+        </p>
+      </div>
+      <div class="decoratorBorderBottom">
+        <span class="timer" id="timer"></span>
+      </div>
+    </div>
+    <div *ngIf="isErrorMessage" class="errorModalContainer">
+      <div class="xContainer">
+        <i class="far fa-times-circle exitIcon" (click)="closeModal()"></i>
+      </div>
+      <div class="titleContainer">
+        <h1 class="title">
+          {{ messageContent.title }}
+        </h1>
+      </div>
+      <div class="modalContentContainer">
+        <p class="terms">
+          {{ messageContent.message }}
+        </p>
+      </div>
+      <div class="decoratorBorderBottom">
+        <span class="timer" id="timer"></span>
+      </div>
+    </div>
+  </div>
+</div>

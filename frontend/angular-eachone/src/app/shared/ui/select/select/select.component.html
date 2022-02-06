@@ -1,0 +1,21 @@
+<div [ngClass]="{'text-line' : isInline, 'selectContainer' : isSimple, 'disabled' : isDisabled}"
+  (click)="controlSelect()">
+  <div class="areaSelect flex">
+    <div class="iconNg">
+      <ng-content></ng-content>
+    </div>
+    <div class="areaInput">
+      <input class="inputSelect" [formControl]="formControl" type="text" readonly [placeholder]="placeholder">
+    </div>
+    <div class="iconDrop">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </div>
+  <div class="searchList" [ngClass]="{ 'disabledSelect': !activeSelect, 'searchListInline': isInline}">
+    <div *ngFor="let select of items">
+      <li value="{{select.value}}" (click)="clickItem(select)">{{select}}</li>
+    </div>
+  </div>
+  <div class="errorDiv">
+  </div>
+</div>

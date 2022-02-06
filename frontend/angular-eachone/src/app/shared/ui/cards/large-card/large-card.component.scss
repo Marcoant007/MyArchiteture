@@ -1,0 +1,14 @@
+@import "../../../../../variable.scss";
+
+.large{
+    background-color: var(--cards-background);
+    height: 25rem;
+    border-radius: 4px;
+  }
+
+@media only screen and (max-width : $max-md) {
+  .large{
+    width:100%;
+    margin: 2rem 0px;
+  }
+}

@@ -1,0 +1,79 @@
+@import "../../../../variable.scss";
+
+body {
+  background-color: var(--background-color);
+  height: 100vh;
+  .logo {
+    margin-top: 10vh;
+    margin-left: 10vw;
+  }
+
+  .wrapperLoginContainer {
+    .wrapperLogin {
+      min-height: 65vh;
+      margin-top: 2rem;
+      min-width: 35vw;
+
+      .loginGirl {
+        margin: auto;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $max-xmd) {
+  body {
+    .logo {
+      margin-top: 4vh;
+      margin-left: 0vw;
+      text-align: center;
+      position: absolute;
+      top: 2%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .wrapperLoginContainer {
+      .wrapperLogin {
+        .loginGirl {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $max-xmd) {
+  body {
+    .logo {
+      margin-top: 4vh;
+    }
+  }
+}
+
+@media only screen and (max-height: $min-xmd) {
+  body {
+    .wrapperLoginContainer {
+      .wrapperLogin {
+        position: relative;
+        min-height: 30vh;
+        min-width: 5vw;
+        height: 65vh;
+        width: 40vw;
+        margin-top: 2rem;
+        .loginGirl {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $max-md) {
+  .logo {
+    margin-top: 4vh;
+  }
+}

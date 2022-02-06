@@ -1,0 +1,142 @@
+@import "../../../../../variable.scss";
+
+.themeWrapper{
+  margin: auto;
+}
+
+.perfilPhoto{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 15rem;
+  margin:auto 1rem;
+  margin-top: 0.5rem;
+}
+
+.profileName{
+  font-size: 1rem;
+  color: var(--title-color);
+}
+
+.notifications{
+  color: grey;
+  min-width: 3rem;
+  margin: auto 0rem;
+  font-size: 1.5rem;
+  &.ItemMenu{
+    display: none;
+  }
+
+  .badge{
+  color: white;
+  font-size: 0.8rem;
+  background-color: red;
+  border-radius: 50%;
+  padding: 0.1rem 0.3rem ;
+  text-align: center;
+  position: relative;
+  bottom: 0.8rem;
+  left: 0.6rem;
+  z-index: 99;
+  }
+}
+
+.notificationsOn{
+  position: relative;
+  right: 1.2rem;
+}
+
+.profile{
+  margin: auto;
+  padding: 0px 1rem;
+}
+
+.profileText{
+  min-width: max-content;
+}
+
+.wrapper{
+  background-color: var(--menu-background-color);
+  max-height: 4rem;
+}
+
+.arrowDown{
+  margin: auto;
+  font-size: 1.5rem;
+  color: grey;
+  margin-left: 2rem;
+}
+
+.ProfileClass{
+  color: #7E84A4;
+}
+
+.profileName{
+  color: white;
+  color: var(--title-color);
+  margin-top: 1rem;
+  margin-bottom: 0px;
+  font-size: 1rem;
+}
+
+.menuHideOptions{
+  display: none;
+}
+
+.ProfileClassMenu{
+  color: #7E84A4;
+  margin: 0px;
+}
+
+.themeMobile{
+  font-size: 10rem;
+}
+
+.dropStyle{
+  margin:auto 0rem auto 1rem;
+}
+
+.themeNotification{
+  font-size: 1.2rem;
+  margin: auto;
+}
+
+@media only screen and (max-width : $min-xmd) {
+  .themeWrapper{
+    display: none;
+
+    &.ItemMenu{
+      display: inline-block;
+    }
+  }
+
+  .menuHideOptions{
+    display: inline-block;
+  }
+
+  .notifications{
+    display: none;
+
+    &.ItemMenu{
+      display: inline-block;
+    }
+  }
+}
+
+@media only screen and (max-width : $max-md) {
+  .profileName{
+    display: none;
+  }
+  .ProfileClass{
+    display: none;
+  }
+}
+
+@media only screen and (max-width : $min-md) {
+  .perfilPhoto{
+    width: 2rem;
+    height: 2rem;
+    margin: auto;
+  }
+}
+
+

@@ -1,0 +1,114 @@
+body,
+input,
+button {
+  font: 16px $font1, sans-serif;
+  font-weight: 200;
+
+  &.default {
+    font-size: $fs3;
+    min-height: 37px;
+    background: $primary-color;
+    color: $secundary-color;
+    padding: 7px 15px 5px 15px;
+    font-weight: 400;
+    margin-top: 15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px 0px $primary-color;
+    border:none;
+    &.fit-content {
+      height: fit-content;
+    }
+  }
+  &.light {
+    font-size: $fs3;
+    min-height: 37px;
+    background: $secundary-color;
+    color: $terceary-color;
+    border: 2px solid $terceary-color;
+    padding: 5px 15px 5px 15px;
+    font-weight: 400;
+    margin-top: 15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px 0px #fff;
+    &.fit-content {
+      height: fit-content;
+    }
+  }
+  &.lightFocus {
+    font-size: $fs3;
+    min-height: 37px;
+    background: $secundary-color;
+    color: $focus-color;
+    border: 2px solid $focus-color;
+    padding: 5px 15px 5px 15px;
+    font-weight: 400;
+    margin-top: 15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px 0px #fff;
+    &.fit-content {
+      height: fit-content;
+    }
+  }
+  &.focus {
+    font-size: $fs3;
+    min-height: 37px;
+    background: $focus-color;
+    color: $secundary-color;
+    padding: 5px 15px 5px 15px;
+    font-weight: 400;
+    margin-top: 15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px 0px $box-shadow-focus;
+    border:none;
+    &.fit-content {
+      height: fit-content;
+    }
+    &.marginAlt{
+      margin-top: 22px;
+    }
+  }
+  &.email{
+    font-size: $fs3;
+    min-height: 37px;
+    padding: 5px 15px 5px 15px;
+    font-weight: 400;
+    margin-top: 15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border:none;
+    background-color: $secundary-color;
+    &.fit-content {
+      height: fit-content;
+    }
+    &.ativo{
+      color:$primary-color;
+      border: 1px solid $button-color;
+      box-shadow: none;
+    }
+    &.desativo{
+      color:$off-color;
+      border: 1px solid $off-color;
+      box-shadow: none;
+    }
+  }
+}
+
+// Botão de Adicionar nas páginas de Listagem
+.btn-add{
+    margin-bottom:5px;
+    button{
+        margin: 0 1em 0 0;
+    }
+    // @media (max-width: $max-md) {
+    //   margin-top: 15px;
+    // }
+}

@@ -1,0 +1,76 @@
+@import "../../../../../../variable.scss";
+
+body {
+  color: var(--font-color);
+  .container {
+    min-height: calc(100vh - 14rem);
+    background-color: var(--background-color-2);
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    .bodyContainer {
+      padding: 1rem;
+      .headImageZone {
+        display: flex;
+        .headImg {
+          padding-top: 1rem;
+          padding-right: 1.2rem;
+          cursor: pointer;
+          margin-left: auto;
+        }
+      }
+      .bodyForm {
+        margin-top: 1.8rem;
+        .inputArea {
+          margin-right: 1rem;
+        }
+      }
+      .bottomHeader {
+        margin-top: 4.5rem;
+        margin-left: 1rem;
+        h2 {
+          color: $border-text-color;
+          word-break: keep-all;
+          margin-top: 1rem;
+          margin-bottom: 0rem;
+        }
+        .bottomSubHeader {
+          color: #5a607f;
+          font-size: 18px;
+          font-weight: 200;
+          margin-top: 3rem;
+        }
+      }
+      .buttonsForm {
+        display: flex;
+        justify-content: center;
+        height: 3rem;
+        margin-top: 3rem;
+        margin-right: 2rem;
+        @media only screen and (max-width: 500px) {
+          margin: auto;
+          margin-top: 5rem;
+        }
+        .btnCancel {
+          margin-left: 4rem;
+          @media only screen and (max-width: 500px) {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.minsize {
+  width: 200px;
+  flex: 2 1 700px;
+}
+
+@media only screen and (max-width: $max-md) {
+  form .row .col {
+    flex: 100%;
+  }
+}

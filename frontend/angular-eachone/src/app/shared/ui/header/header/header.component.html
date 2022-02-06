@@ -1,0 +1,24 @@
+<body>
+  <div class="container flex" [ngClass]="{'buttonAddContainer': hasAddButton}">
+    <div class="divTitle">
+      <h1 class="intern">{{ title }}</h1>
+      <app-breadcumb [breadcrumb]="breadcrumb"></app-breadcumb>
+    </div>
+    <div class="rightContainer flex" *ngIf="hasCalendarOptions">
+      <app-period-button class="PeriodButton"></app-period-button>
+      <div class="breakerMenu flex">
+        <app-calendar-button></app-calendar-button>
+        <app-options></app-options>
+      </div>
+    </div>
+    <div class="rightContainerAddButton flex" *ngIf="hasAddButton" [appAuthorized]="permission" (click)="buttonClick()">
+      <app-button-add class="addButton"></app-button-add>
+    </div>
+    <div class="rightContainer flex" *ngIf="hasSearch">
+      <div class="search">
+        <app-input-search [txValue]="value" [placeholder]="placeHolder">
+        </app-input-search>
+      </div>
+    </div>
+  </div>
+</body>

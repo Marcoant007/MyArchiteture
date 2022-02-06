@@ -1,0 +1,12 @@
+<body>
+    <div class="pagination">
+        <a (click)="goToPage(actualPage - 1)" [ngClass]="{ 'invisible' : actualPage == 1 || totalCount == 0}">
+            <i class="fa fa-chevron-left"></i> </a>
+        <div *ngFor="let item of getPages()">
+            <a *ngIf="rangePagesVisible(item + 1)" [ngClass]="{ 'active' : (item +1)  == actualPage  }"
+                (click)="goToPage(item + 1)">{{item + 1 }}</a>
+        </div>
+        <a (click)="goToPage(actualPage + 1)" [ngClass]="{ 'invisible' : actualPage == totalPages || totalCount == 0}">
+            <i class="fa fa-chevron-right"></i> </a>
+    </div>
+</body>

@@ -1,0 +1,95 @@
+@import "~breakpoint-sass/stylesheets/breakpoint";
+@import "../../../../../variable.scss";
+.input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1px;
+    &.margin-disable {
+        margin-bottom: 0px;
+    }
+    label {
+        font-size: $fs4;
+        font-family: $font1;
+        color: $dark-color;
+        margin: 5px 5px 0px 5px;
+        display: inline-flex;
+        &.login {
+            color: $primary-color;
+        }
+    }
+    input {
+        resize: none;
+        font-size: $fs3;
+        padding: 8px 5px 5px 30px;
+        border: 2px solid $border-color;
+        color: $terceary-color;
+
+        background: $secundary-color;
+        height: 40px;
+
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+
+        //-webkit-box-shadow: 5px 5px 10px 0px #d6d6d8;
+        //-moz-box-shadow: 5px 5px 10px 0px #d6d6d8;
+        //box-shadow: 5px 5px 10px 0px #d6d6d8;
+
+        &::placeholder {
+            opacity: 0.5;
+            color: $terceary-color;
+            font-family: $font1;
+        }
+        &::-ms-input-placeholder {
+            opacity: 0.5;
+            color: $terceary-color;
+            font-family: $font1;
+        }
+        &::-ms-input-placeholder {
+            opacity: 0.5;
+            color: $terceary-color;
+            font-family: $font1;
+        }
+        &:disabled {
+            opacity: 0.9;
+            cursor: no-drop;
+        }
+        &:focus {
+            border: 2px solid $focus-color;
+        }
+        &.center{
+            text-align: center;
+        }
+        &.agendamento{
+            padding: 0;
+        }
+    }
+    &.inline {
+        display: inline;
+        input {
+            position: relative;
+            vertical-align: middle;
+
+            height: fit-content;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+
+            -webkit-border-radius: none;
+            -moz-border-radius: none;
+            border-radius: none;
+        }
+    }
+    .required_field {
+        margin-left: 3px;
+        color: $error-color;
+    }
+    
+}
+.error-message {
+    margin-top: 5px;
+    color: $error-color;
+    font-size: $fs5;
+    font-weight: 200;
+}

@@ -1,0 +1,9 @@
+<body>
+    <app-with-users *ngIf="hasUsers" [users]="users" [actualPage]="actualPage" [totalCount]="totalCount" [limit]="limit"
+        (paginatorEmitter)="paginatorChange($event)" [itemsSelect]="itemsSelect" (deleteEmitter)="delete($event)"
+        [usersList]="usersList" (searchAutocompleteEmitter)="searchAutocomplete($event)"
+        (selectUserTypeEmitter)="selectItemEvent($event)" (printUser)="printUser()"
+        (exportUserExcell)="exportUserExcell()">
+    </app-with-users>
+    <app-without-users *ngIf="!hasUsers"></app-without-users>
+</body>

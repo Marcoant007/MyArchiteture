@@ -1,0 +1,47 @@
+@import "../../../../../variable.scss";
+.archor-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: $breadcumb-color;
+    border-radius: 0.2rem;
+}
+
+.archor-item {
+    display: flex;
+    justify-content: center;
+    color: $breadcumb-color-text;
+    background-color: $sixth-color;
+    width: 8rem;
+    height: 3rem;
+    margin: 0.1rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    a {
+        margin: auto;
+        font-weight: 400;
+    }
+}
+
+.archor-item:hover {
+    background-color: $down-model;
+    color: white;
+}
+
+@media only screen and (max-width: $max-xmd) {
+    .archor-container {
+        width: 16.5rem;
+    }
+}
+
+@media only screen and (max-width: $max-sm) {
+    .archor-container {
+        width: 12.5rem;
+    }
+
+    .archor-item {
+        width: 6rem;
+    }
+}

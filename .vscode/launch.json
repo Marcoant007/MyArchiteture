@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Auth-server: Nodemon",
+            "port": 5863,
+            "address": "localhost",
+            "localRoot": "${workspaceFolder}/backend/auth-server",
+            "remoteRoot": "/home/node",
+            "protocol": "inspector",
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Alarmes: Nodemon",
+            "port": 5885,
+            "address": "localhost",
+            "localRoot": "${workspaceFolder}/backend/ut-gestao-alarmes",
+            "remoteRoot": "/home/node",
+            "protocol": "inspector",
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+<app-breadcumb [breadcrumb]="breadcrumb"></app-breadcumb>
+
+<form [formGroup]="formGroup">
+
+  <div class="row col_wrap">
+    <div class="box col">
+      <div class="title">Dados de contato:</div>
+      <div class="subtitle">Esses dados estão aqui só para fins informativos. Para alterar esses dados, você deve
+        acessar as informações da conta</div>
+      <div class="row start col_wrap">
+
+        <div class="col">
+          <app-input label="Email" id="email" name="email" type="text" [formControl]="formGroup.controls['email']"
+            placeholder="email@email.com" class="bordered">
+            <i class="fal fa-at input"></i>
+          </app-input>
+        </div>
+
+        <div class="col">
+          <app-input label="Celular" id="phone" name="phone" type="text" [formControl]="formGroup.controls['phone']"
+            placeholder="(27) 99999-9999" class="bordered">
+            <i class="fal fa-mobile input"></i>
+          </app-input>
+        </div>
+
+        <div class="col">
+          <app-input label="Telefone fixo" id="comercialPhone" name="comercialPhone" type="text"
+            [formControl]="formGroup.controls['comercialPhone']" placeholder="(--) ---- ----" class="bordered">
+            <i class="fal fa-phone input"></i>
+          </app-input>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row col_wrap">
+    <div class="box col">
+      <div class="title">Selecione as ações para as notificações:</div>
+      <div class="row start col_wrap">
+
+        <app-input-checkbox [data]="actionsList" textValue="name" atributeValue="id" [formGroup]="formGroup"
+          [controlName]="'actions'"></app-input-checkbox>
+
+      </div>
+    </div>
+  </div>
+
+</form>
+
+<div class="row col_wrap center">
+  <div class="btn_list">
+    <button class="btn default" (click)="goToNotifications()"><i class="fas fa-ban"></i> Cancelar</button>
+    <button class="btn focus" type="submit" (click)="submit()"><i class="fas fa-save"></i> Salvar</button>
+  </div>
+</div>

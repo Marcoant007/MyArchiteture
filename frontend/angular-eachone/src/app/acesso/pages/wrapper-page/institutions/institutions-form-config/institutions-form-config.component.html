@@ -1,0 +1,349 @@
+<body>
+    <app-header class="headerTitle" [breadcrumb]="breadcrumb" id="title"></app-header>
+    <div class="container">
+        <div class="bodyContainer">
+            <div class="flex">
+                <div class="headImg" (click)="backToList()">
+                    <img src="../../../../../../assets/imgs/bt_back.svg" alt="">
+                </div>
+            </div>
+            <div class="archor-section-area">
+                <div class="archor-section-element">
+                    <app-archor-section [isStatic]="true" [list_archor]="archor_sections"></app-archor-section>
+                </div>
+            </div>
+            <div class="head">
+                <div class="head-titles">
+                    <h1>Dados da Instituição</h1>
+                    <span class="subtitleHeader">Visualize abaixo os dados desta Instituição de ensino.</span>
+                </div>
+                <div class="buttons-actions">
+                    <app-button-radius (click)="editMode()" [appAuthorized]="['institution-update']" [isEdit]="true">
+                        <i class="far fa-edit iconEdit"></i>
+                    </app-button-radius>
+                    <app-button-radius [isDelete]="true" (click)="disableTable()"
+                        [appAuthorized]="['disable-institution']">
+                        <i class="far fa-ban iconDelete"></i>
+                    </app-button-radius>
+                </div>
+            </div>
+            <div class="form-body" id="data">
+                <form>
+                    <div class="rowName">
+                        <div class="col wrap minsizeStatus">
+                            <div class="inputArea">
+                                <app-input class="inputName" label="Nome" type="text" [showRequired]="false"
+                                    [inline]="true" placeholder="Insira o nome da instituição de Ensino"
+                                    [formControl]="formGroup.controls['name']">
+                                </app-input>
+                            </div>
+                        </div>
+                        <div class="col wrap minsize">
+                            <div class="zone-input">
+                                <div class="status-zone">
+                                    <h2 class="status-title">Status</h2>
+                                    <div class="status">
+                                        <app-circle-status (statusUserEmit)="changeStatus($event)"
+                                            [status]="currentStatus" [disabled]="disable">
+                                        </app-circle-status>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wrap">
+                        <div class="col wrap minsize">
+                            <div class="inputArea">
+                                <app-input class="inputName" label="Razão" type="text" [showRequired]="false"
+                                    [inline]="true" placeholder="Insira a razão social da instituição de Ensino"
+                                    [formControl]="formGroup.controls['companyName']">
+                                </app-input>
+                            </div>
+                        </div>
+                        <div class="col wrap minsize">
+                            <div class="inputAreaRight">
+                                <app-input class="inputName" label="Responsável" type="text" [showRequired]="false"
+                                    [inline]="true" placeholder="Insira o nome do responsável."
+                                    [formControl]="formGroup.controls['responsible']">
+                                </app-input>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wrap">
+                        <div class="col wrap minsize">
+                            <div class="inputArea">
+                                <app-input class="inputName" type="text" [showRequired]="false" [inline]="true"
+                                    label="CNPJ" notEquivalentMessage="Valor inválido"
+                                    placeholder="Insira o CNPJ da instituição de Ensino" mask="00.000.000/0000-00"
+                                    [formControl]="formGroup.controls['cnpj']">
+                                </app-input>
+                            </div>
+                        </div>
+                        <div class="col wrap minsize">
+                            <div class="inputAreaRight">
+                                <app-input class="inputName" label="Telefone" type="text" [showRequired]="false"
+                                    [inline]="true" placeholder="Insira o telefone de contato." mask="00 0000-0000"
+                                    [formControl]="formGroup.controls['cellPhone']">
+                                </app-input>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wrap">
+                        <div class="col wrap minsize">
+                            <div class="inputArea">
+                                <app-input class="inputName" type="text" [showRequired]="false" [inline]="true"
+                                    label="Inscrição Estadual" notEquivalentMessage="Valor inválido"
+                                    placeholder="Insira a Inscrição Estadual da instituição de Ensino"
+                                    [formControl]="formGroup.controls['stateRegistration']">
+                                </app-input>
+                            </div>
+                        </div>
+                        <div class="col wrap minsize">
+                            <div class="inputAreaRight">
+                                <app-input class="inputName" type="text" [showRequired]="false" [inline]="true"
+                                    label="Email"
+                                    pattern="^[a-zA-Z0-9_+&*-]+(?:.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+.)+[a-zA-Z]{2,7}$"
+                                    placeholder="Insira o email da instituição de Ensino"
+                                    [formControl]="formGroup.controls['email']">
+                                </app-input>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wrap">
+                        <div class="col wrap minsize">
+                            <div class="row wrap">
+                                <div class="col wrap minsize">
+                                    <div class="inputArea">
+                                        <app-input class="inputName" label="Plano Contratado" type="text"
+                                            [showRequired]="false" [inline]="true"
+                                            placeholder="Visualiza o plano contratado pela instituição"
+                                            [formControl]="formGroup.controls['plan_hired']">
+                                        </app-input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row wrap">
+                                <div class="col wrap minsize">
+                                    <div class="zone-input">
+                                        <h2>Idiomas habilitados</h2>
+                                        <app-languages-select (selectLanguageEmiter)="selectLanguage($event)"
+                                            [countryList]="list_country" [disabled]="disable"></app-languages-select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col wrap minsize">
+                            <div class="zone-input">
+                                <h2>Descrição</h2>
+                                <div class="inputAreaRight">
+                                    <div class="multiline">
+                                        <app-text-area-multiline [lineWidht]="75" [lineQuantity]="4"
+                                            [placeholder]="'Conte-nos um pouco sobre sua instituição de ensino.'"
+                                            [formControl]="formGroup.controls['description']">
+                                        </app-text-area-multiline>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <hr class="divider">
+            <div id="logo">
+                <div class="head-logo">
+                    <div class="head-titles">
+                        <h1>Logomarca da Instituição</h1>
+                        <span class="subtitleHeader">Personalize sua área de trabalho com a Logomarca da sua
+                            instituição.</span>
+                    </div>
+                </div>
+                <!-- <div class="attach-area">
+                    <app-attach-area (dragDropEvent)="dragDropEvent($event)" [disabled]="disable"
+                        (clickEvent)="clickAttach($event)">
+                        Arraste o arquivo da sua logomarca para dentro da área. <br>
+                        (Apenas arquivos .jpeg e .png). Máximo: 1000px x 1000px
+                    </app-attach-area>
+                </div> -->
+                <div class="attach-area">
+                    <app-attach-area (dragDropEvent)="dragDropEvent($event)" (clickEvent)="clickAttach($event)"
+                        [isForEditingUser]="true" [imgUrl]='srcImage'>
+                        Arraste o arquivo do seu avatar para dentro da área (Apenas arquivos .BMP; PNG; GIF e JPEG)
+                    </app-attach-area>
+                </div>
+            </div>
+            <!-- <hr class="divider">
+            <div id="notifications">
+                <div class="head-notifications">
+                    <div class="head-titles">
+                        <h1>Histórico de Notificações</h1>
+                        <span class="subtitleHeader">Visualize as notificações enviadas para esta instituição.</span>
+                    </div>
+                </div>
+                <div class="actions-notifications">
+                    <div class="filterUser">
+                        <app-select class="selectClass" [formControl]="formGroup.controls['select_table']"
+                            [placeholder]="'Filtrar por...'" [isSimple]="true">
+                            <i class="fas fa-filter userIcon"></i>
+                        </app-select>
+                    </div>
+                    <div class="buttons">
+                        <div class="button_print">
+                            <app-button-radius>
+                                <i class="fas fa-print img_icon"></i>
+                            </app-button-radius>
+                        </div>
+                        <div class="button_file">
+                            <app-button-radius>
+                                <i class="fas fa-file img_icon"></i>
+                            </app-button-radius>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-area">
+                    <app-table-eachone [isNotification]="true" [dataList]="list_notifications"></app-table-eachone>
+                </div>
+                <div class="pagination-container">
+                    <app-pagination *ngIf="list_notifications && totalCount>limit" [totalCount]="totalCount"
+                        [limit]="limit" [actualPage]="actualPage"></app-pagination>
+                </div>
+            </div>
+            <hr class="divider"> -->
+            <hr class="divider">
+            <div id="charge">
+                <div class="head-charge">
+                    <div class="head-titles">
+                        <h1>Histórico de Cobranças</h1>
+                        <span class="subtitleHeader">Veja abaixo o histórico de pagamentos desta instituição.</span>
+                    </div>
+                </div>
+                <div class="actions-charge">
+                    <div class="filterUser">
+                        <app-select class="selectClass" [items]="itensSelectCharges"
+                            (selectElement)="selectItemChargeEvent($event)"
+                            [formControl]="formGroup.controls['select_table']" [placeholder]="'Filtrar por...'"
+                            [isSimple]="true">
+                            <i class="fas fa-filter userIcon"></i>
+                        </app-select>
+                    </div>
+                    <div class="buttons">
+                        <div class="button_print">
+                            <app-button-radius>
+                                <i class="fas fa-print img_icon"></i>
+                            </app-button-radius>
+                        </div>
+                        <div class="button_file">
+                            <app-button-radius>
+                                <i class="fas fa-file img_icon"></i>
+                            </app-button-radius>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-area">
+                    <app-table-eachone [isCharge]="true" [dataList]="list_charges"></app-table-eachone>
+                </div>
+                <div class="pagination-container">
+                    <app-pagination *ngIf="list_charges && totalCount>limit" [totalCount]="totalCountCharge"
+                        [limit]="limitCharge" [actualPage]="pageCharge"></app-pagination>
+                </div>
+            </div>
+            <hr class="divider">
+            <div id="users">
+                <div class="head-users">
+                    <div class="head-titles">
+                        <h1>Usuários da Instituição</h1>
+                        <span class="subtitleHeader">Aqui você visualiza os usuários desta instituição.</span>
+                    </div>
+                </div>
+                <div class="actions-users-institutions">
+                    <div class="userSearch">
+                        <app-dropdown-search [titleDropbox]="'Procurar usuário'"
+                            (inputValueEmitter)="searchAutocompleteUser($event)" [listSearch]="listSearch_users"
+                            (dropdownValueSelect)="clickDropdownValueUser($event)">
+                            <i class="far fa-user userIcon"></i>
+                        </app-dropdown-search>
+                    </div>
+                    <div class="filterUser">
+                        <app-select class="selectClass" [items]="itemsSelectUsersType" [placeholder]="'Filtrar por...'"
+                            [isSimple]="true" (selectElement)="selectItemEvent($event)">
+                            <i class="fas fa-filter userIcon"></i>
+                        </app-select>
+                    </div>
+                    <div class="buttonsAlternative">
+                        <div class="button_print">
+                            <app-button-radius>
+                                <i class="fas fa-print img_icon"></i>
+                            </app-button-radius>
+                        </div>
+                        <div class="button_file">
+                            <app-button-radius>
+                                <i class="fas fa-file img_icon"></i>
+                            </app-button-radius>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-area">
+                    <app-table-user [usersList]="list_users">
+                    </app-table-user>
+                </div>
+                <div class="pagination-container">
+                    <app-pagination *ngIf="list_users && totalCount>limitUser" (goToPageEmitter)="goToPageUser($event)"
+                        [totalCount]="totalCountUser" [limit]="limitUser" [actualPage]="actualPage"></app-pagination>
+                </div>
+            </div>
+            <hr class="divider">
+            <!-- <div id="institutions">
+                <div class="head-course-institutions">
+                    <div class="head-titles">
+                        <h1>Cursos da Instituição</h1>
+                        <span class="subtitleHeader">Aqui você visualiza os cursos desta instituição de ensino.</span>
+                    </div>
+                </div>
+                <div class="actions-courses-institutions">
+                    <div class="userSearch">
+                        <app-dropdown-search [titleDropbox]="'Procurar cursos'">
+                            <i class="fas fa-graduation-cap userIcon"></i>
+                        </app-dropdown-search>
+                    </div>
+                    <div class="filterUser">
+                        <app-select class="selectClass" [formControl]="formGroup.controls['select_table']"
+                            [placeholder]="'Filtrar por...'" [isSimple]="true">
+                            <i class="fas fa-filter userIcon"></i>
+                        </app-select>
+                    </div>
+                    <div class="buttonsAlternative">
+                        <div class="button_print">
+                            <app-button-radius>
+                                <i class="fas fa-print img_icon"></i>
+                            </app-button-radius>
+                        </div>
+                        <div class="button_file">
+                            <app-button-radius>
+                                <i class="fas fa-file img_icon"></i>
+                            </app-button-radius>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-area">
+                    <app-table-eachone [isCourse]="true" [dataList]="list_course"></app-table-eachone>
+                </div>
+                <div class="pagination-container">
+                    <app-pagination *ngIf="list_course && totalCount>limit" [totalCount]="totalCount" [limit]="limit"
+                        [actualPage]="actualPage"></app-pagination>
+                </div>
+            </div> -->
+        </div>
+        <div class="buttonsForm">
+            <app-button-area [isCancel]="true" (click)="backToList()">
+                Cancelar
+            </app-button-area>
+            <div class="btnConfirm">
+                <app-button-area [isConfirm]="true" (click)="submit()">
+                    Confirmar
+                </app-button-area>
+            </div>
+        </div>
+    </div>
+    <div>
+        <app-anchor-button [anchor]='anchor'></app-anchor-button>
+    </div>
+</body>

@@ -1,0 +1,8 @@
+.body{
+  color: var(--title-color);
+  margin: 1rem 0rem;
+  background-color: var(--background-color-2);
+  border-radius: 1rem;
+  min-height: calc(100vh - 14rem); //min tamanho
+  padding: 2rem 3rem;
+}

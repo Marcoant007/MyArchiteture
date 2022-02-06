@@ -1,0 +1,13 @@
+<div class="flex body">
+  <div class="ulContainer">
+    <i class="fas fa-chevron-down arrowDown" id="arrow" (click)="dropDownClick()">
+      <ul class="profileItems" id="list">
+        <span class="arrow"></span>
+        <p class="classProfile" *ngIf="smallScreen">{{actualProfile}}</p>
+        <li (click)="handleClick(item, 2)" *ngFor="let item of itemsProfile; let i = index" class="flex items">
+          {{item.item}}
+        </li>
+      </ul>
+    </i>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+<body>
+    <app-header class="headerTitle" [title]="'Usuário Instituição de Ensino'"></app-header>
+    <div class="container">
+        <div class="bodyContainer">
+            <div class="headImageZone">
+                <div class="headImg" (click)="backtoList()">
+                    <img src="../../../../../../assets/imgs/bt_back.svg" alt="">
+                </div>
+            </div>
+            <div class="bodyForm">
+                <form>
+                    <div class="row wrap">
+                        <div class="col wrap minsize">
+                            <div class="inputArea">
+                                <app-input class="inputName" label="Nome da instituição de ensino" type="text"
+                                    [showRequired]="false" [inline]="true"
+                                    placeholder="Nome da instituição de ensino que está sendo cadastrada"
+                                    [formControl]="formGroup.controls['nameEducationalInstitution']">
+                                </app-input>
+                            </div>
+                        </div>
+                        <div class="col wrap minsize">
+                            <div class="inputArea">
+                                <app-input id="inputName" label="Nome do usuário" class="inputName" type="text"
+                                    [showRequired]="false" [inline]="true"
+                                    placeholder="Nome do usuário da Instituição de Ensino"
+                                    [formControl]="formGroup.controls['name']">
+                                </app-input>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wrap">
+                        <div class="col wrap minsize">
+                            <div class="bottom">
+                                <div class="inputArea">
+                                    <app-input id="inputName" label="E-mail do usuário" class="inputName" type="text"
+                                        pattern="^[a-zA-Z0-9_+&*-]+(?:.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+.)+[a-zA-Z]{2,7}$"
+                                        [showRequired]="false" [inline]="true"
+                                        placeholder="E-mail do usuário da Instituição de Ensino"
+                                        [formControl]="formGroup.controls['email']">
+                                    </app-input>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col wrap minsize">
+                            <div class="bottom">
+                                <div class="inputArea">
+                                    <app-input id="inputName" label="CPF" class="inputName" type="text"
+                                        [showRequired]="false" [inline]="true" mask="000.000.000-00"
+                                        placeholder="Insira o cpf responsável"
+                                        [formControl]="formGroup.controls['cpf']">
+                                    </app-input>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="bottomHeader">
+                <h2>Demais dados da instituição serão informados pelo usuário</h2>
+                <div class="bottomSubHeader">
+                    <span>Será gerado um senha de acesso rápido para que ele continue o próprio cadastro. O usuário deve
+                        receber um e-mail em alguns instantes.</span>
+                </div>
+            </div>
+            <div class="buttonsForm">
+                <app-button-area [isCancel]="true" (click)="backtoList()"
+                    [ngClass]="{'hidden': hidden, 'noHidden': !hidden}">
+                    Cancelar
+                </app-button-area>
+                <div class="btnCancel">
+                    <app-button-area (click)="submit()" [isConfirm]="true"
+                        [ngClass]="{'hidden': hidden, 'noHidden': !hidden}">
+                        Confirmar
+                    </app-button-area>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

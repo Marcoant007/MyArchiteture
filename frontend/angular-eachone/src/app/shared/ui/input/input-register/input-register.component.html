@@ -1,0 +1,4 @@
+<div class="conteinerInput">
+    <input placeholder="{{innerText}}" type="text" [formControl]="formControl" class="inputClass" [readonly]="readOnly">
+    <p *ngIf="touched && formControl.errors?.required" class="error-message">{{requirementMessage}}</p>
+</div>

@@ -1,0 +1,19 @@
+@import"../../../../../variable.scss";
+
+.btn-ajust{
+    border: solid 0.1rem var(--border-color-down);
+    border-radius: 0.5rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    background-color: var(--drown-model-background-color);
+    width: 100%;
+    span{
+        text-align: center;
+        color: $down-model;
+        margin-right: 1.2rem;
+    }
+    img{
+        margin-left: 1.2rem;
+        margin-right: 1rem;
+    }
+}

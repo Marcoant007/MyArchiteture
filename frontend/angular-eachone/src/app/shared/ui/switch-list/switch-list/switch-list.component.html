@@ -1,0 +1,10 @@
+<div *ngFor="let item of switchs" class="flex body">
+  <span class="language-name">{{returnLanguage(item.name)}}</span>
+  <div class="switchCase" *ngIf="item">
+    <label class="switch">
+      <input (click)="languageHandler(item)" type="checkbox" *ngIf="item.enable" checked>
+      <input (click)="languageHandler(item)" type="checkbox" *ngIf="!item.enable">
+      <span class="slider round"></span>
+    </label><br><br>
+  </div>
+</div>

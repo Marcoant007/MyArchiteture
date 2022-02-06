@@ -1,0 +1,21 @@
+<div class="wrapperdropdown">
+  <div class="dropdownSearch">
+    <div class="areaSelectSearch">
+      <div class="iconSearch">
+        <ng-content></ng-content>
+      </div>
+      <div class="inputContainer">
+        <input (keyup)="searchUser($event)" type="text" class="input" placeholder="Procurar usuário">
+      </div>
+      <div class="iconDropSearch">
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+    <div class="searchList">
+      <div class="divli" *ngFor="let item of listSearch" [ngClass]="{'searchListHide':!hideDisplay}">
+        <li (click)="selectItem(item)">{{item.name}}
+        </li>
+      </div>
+    </div>
+  </div>
+</div>

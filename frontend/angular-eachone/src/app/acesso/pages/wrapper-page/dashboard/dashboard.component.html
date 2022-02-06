@@ -1,0 +1,36 @@
+<body class="body">
+  <app-header
+    [breadcrumb]="breadcrumb"
+    [hasCalendarOptions]="true"
+  ></app-header>
+
+  <app-modal-filter></app-modal-filter>
+
+  <div class="flex spaceBetween wrap responsive-smallCard">
+    <app-small-card class="smallCard"> </app-small-card>
+    <app-small-card class="smallCard" (click)="modal()"> </app-small-card>
+    <app-small-card class="smallCard"> </app-small-card>
+  </div>
+
+  <div class="cardSpace">
+    <app-extra-large-card> </app-extra-large-card>
+  </div>
+
+  <div class="flex spaceBetween responsive-mediumCard">
+    <app-large-card class="largeCard"> </app-large-card>
+    <app-medium-card class="mediumCard"> </app-medium-card>
+  </div>
+
+  <div class="cardSpace">
+    <div class="flex spaceBetween responsive-smallCard">
+      <app-small-card class="smallCard"> </app-small-card>
+      <app-small-card class="smallCard"> </app-small-card>
+      <app-small-card class="smallCard"> </app-small-card>
+    </div>
+  </div>
+
+  <div class="flex spaceBetween responsive-mediumCard">
+    <app-large-card class="largeCard"> </app-large-card>
+    <app-medium-card class="mediumCard"> </app-medium-card>
+  </div>
+</body>

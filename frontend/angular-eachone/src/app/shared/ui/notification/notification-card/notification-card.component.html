@@ -1,0 +1,4 @@
+<div (click)="selectNotification(index)"  class="container flex spaceBetween" [ngClass]="[activeCard == index? 'active': '',unseen?'unseen':'',status == 1?'status1':status==2?'status2':status == 3?'status3':'']" >
+  <p  class="title"> {{title}}</p>
+  <div class="date"> {{date}}</div>
+</div>

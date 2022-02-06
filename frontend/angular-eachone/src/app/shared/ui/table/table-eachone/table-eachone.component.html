@@ -1,0 +1,185 @@
+<body [ngClass]="{error: error}">
+    <table *ngIf="isInstitution" class="institutionClass">
+        <tbody class="bodyTable">
+            <tr *ngFor="let institution of dataList">
+                <td id="institutionTable"> {{institution.name}} </td>
+                <td id="statusTable">
+                    <app-status-user *ngIf="institution.active && !institution.blocked" [statusText]="'Habilitado'"
+                        [class]="'enable'">
+                    </app-status-user>
+                    <app-status-user *ngIf="!institution.active && !institution.blocked" [statusText]="'Desabilitado'"
+                        [class]="'disable'" [disabled]="true"></app-status-user>
+                    <app-status-user *ngIf="institution.blocked" [statusText]="'Bloqueado'" [class]="'blocked'"
+                        blocked="true">
+                    </app-status-user>
+                </td>
+                <td class="tdActions">
+                    <div class="buttonsActions">
+                        <div class="vd"></div>
+                        <div class="viewButton">
+                            <app-button-radius [isView]="true" (click)="clickEdit(institution.id)"
+                                [appAuthorized]="editPermission">
+                                <i class="far fa-eye"></i>
+                            </app-button-radius>
+                        </div>
+                        <div class="deleteButton" (click)="clickDelete(institution.id)"
+                            [appAuthorized]="deletePermission">
+                            <app-button-radius [isDelete]="true">
+                                <i class="far fa-ban"></i>
+                            </app-button-radius>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr *ngIf="dataList.length == 0">
+                <td class="center" colspan="10">
+                    Não existem Instituições cadastradas!
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table *ngIf="isNotification" class="notificationsClass">
+        <thead class="headerTableNotification">
+            <th>
+                <div class="configHeaderTableNotification">
+                    <i class="fas fa-cog icon-cog"></i>
+                    <i class="fas fa-chevron-down icon-chevron"></i>
+                </div>
+            </th>
+            <th></th>
+            <th><img src="../../../../../assets/imgs/table_icon.svg" alt=""></th>
+        </thead>
+        <tbody class="bodyTable">
+            <tr *ngFor="let notification of dataList"
+                [ngClass]="{'status1': notification.status === 'status1', 'status2': notification.status === 'status2'}">
+                <td id="time">{{notification.time}}</td>
+                <td id="description">{{notification.description}}</td>
+                <td></td>
+            </tr>
+            <tr *ngIf="dataList.length == 0">
+                <td class="noData" colspan="10">
+                    Não existem Notificações!
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table *ngIf="isCharge" class="chargeClass">
+        <thead class="headerTableCharge">
+            <th>Bandeira</th>
+            <th>Número</th>
+            <th>Data</th>
+            <th>Plano</th>
+            <th>Valor</th>
+        </thead>
+        <tbody class="bodyTable">
+            <tr *ngFor="let charge of dataList">
+                <td> <img width="55px"
+                        src="../../../../../assets/imgs/cardsImg/{{verifyFlags(charge.creditCard.number)}}.svg" alt="">
+                </td>
+                <td>{{charge.creditCard.number}}</td>
+                <td>{{charge.billing_date | date: "dd/MM/yyyy HH:mm:ss"}}</td>
+                <td>{{charge.plan.name}}</td>
+                <td>{{charge.value}}</td>
+            </tr>
+            <tr *ngIf="dataList.length == 0">
+                <td class="noData" colspan="10">
+                    Não existem Cobranças!
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table *ngIf="isCourse" class="courseInstitutionsClass">
+        <thead class="headerTableCourseInstituitions">
+            <th>Nome</th>
+            <th *ngIf="isExpandTable">Instituição</th>
+            <th>Registro</th>
+            <th>Área</th>
+            <th>Status</th>
+            <th (click)="expand()"> <img src="../../../../../assets/imgs/table_icon.svg" alt=""></th>
+        </thead>
+        <tbody class="bodyTable">
+            <tr *ngFor="let course of dataList">
+                <td id="name">{{course.name}}</td>
+                <td id="institution" *ngIf="isExpandTable">Instituição</td>
+                <td id="registration">{{course.registration}}</td>
+                <td id="area">{{course.area}}</td>
+                <td id="status">
+                    <app-status-user *ngIf="course.active" [statusText]="'Habilitado'" [class]="'enable'">
+                    </app-status-user>
+                    <app-status-user *ngIf="!course.active" [statusText]="'Desabilitado'" [class]="'disable'"
+                        [disabled]="true"></app-status-user>
+                </td>
+                <td>
+                    <div class="buttonsActions">
+                        <div class="vd">
+                        </div>
+                        <div class="viewButton">
+                            <app-button-radius [isView]="true" [appAuthorized]="editPermission">
+                                <i class="far fa-eye"></i>
+                            </app-button-radius>
+                        </div>
+                        <div class="deleteButton">
+                            <app-button-radius [isDelete]="true" [appAuthorized]="deletePermission">
+                                <i class="far fa-trash"></i>
+                            </app-button-radius>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr *ngIf="dataList.length == 0">
+                <td class="center" colspan="10">
+                    Não existem cursos!
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- CHARGING TABLE  -->
+    <table *ngIf="isCharging" class="chargePlaningClass">
+        <thead class="headerTableChargePlaning">
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Mensalidade</th>
+            <th>Vigência</th>
+            <th>Status</th>
+            <th></th>
+        </thead>
+        <tbody class="bodyTable">
+            <tr *ngFor="let plan of dataList">
+                <td id="name">{{plan.name}}</td>
+                <td id="value">{{plan.value | currency:"BRL" }}</td>
+                <td id="mounthlyValue">{{plan.monthly_value | currency:"BRL"}}</td>
+                <td id="validity">{{plan.validity}} Meses</td>
+                <td id="status">
+                    <app-status-user *ngIf="plan.active" [statusText]="'Habilitado'" [class]="'enable'">
+                    </app-status-user>
+                    <app-status-user *ngIf="!plan.active" [statusText]="'Desabilitado'" [class]="'disable'"
+                        [disabled]="true"></app-status-user>
+                </td>
+                <td id="actions">
+                    <div class="buttonsActions">
+                        <div class="vd">
+                        </div>
+                        <div class="viewButton">
+                            <app-button-radius [isView]="true" [appAuthorized]="editPermission"
+                                (click)="clickEdit(plan.id)">
+                                <i class="far fa-eye"></i>
+                            </app-button-radius>
+                        </div>
+                        <div class="deleteButton">
+                            <app-button-radius [isDelete]="true" (click)="clickDelete(plan.id)">
+                                <i class="far fa-trash"></i>
+                            </app-button-radius>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr *ngIf="dataList.length == 0">
+                <td class="center" colspan="10">
+                    Não existem planos cadastrados!
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>

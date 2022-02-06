@@ -1,0 +1,86 @@
+.container{
+  color: var(--text-white-to-gray);
+  display: flex;
+  height: 4rem;
+  position: relative;
+
+  &.disabled{
+    opacity: 0.4;
+  }
+
+  .status {
+    &.disabled{
+      color: var(--disabled-button-color);
+      &:hover{
+        color: #484848;
+        cursor: pointer;
+      }
+      .title{
+        top: 2.8rem;
+      }
+      .circle{
+        &.active{
+          background-color:  var(--disabled-button-color);
+        }
+        border-color:  var(--disabled-button-color);
+      }
+    }
+    &.enable{
+      color: var(--enable-button-color);
+      &:hover{
+        color: rgb(16, 110, 250);
+        cursor: pointer;
+      }
+      .title{
+        left: 4.95rem;
+        bottom: 3.5rem;
+      }
+      .circle{
+        &.active{
+          background-color: var(--enable-button-color);
+        }
+        border-color: var(--enable-button-color);
+      }
+    }
+    &.blocked{
+      color: var(--blocked-button-color);
+      &:hover{
+        color: #fd0f07;
+        cursor: pointer;
+      }
+      .title{
+        left: 11.5rem;
+        top: 2.8rem;
+      }
+      .circle{
+        &.active{
+          background-color: var(--blocked-button-color);
+        }
+        border-color: var(--blocked-button-color);
+      }
+    }
+    .title {
+      margin-bottom: 0px;
+      margin-top: 0.4rem;
+      position: absolute;
+      left: -2rem;
+    }
+    .circle{
+      position: relative;
+      width: 2rem;
+      height: 2rem;
+      top: 0.80rem;
+      border-radius: 4rem;
+      border: 2px solid;
+    }
+
+  }
+  .line{
+    height: 0.2rem;
+    width: 4rem;
+    background-color: var(--text-white-to-gray);
+    margin-top: 1.8rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+  }
+}

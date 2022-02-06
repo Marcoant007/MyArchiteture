@@ -1,0 +1,158 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  .btn_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .box {
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+    padding: 6px 6px 15px 6px;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0px 5px 5px rgba(69, 181, 204, 0.5);
+    .title {
+      color: $dark-color;
+      font-size: $fs6;
+      margin-left: 5px;
+      font-weight: 500;
+    }
+    &.col {
+      flex: 1;
+      .flex {
+        flex: inherit;
+      }
+      .flex-2 {
+        flex: 2;
+      }
+      .flex-3 {
+        flex: 3;
+      }
+      .flex-7 {
+        flex: 7;
+      }
+    }
+    &.perfil {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      .name {
+        color: $primary-color;
+        font-size: $fs8;
+        text-align: center;
+        margin-top: 10px;
+        line-height: 1.2em;
+      }
+      .avatar {
+        width: 125px;
+        height: 125px;
+        margin: auto;
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(/assets/img/avatar.svg);
+        border-radius: 50%;
+        border: 2px solid $primary-color;
+        margin: 15px auto 15px auto;
+        -webkit-transition: opacity 0.5s ease-in-out;
+        -moz-transition: opacity 0.5s ease-in-out;
+        -ms-transition: opacity 0.5s ease-in-out;
+        -o-transition: opacity 0.5s ease-in-out;
+        transition: opacity 0.5s ease-in-out;
+        img {
+          width: 121px;
+          height: 121px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        &:hover {
+          cursor: pointer;
+          filter: alpha(opacity=50);
+          opacity: 0.5;
+        }
+      }
+      .text {
+        padding: 0px 20px 0px 20px;
+        font-size: $fs2;
+        color: $button-color;
+        font-weight: 300;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        gap: 8px;
+        span {
+          color: $dark-color;
+          margin-right: 10px;
+          font-weight: 400;
+        }
+        p {
+          margin: 0px;
+        }
+        @media (max-width: $max-md) {
+          flex-direction: column;
+        }
+      }
+    }
+    &.dados {
+      flex: 2;
+      .row {
+        margin-bottom: 0px;
+        button {
+          width: 100%;
+        }
+        .flex-2 {
+          flex: 2;
+        }
+      }
+    }
+    &.rank {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      p {
+        padding: 15px 0px 15px 0px;
+        text-align: center;
+        color: $dark-color;
+        font-size: $fs4;
+        font-weight: 100;
+        margin: auto;
+        &.number {
+          color: $primary-color;
+          font-size: $fs2;
+        }
+      }
+    }
+    &.patient{
+      padding: 6px 6px 15px 15px;
+    }
+  }
+  &.col_wrap {
+    flex-wrap: wrap;
+  }
+  &.col_nowrap {
+    flex-wrap: nowrap;
+  }
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
+  &.row_margin {
+    margin-top: 20px;
+  }
+  &.noGap {
+    gap: inherit;
+  }
+  @media (max-width: 750px) {
+    flex-wrap: wrap;
+  }
+}
+#myFile {
+  display: none;
+}

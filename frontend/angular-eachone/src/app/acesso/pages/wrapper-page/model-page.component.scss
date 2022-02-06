@@ -1,0 +1,85 @@
+@import "../../../../variable.scss";
+
+
+body{
+  background-color:var(--background-color);
+}
+
+.gridNav{
+  grid-area: nav;
+  height: 3rem;
+  z-index: 100;
+}
+
+.gridSidenav{
+  grid-area: side;
+  width: 15rem;
+  position: relative;
+  z-index: 99;
+}
+
+.gridSidenavClosed{
+  grid-area: side;
+  width: 5vw;
+}
+
+.gridContent{
+  grid-area: content;
+  padding: 0px 2rem;
+  height: calc(100vh - 3rem);
+  overflow: auto;
+  width: 100%;
+ padding: 0rem 2rem;
+
+  grid-template-areas:
+		"title "
+		"card "
+		;
+}
+
+.grid-template-areas{
+  display: grid;
+  grid-template-columns: 15rem auto;
+  background-color: var(--background-color);
+	grid-template-areas:
+		"nav nav "
+		"side content "
+		;
+}
+
+.grid-template-areas-closed {
+ grid-template-columns: 5rem auto;
+}
+
+.gridTitle{
+  grid-area: title;
+  margin: 1rem 0px;
+}
+
+.gridCard{
+  grid-area: card;
+}
+
+.title{
+  font-size: 2rem;
+  color: var(--font-color);
+}
+
+@media only screen and (max-width : $max-lg) {
+
+.grid-template-areas {
+  display: grid;
+  grid-template-columns:auto;
+  background-color: var(--background-color);
+	grid-template-areas:
+		" nav "
+		" content "
+		;
+  }
+
+  .gridSidenav{
+    position: absolute;
+    z-index: 99;
+    top: 3rem;
+  }
+}

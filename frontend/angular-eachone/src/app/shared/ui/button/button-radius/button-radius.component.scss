@@ -1,0 +1,55 @@
+.button {
+  position: relative;
+  background-color: var(--button-background-color);
+  border: solid 0.1rem var(--border-default-button);
+  border-radius: 50%;
+  width: 3.125rem;
+  height: 3.125rem;
+  text-align: center;
+  cursor: pointer;
+  img {
+    margin-top: 0.75rem;
+  }
+}
+
+.item {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% -50%);
+}
+
+.view {
+  background-color: var(--view-background-color);
+  border: solid 0.1rem var(--border-view-button);
+}
+
+.delete {
+  background-color: var(--delete-background-color);
+  border: solid 0.1rem var(--border-delete-button);
+}
+
+.edit {
+  background-color: var(--edit-background-color);
+  border: solid 0.1rem var(--border-edit-button);
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.button:hover {
+  background-color: #0057f91f;
+}
+
+.edit:hover {
+  background-color: #38d59b11;
+}
+
+.delete:hover {
+  background-color: #e6171717;
+}
+
+.view:hover {
+  background-color: #5772ea1e;
+}

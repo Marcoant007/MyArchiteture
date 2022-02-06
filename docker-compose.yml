@@ -1,0 +1,91 @@
+version: "3.7"
+services: 
+
+  # front
+  angular-eachone:
+    build:
+      context: ./frontend/angular-eachone
+      dockerfile: Dockerfile.dev
+    networks:
+      - app
+    volumes:
+      - ./frontend/angular-eachone:/home/node
+      - angular-eachone-volume:/home/node/node_modules
+    ports: 
+      - "8080:4200"
+    command: npm start
+
+  # back
+  auth-server:
+    build:
+      context: ./backend/auth-server
+    ports:
+      - "4000:3000"
+      - "5863:5858"
+    networks:
+      - app
+      - kafka_net
+    depends_on:
+      - migrations
+    env_file: ./backend/auth-server/env/dev.env
+    volumes:
+      - ./backend/auth-server:/home/node
+      - auth-server-data:/home/node/node_modules
+    command: ./wait-for.sh db:5432 -- npm run dev
+
+  # Executa migrations
+  migrations:
+    build:
+      context: ./backend/auth-server
+      dockerfile: Dockerfile.migrations
+    env_file: ./backend/auth-server/env/dev.env
+    volumes:
+      - ./backend/auth-server:/home/node
+    networks:
+      - app
+    depends_on:
+      - db
+    command: ./wait-for.sh db:5432 -- npm run migration:run
+  
+  # infraestrutura
+  db:
+    build: 
+      context: containers/postgresdb/
+    env_file: containers/postgresdb/.env
+    networks:
+      - app
+    ports: 
+      - "5444:5432"
+    volumes: 
+      - pg_data:/var/lib/postgresql/data
+
+  # ut-gestao-alarmes:
+  #   build:
+  #     context: ./backend/ut-gestao-alarmes
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3008:3000"
+  #     - "5885:5859"
+  #   networks:
+  #     - app
+  #     - kafka_net
+  #   depends_on:
+  #     - db
+  #   env_file: ./backend/ut-gestao-alarmes/env/dev.env
+  #   volumes:
+  #     - ./backend/ut-gestao-alarmes:/home/node
+  #     - ut-gestao-alarmes-volume:/home/node/node_modules
+  #   command: ./wait-for.sh db:5432 -- npm run dev
+    
+volumes:
+  pg_data:
+  client-data:
+  auth-server-data: 
+  angular-eachone-volume: 
+  # ut-gestao-alarmes-volume:
+
+networks:
+  app:
+    driver: bridge
+  kafka_net:
+    driver: bridge  

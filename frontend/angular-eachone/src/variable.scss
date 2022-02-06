@@ -1,0 +1,316 @@
+$primary-color: #5aadd3;
+$secundary-color: #fff;
+$terceary-color: #6a7db8;
+$fourth-color: #5f5fff;
+$fifth-color: #707279;
+$sixth-color: #ffffff; // icones e places holders;
+$button-color: $primary-color;
+$border-color: $primary-color;
+
+$off-color: #e54242; // situação do email quando não está confirmado;
+$error-color: #e23333; // erro em qualquer situação
+$icon-delete: #f1142f;
+$icon-edit: #38d59b;
+$navbar-color: #41c3ca; // Navbar Button Hover;
+$dark-color: #484848; // usado nos textos secundários;
+$background-degrade: linear-gradient(
+  180deg,
+  rgba(196, 196, 196, 0.05) 0%,
+  rgba(196, 196, 196, 0.05) 0.01%,
+  rgba(228, 228, 228, 0.45) 48.96%,
+  rgba(223, 223, 223, 0.75) 100%
+);
+
+// Novas Cores
+// $dark-background-color: #2B2C3A;
+$dark-menu-background-color: #2f3141;
+$icon-color-menu: #7d84a2;
+$light-white: #ffffff;
+$icon-login: #6b69f9;
+$focus-color: #6b69f9;
+$subtitle-color: #989898;
+$button-grey: #475365;
+$icon-key: #979797;
+$hiperlink-color: #5f5fff;
+$btn-confirm: #008d59;
+$btn-add: #38d59b;
+$color-title: #6f6eff;
+$down-model: #0058ff;
+$button-down: #2a3554;
+$border-color-down: #273760;
+$border-text-color: #7e84a4;
+$blue-white-color: #0057f9;
+$gray-color-table: #7e84a3;
+$background-table: #d8dcec;
+$background-tr-table: #303444;
+$border-btn-view: #3b4064;
+$background-color-btn-view: #373b54;
+$color-view-btn: #5b75f4;
+$color-border-btn: #532b3c;
+$background-color-btn-delete: #422e3e;
+$background-btn-print: #2a3453;
+$color-border-filter: #263764;
+$color-img-icon: #0054f9;
+$color-btn-delete: #f1142f;
+$color-select-hover: #5281da;
+$color-input-white: #596278;
+$color-input-default: #f4f7fc;
+$color-text: #fff;
+$background-sidemenu-items: #00236433;
+$stars-color: #ffd900;
+$table-notification-red: #f1142f1a;
+$table-notification-border-red: #f1142f;
+$table-notification-green: #42d5951a;
+$table-notification-border-green: #42d595;
+$table-notification-yellow: #fa96001a;
+$table-notification-border-yellow: #fa9600;
+$breadcumb-color: #d7dbec;
+$breadcumb-color-text: #131523;
+$hover-color: #575b72;
+
+$sucess-snackbar-color: #28cf93;
+$sucess-snackbar-border: #9ae3ca;
+$sucess-snackbar-background: #28cf9233;
+$confirm-deletion-snackbar-color: #f1142f;
+$confirm-deletion-snackbar-border: #f1142e2f;
+$confirm-deletion-snackbar-background: #f1142e1a;
+$question-add-snackbar-color: #89abfc;
+$question-add-snackbar-background: #89abfc1a;
+$question-add-snackbar-border: #bac8ea;
+$confirm-snackbar-button: #2f6954;
+$cancel-snackbar-button: #e36d00;
+$confirm-snackbar-button-hover: #264e3f;
+$cancel-snackbar-button-hover: #a85202;
+$color-status-enable: #21d59b;
+$color-status-disable: #fa9600;
+$color-subtitle: #5a607f;
+
+//theme
+:root {
+  // theme variables
+  --background-color: #2b2c3a;
+  --menu-background-color: #333442;
+  --background-color-2: #333442;
+  --font-color: #f3f3f5;
+  --font-color-grey: #7e84a4;
+  --university-logo-dark-color: #7e84a3;
+  --title-color: rgb(250, 250, 250);
+  --font-header-color: #7e84a3;
+  --icon-color-grey: #7d84a2;
+  --light-white: #ececec;
+  --icon-login: #6b69f9;
+  --focus-color: #6b69f9;
+  --button-grey-1: #475365;
+  --button-grey-2: #3b4555;
+  --button-active: #0058ff;
+  --sidemenu-text-color: #fff;
+  --separating-edge-color: #0000;
+  --droptools-background: #272835;
+  --border-view-button: #3a3f6125;
+  --text-white-to-gray: #fff;
+  --calendar-background: #475365;
+  --period-background: #3b4555;
+  --background-gray-1-to-white: #475365;
+  --cards-background: #333442;
+  --icon-color-menu: #7d84a2;
+  --text-background-color-to-gray-1: #2b2c3a;
+  --drown-model-background-color: #2a3554;
+  --sidemenu-icon: #fff;
+  --white-text: #fff;
+  --drop-menu-profile: #272835;
+  --anchor-button-background: #303c58;
+  --anchor-button-text: #0057f9;
+  --university-logo-dark-color: #7e84a3;
+  --icon-color-grey: #7d84a2;
+  --light-white: #ececec;
+  --icon-login: #6b69f9;
+  --focus-color: #6b69f9;
+  --button-grey-1: #475365;
+  --button-grey-2: #3b4555;
+  --button-active: #0058ff;
+  --border-color-down: #0059ff13;
+  --linkColor: #0058ff;
+  --hover-color: #5a607f;
+  --dividr-color: #fff;
+  --label-color: #686d88;
+
+  // light
+  --light-background-color: #f4f7fc;
+  --light-menu-background-color: #ffff;
+  --light-background-color-2: #ffff;
+  --light-font-color: #000;
+  --light-title-color: #000;
+  --light-font-header-color: #000;
+  --light-sidemenu-text-color: #fff;
+  --light-separating-edge-color: #f0f0f0;
+  --light-droptools-background: #ced6e5;
+  --light-border-view-button: #3a3f6125;
+  --light-text-white-to-gray: #7e84a3;
+  --light-calendar-background: #fff;
+  --light-period-background: #cacede;
+  --light-background-gray-1-to-white: #fff;
+  --light-cards-background: #f0f0f0;
+  --light-icon-color-menu: #fff;
+  --light-text-background-color-to-gray-1: #475365;
+  --light-drown-model-background-color: #0059ff2d;
+  --light-sidemenu-icon: #808080;
+  --light-white-text: #fff;
+  --light-drop-menu-profile: #ced6e5;
+  --light-anchor-button-background: #f1f1f1;
+  --light-anchor-button-text: #000;
+  --linkColor: #0058ff;
+  --navBar-icon: #7e84a3;
+  --inlineInputColor: #eeeeee;
+  --snackBarError: #482c3ca1;
+  --background-main-snackbar-confirm: #2f3141e8;
+  --light-hover-color: #b6b7bd;
+  --light-label-color: #7e84a4;
+
+  --separating-edge-color: #ffffff;
+  // white
+  --background-color-white: #f4f7fc;
+
+  // buttons
+  --text-white-to-gray: #fff;
+  --text-white-inline: #fff;
+  --background-gray-1-to-white: #475365;
+  --calendar-background: #475365;
+  --period-background: #3b4555;
+  --button-background-color: #0057f93f;
+  --button-add-background-color: #38d59b3a;
+  --view-background-color: #5772ea31;
+  --delete-background-color: #e6171727;
+  --edit-background-color: #38d59b1a;
+  --border-default-button: #0044ff36;
+  --border-view-button: #3a3f6125;
+  --border-delete-button: #ff00001c;
+  --border-edit-button: #38d59b36;
+  --text-background-color-to-gray-1: #2b2c3a;
+  --blocked-button-color: #fec72e;
+  --disabled-button-color: #7e84a4;
+  --enable-button-color: #38d59b;
+  --confirm-button: #38d59b;
+  --cancel-button: #fa9600;
+  --icon-edit: #38d59b;
+
+  // fixed variables
+  --drop-tools-text: #0062ff;
+  --leave-text: #ff0000;
+  --title-router: #7e84a4;
+
+  // static items
+  --divider-color: #707070;
+  --hiperlink-color: #5f5fff;
+  --subtitle-color: #989898;
+  --login-light-white: #ffffff;
+  --btn-confirm: #008d59;
+  --info-user-border: #808080;
+  --icon-key: #979797;
+  --required-pass-info-color: #989898;
+
+  // transparent backgrounds
+  --drop-tools-item-background: #0062ff0a;
+  --leave-background: #ff000011;
+  --drop-menu-profile-item-background: #0062ff0a;
+
+  // modal
+  --modal-sucess-pattern-color: #28cf93;
+  --modal-error-pattern-color: #ed6273;
+  --modal-background-color: #303141;
+  --modal-box-shadow: #00000077;
+  --modal-exit-sucess-button-hover: #7cdab7;
+  --modal-exit-error-button-hover: #e7818d;
+  --modal-content: #fff;
+  --modal-external-background: #00000044;
+
+  // time
+  --modal-dialog-time: 4000ms;
+}
+
+// Fontes Usadas no Projeto
+$font1: roboto;
+
+// Nova Tabela de FONT-SIZE
+$fs0: 4rem;
+$fs1: 1rem;
+$fs2: 1.8rem;
+$fs3: 1.6rem;
+$fs4: 1.4rem;
+$fs5: 1rem;
+$fs6: 2rem;
+$fs7: 2.8rem;
+$fs8: 2.5rem;
+$fs9: 5.2rem;
+
+// Media Queries
+$min-sm: 320px;
+$max-sm: 480px; // Mobile devices
+$min-md: 481px;
+$max-md: 768px; // iPads, Tablets
+$min-xmd: 769px;
+$max-xmd: 1024px; // Small screens, laptops
+$min-lg: 1025px;
+$max-lg: 1200px; // Desktops, large screens
+$max-xlg: 1201px; // Extra large screens, TV
+$min-ltl: 1440px;
+$max-ltl: 1441px;
+$max-xxxlg: 1825px;
+
+//Login
+$login-left: #fff;
+
+// Dashboard
+$header-color: linear-gradient(to bottom, #41c3ca, #45b5cc);
+$satisfaction-color: linear-gradient(to bottom, #45a3ce, #5fbde8);
+$menu-color: #e8e7e5;
+$menu-item-color: #cecbcb;
+$card-color: #fff;
+
+//table
+$odd-row-color: rgba(56, 211, 241, 0.35);
+$td-top-color: #84cfde;
+$td-row-text: #5aadd3;
+$td-back-color: #45b5cc;
+//Shadow
+$box-shadow-primary: rgba(57, 149, 167, 0.5);
+$box-shadow-focus: rgba(167, 119, 57, 0.5);
+$box-shadow-box: rgba(90, 173, 211, 0.5);
+
+$container-border: $button-color;
+$container-border-box: $focus-color;
+
+//Classes auxiliares
+
+.flex {
+  display: flex;
+
+  &.displayColumn {
+    flex-direction: column;
+  }
+
+  &.displayRow {
+    flex-direction: row;
+  }
+
+  &.spaceBetween {
+    justify-content: space-between;
+  }
+
+  &.spaceAround {
+    justify-content: space-around;
+  }
+
+  &.justifyCenter {
+    justify-content: center;
+  }
+
+  &.col {
+    flex-direction: column;
+  }
+
+  *.wrap {
+    flex-wrap: wrap;
+  }
+}
+
+//usar font-size para diminuir as coisas com REM, garanta que tudo esteja linkado em REM para funcionar.

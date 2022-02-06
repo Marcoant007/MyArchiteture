@@ -1,0 +1,7 @@
+<body>
+    <app-with-institutions *ngIf="hasInstitutions" (paginatorEmitter)="paginatorChange($event)"
+        (deleteEmitter)="clickDelete($event)" (viewEmitter)="clickEdit($event)" [institutions]="institutionsList"
+        [actualPage]="actualPage" [totalCount]="totalCount" [limit]="limit">
+    </app-with-institutions>
+    <app-without-institutions *ngIf="!hasInstitutions"></app-without-institutions>
+</body>

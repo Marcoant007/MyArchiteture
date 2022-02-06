@@ -1,0 +1,20 @@
+<div class="snackAction container" [ngClass]="{'active': this.actionSnackbar.show}">
+  <div class="body" [ngClass]="{'delete': true}">
+    <div class="box">
+      <div class="areaElement flex">
+        <div class="icon">
+          <i class="far" [class]="this.typeToIcon()"></i>
+        </div>
+        <div class="contentContainer">
+          <div class="message">
+            <h1 class="title">{{actionSnackbar.title}}</h1>
+          </div>
+          <div class="buttonsActions">
+            <button class="button confirm" (click)="confirm()">Confirmar</button>
+            <button class="button cancel" (click)="cancel()">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

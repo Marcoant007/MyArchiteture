@@ -1,0 +1,16 @@
+<div [ngClass]="{'error': hasDropDownError, 'inline': inline}">
+    <label>
+        {{label}}
+
+        <span *ngIf="formControl?.hasError('required') && showRequired" class="required_field">
+            *
+        </span>
+        <app-tooltip *ngIf="tooltip">
+            <ng-content select="[tooltip]"></ng-content>
+        </app-tooltip>
+    </label>
+
+    <input type="color" [formControl]="formControl">
+</div>
+
+<p *ngIf="hasDropDownError" class="error_message">{{requirementMessage}}</p>

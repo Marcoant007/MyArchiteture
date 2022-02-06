@@ -1,0 +1,12 @@
+<app-breadcumb [breadcrumb]="breadcrumb"></app-breadcumb>
+
+<div class="toggle-display">
+  <app-toggle-switch [checked]="showAllEvents" (toogleClick)="changeNotificationType()">
+  </app-toggle-switch>
+
+  <h1 *ngIf="!showAllEvents">Exibindo somente os alarmes</h1>
+  <h1 *ngIf="showAllEvents">Exibindo todos os eventos</h1>
+</div>
+
+<app-alarms-list *ngIf="!showAllEvents"></app-alarms-list>
+<app-events-list *ngIf="showAllEvents"></app-events-list>

@@ -1,0 +1,15 @@
+<div *ngIf="message" class="modal">
+    <div class="modal-content">
+        <div class="flex">
+            <img src="../../../../../assets/img/satisfaction-research-message.svg" alt=""></div>
+        <div class="flex">
+            <!-- <span class="close" (click)="closeMessage()">&times;</span> -->
+            <h1 class="title">{{message?.title}}</h1>
+            <h3 class="message" [innerHTML]="message?.message"></h3>
+            <p class="submessage">{{message?.submessage}}</p>
+            <div class="buttons">
+                <button class="default rigth" (click)="closeMessage()">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

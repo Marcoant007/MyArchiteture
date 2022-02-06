@@ -1,0 +1,94 @@
+@import "../../../../../variable.scss";
+
+.dropdownSearch{
+    position: relative;
+    background-color: $blue-white-color;
+    border-radius: 0.2rem;
+    height: 2.688rem;
+    min-width: 15.5rem;
+}
+
+.inputContainer{
+  position: relative;
+  width: 70%;
+}
+
+.input{
+  position: absolute;
+  background-color: $blue-white-color;
+  color: white;
+  margin-top: 0.75rem;
+  border: solid 0rem;
+  width: 100%;
+  margin-left: 0.5rem;
+}
+
+::placeholder {
+    color: white;
+    font-size: 1rem;
+}
+
+.areaSelectSearch{
+    display: flex;
+}
+
+.iconDropSearch{
+    justify-content: end;
+    margin-top: 0.6rem;
+    margin-right: 0.5rem;
+    margin-left: auto;
+
+}
+
+.iconSearch{
+    margin-top: 0.6rem;
+}
+
+.searchList{
+background-color: $blue-white-color;
+width: auto;
+overflow-y: auto;
+-webkit-box-shadow: 0px 3px 3px 0px #000000;
+  box-shadow: 0px 3px 3px 0px #000000;
+position: relative;
+z-index: 40;
+border-radius: 0.2rem;
+
+
+}
+
+.searchList.active{
+    background-color: $blue-white-color;
+    display: block;
+    position: relative;
+    z-index: 40;
+
+}
+
+.searchListHide{
+    display: none;
+}
+
+::ng-deep .divli{
+  li{
+    list-style: none;
+    font-weight: 400;
+    padding: 0.8rem 0.8rem;
+    margin-top: 0.4rem;
+    cursor: default;
+  }
+  li:hover{
+    background: $color-select-hover;
+  }
+}
+
+@media only screen and (max-width: $max-sm){
+  .dropdownSearch{
+    margin-left: -1rem;
+    width: 50vw;
+    min-width: 9rem;
+    .iconDropSearch{
+      display: none;
+    }
+  }
+}

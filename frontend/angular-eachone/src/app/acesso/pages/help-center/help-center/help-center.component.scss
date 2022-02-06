@@ -1,0 +1,53 @@
+@import "../../../../../variable.scss";
+
+.header{
+  color: var(--font-color);
+}
+
+.anchor{
+  margin: auto;
+}
+
+.anchorContainer{
+  width: fit-content;
+  margin:auto;
+}
+
+
+.body{
+  color: var(--font-color);
+  margin: 1rem 0rem;
+  background-color: var(--background-color-2);
+  border-radius: 1rem;
+  min-height: calc(100vh -14vh);
+  padding: 2rem 3rem;
+
+  h1{
+    color: #7E84A3;
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+  h3{
+    color: #7E84A3;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  p{
+    padding: 0rem 2rem;
+    font-size: 1.3rem;
+  }
+}
+
+
+
+
+@media only screen and (max-width : $max-md) {
+  .body{
+    margin-top: 3rem;
+    padding: 1rem;
+  }
+  p{
+    padding: 0rem;
+    font-size: 1.2rem;
+  }
+}

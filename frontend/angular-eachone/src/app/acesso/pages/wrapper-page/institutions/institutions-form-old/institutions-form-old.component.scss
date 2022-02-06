@@ -1,0 +1,172 @@
+@import '../../../../../../variable.scss';
+
+body{
+  color: var(--font-color);
+}
+
+.container{
+  background-color: var(--background-color-2);
+  width: 100%  ;
+  height: auto  ;
+  border-radius: 5px  ;
+  margin-top: 2rem  ;
+  padding-bottom: 2rem  ;
+}
+
+.bodyContainer{
+  padding: 1rem;
+}
+
+.headId{
+  padding-top: 2.6rem;
+  padding: 1rem;
+  span{
+      color: $blue-white-color;
+      font-weight: 500;
+      font-size: 1.5rem;
+  }
+}
+
+.headImg{
+  padding-top: 1rem;
+  padding-right: 1.2rem;
+  cursor: pointer;
+}
+
+.title{
+  margin-left: 1rem;
+}
+
+.bodyForm{
+  margin-top: 1.8rem;
+}
+
+.containerForm{
+  display: flex;
+  justify-content: space-between;
+}
+
+.subtitleHeader{
+  color: $color-subtitle;
+  margin-left: 1rem;
+  width: auto;
+}
+
+.leftForm{
+  margin-left: 1rem;
+  margin-top: 4.5rem;
+}
+
+.leftBody{
+  width: 50%;
+}
+
+.rightBody{
+  width: 50%;
+}
+
+.statusTitle{
+  margin-top: 0rem;
+}
+
+.status{
+ display: flex;
+ justify-content: center;
+ margin-left: 13rem;
+ margin-top: 1.8rem;
+}
+
+.buttonsActions{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+.iconEdit{
+  color: $icon-edit;
+  margin-top: 0.7rem;
+  font-size: 21px;
+  margin-left: 0.2rem;
+}
+.iconDelete{
+  margin-top: 0.7rem;
+  font-size: 21px;
+  color: $icon-delete;
+}
+
+.buttonEdit{
+  margin-right: 1rem;
+}
+
+.inputArea{
+  max-width: 43rem;
+  width: auto;
+}
+
+.selectArea{
+  max-width: 45rem;
+  width: auto;
+}
+
+.descriptionArea{
+  margin-top: 1.23rem;
+}
+
+.areaLanguage{
+  margin-left: 1rem;
+}
+
+.countryLanguage{
+  display: flex;
+  margin-right: 1rem;
+  img{
+    margin-right: 0.5rem;
+  }
+}
+
+.bottomArea{
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.attachArea{
+  margin: auto;
+  width: 57%;
+  margin-top: 3rem;
+}
+
+.buttonAttach{
+  margin-left: 6rem;
+}
+
+.textAreaActions{
+  color: $border-text-color;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.buttonsForm{
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+  margin-top: 3rem;
+  margin-right: 2rem;
+}
+
+
+.btnCancel{
+  margin-left: 4rem;
+}
+
+
+h1{
+  color: $border-text-color;
+  word-break: keep-all;
+}
+
+h2{
+  color: $border-text-color;
+  word-break: keep-all;
+  margin-top: 1rem;
+}

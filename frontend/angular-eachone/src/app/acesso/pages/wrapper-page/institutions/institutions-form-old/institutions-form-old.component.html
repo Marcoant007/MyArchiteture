@@ -1,0 +1,169 @@
+<!-- TODO Isso aqui vai servir pra alguma coisa -->
+
+<body>
+    <app-header class="headerTitle" [title]="'Instituição de Ensino > Cadastrar'" [hasAddButton]="true"></app-header>
+    <div class="container">
+        <div class="bodyContainer">
+            <div class="headerNew">
+                <div class="flex spaceBetween">
+                    <div class="headId">
+                        <span>ID: asdj aasd asdfa adr7</span>
+                    </div>
+                    <div class="headImg">
+                        <img src="../../../../../../assets/imgs/bt_back.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="bodyForm">
+                <form>
+                    <div class="containerForm">
+                        <div class="leftBody">
+                            <h1 class="title">Cadastrar Instituição de Ensino</h1>
+                            <div class="subtitleHeader">
+                                <span>
+                                    Para cadastrar uma nova instituição de ensino preencha corretamente os <br>
+                                    campos abaixo, ou importe uma lista válida.
+                                </span>
+                            </div>
+                            <div class="leftForm">
+                                <div>
+                                    <h2>Nome</h2>
+                                    <div class="inputArea">
+                                        <app-input-register class="inputName" [formControl]="formGroup.controls['name']"
+                                            [innerText]="'Insira o nome da instituição de Ensino'" id="inputName">
+                                        </app-input-register>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2>Razão</h2>
+                                    <div class="inputArea">
+                                        <app-input-register class="inputSocialName"
+                                            [formControl]="formGroup.controls['social_name']"
+                                            [innerText]="'Insira a razão social da instituição de Ensino'"
+                                            id="inputSocialName">
+                                        </app-input-register>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2>CNPJ</h2>
+                                    <div class="inputArea">
+                                        <app-input-register class="inputCnpj" [formControl]="formGroup.controls['cnpj']"
+                                            [innerText]="'Insira o CNPJ da instituição de Ensino'" id="inputCnpj">
+                                        </app-input-register>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2>Inscrição Estadual</h2>
+                                    <div class="inputArea">
+                                        <app-input-register class="subscription_state"
+                                            [formControl]="formGroup.controls['subscription_state']"
+                                            [innerText]="'Insira a inscrição Estadual da instituição de Ensino'"
+                                            id="subscription_state">
+                                        </app-input-register>
+                                    </div>
+                                </div>
+                                <div class="select">
+                                    <h2>Plano contratado</h2>
+                                    <div class="selectArea">
+                                        <app-select [isInline]="true" [formControl]="formGroup.controls['plan']"
+                                            [placeholder]="'Visualiza o plano contratado pela instituição'">
+                                        </app-select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rightBody">
+                            <div>
+                                <div class="flex spaceBetween">
+                                    <h2 class="statusTitle">Status</h2>
+                                    <div class="buttonsActions">
+                                        <div class="buttonEdit">
+                                            <app-button-radius [isEdit]="true">
+                                                <i class="far fa-edit iconEdit"></i>
+                                            </app-button-radius>
+                                        </div>
+                                        <app-button-radius [isDelete]="true">
+                                            <i class="far fa-trash-alt iconDelete"></i>
+                                        </app-button-radius>
+                                    </div>
+                                </div>
+                                <div class="statusContainer">
+                                    <app-circle-status class="status">
+                                    </app-circle-status>
+                                </div>
+                            </div>
+                            <div>
+                                <h2>Responsável</h2>
+                                <div class="inputArea">
+                                    <app-input-register class="responsible"
+                                        [formControl]="formGroup.controls['responsible']"
+                                        [innerText]="'Insira o nome do responsável da instituição'" id="responsible">
+                                    </app-input-register>
+                                </div>
+                            </div>
+                            <div>
+                                <h2>Melhor Telefone</h2>
+                                <div class="inputArea">
+                                    <app-input-register class="phone" [formControl]="formGroup.controls['phone']"
+                                        [innerText]="'Insira um número para contato'" id="phone">
+                                    </app-input-register>
+                                </div>
+                            </div>
+                            <div>
+                                <h2>Melhor Email</h2>
+                                <div class="inputArea">
+                                    <app-input-register class="email" [formControl]="formGroup.controls['email']"
+                                        [innerText]="'Insira um email para contato'" id="email">
+                                    </app-input-register>
+                                </div>
+                            </div>
+                            <div>
+                                <h2>Descrição</h2>
+                                <div class="descriptionArea">
+                                    <app-text-area-multiline [lineWidht]="75" [lineQuantity]="4">
+                                    </app-text-area-multiline>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="areaLanguage">
+                    <h2>Idiomas habilitados</h2>
+                    <div class="countryLanguage">
+                        <img src="../../../../../../assets/imgs/eua.svg" alt="">
+                        <img src="../../../../../../assets/imgs/brazil.svg" alt="">
+                        <img src="../../../../../../assets/imgs/spain.svg" alt="">
+                    </div>
+                </div>
+                <div class="bottomArea">
+                    <h2>Otimize seu tempo com o preenchimento automático</h2>
+                    <div class="buttonAttach">
+                        <app-button-down-model></app-button-down-model>
+                    </div>
+                </div>
+                <div class="attachArea">
+                    <app-attach-area></app-attach-area>
+                </div>
+                <div class="areaActions">
+                    <div class="textAreaActions">
+                        <span>Ao clicar em confirmar será enviado um email para o usuário responsável por esta
+                            instituição. Ele será <br>
+                            encarregado a efetuar o primeiro acesso desta instituição dentro da plataforma EachOne.
+                            Caberá também a ele <br>
+                            completar os dados da instituição em nosso sistema.</span>
+                    </div>
+                    <div class="buttonsForm">
+                        <app-button-area [isConfirm]="true" [ngClass]="{'hidden': hidden, 'noHidden': !hidden}">
+                            Confirmar
+                        </app-button-area>
+                        <div class="btnCancel">
+                            <app-button-area [isCancel]="true" [ngClass]="{'hidden': hidden, 'noHidden': !hidden}">
+                                Cancelar
+                            </app-button-area>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

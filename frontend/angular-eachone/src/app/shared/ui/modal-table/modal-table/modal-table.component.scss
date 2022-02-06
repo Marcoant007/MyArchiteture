@@ -1,0 +1,55 @@
+@import "../../../../../variable.scss";
+
+.containerModal{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 991;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.24);
+}
+
+.title{
+  font-size: 2rem;
+  color: var(--font-color);
+  margin: 0.5rem auto 0.5rem auto;
+  padding: 0px 0px 0px 1rem;
+}
+
+.subtitle{
+  font-size: 1rem;
+  color: var(--font-color-grey);
+}
+
+.icon{
+  font-size: 1.3rem;
+  margin: 0.5rem 1rem 0.5rem auto ;
+}
+
+.container{
+    overflow: auto;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 70rem;
+    width: 80% ;
+    min-height: 80vh;
+    max-height: 80vh;
+    background-color: var(--background-color-2);
+    margin: auto;
+}
+
+.text{
+    text-align: center;
+}
+
+
+@media screen and (max-width: $min-md) {
+
+}
+
+

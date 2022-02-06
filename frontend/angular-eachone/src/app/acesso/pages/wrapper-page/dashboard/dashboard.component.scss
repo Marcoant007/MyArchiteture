@@ -1,0 +1,52 @@
+@import "../../../../../variable.scss";
+
+.body{
+  color: var(--font-color);
+  margin: auto;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.smallCard{
+  width: 32%;
+}
+
+.mediumCard{
+  width: 29%;
+}
+
+
+.largeCard{
+  width: 69%;
+}
+
+.cardSpace{
+  margin: 2rem 0px;
+}
+
+@media only screen and (max-width : $max-md) {
+
+  .spacer{
+    min-height: 13rem;
+  }
+
+  .responsive-smallCard{
+    flex-direction: column;
+  }
+
+  .smallCard, .mediumCard, .largeCard{
+    width: 100%;
+  }
+
+  .responsive-mediumCard{
+    flex-direction: column;
+  }
+  .cardSpace{
+    margin:0px
+  }
+  .headerBreaker{
+    display: flex;
+    flex-direction: column;
+  }
+}
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recupere a sua senha</title>
+</head>
+
+<body style=" font-family:Helvetica, Arial,  sans-serif;
+background-color: #ffffff;
+text-align: center;
+color: #767676;
+align-items: center;
+margin-top: 1.5rem;
+display: grid;
+margin: 0px auto;
+max-width: 63%;">
+
+    <div style="background-color: rgb(231, 230, 230); font-size: larger;">
+      <br>
+      <img src="https://i.ibb.co/dJSd0Z9/Key.png" style="width: 6rem;" alt="Chave rosa">
+      <h1 style="color:#929090; font-size: 2.5rem;">Recuperação <span style="font-weight:100; font-size: 2.5rem;">seu acesso</span> </h1>
+    </div>
+
+    <div style=" text-align: left;
+
+    height: auto;
+    width: 80%;
+
+    margin: 0px auto">
+
+        <div style=" margin-top: 5%;
+        font-size: 1.3rem;
+        color: #767676;
+        margin-top: 4rem;">
+            <b>Olá {{name}} EachOne,</b>
+            <p style="font-size: smaller; color: #929090;">Seguem as informações para recuperar seu acesso à <b> <a href="" style="color:#6F6EFF;">plataforma de ensino EachOne.</a> </b>  </p>
+        </div>
+        <div style="  margin-top: 20%;
+        font-size: 1.6rem;
+        color: #767676;">
+            <p> <b>Nome:</b> {{name}} <br>
+                <b>Perfil de usuário:</b> {{user_type}} <br>
+                <b>Senha:</b> <a href="{{urlFrontEnd}}/passwordchange?token={{tokenEmail}}" style="color: #6F6EFF;"> Clique aqui para criar uma nova
+                    senha.</a>
+            </p>
+        </div>
+        <div style="margin-top: 20%;
+        font-size: 1.2rem;
+        color: #767676;">
+            <p>Por motivos de segurança, o link acima só será válido durante as próximas 24 horas.</p>
+            <p style="margin-bottom: 10%;">Se você não deseja redefinir sua senha ou não solicitou estas informações, pode ignorar
+            este <br>  e-mail com
+                segurança.
+            </p>
+        </div>
+        <div style="margin-top: 2.5rem; max-width: 100%;border-top: solid 1px gray;">
+          <div style="font-size:1rem; text-align: left; margin: 2rem 0px;">
+            Por favor, não responda esta mensagem. Em caso de dúvidas, acesse nossa
+
+            <a href="https://www.google.com/search?channel=fs&client=ubuntu&q=google" style="color: #6F6EFF; text-decoration: none; font-weight: bolder;"> Central de Ajuda. </a>
+
+          </div>
+        </div>
+    </div>
+
+    <div>
+      <img src="https://i.ibb.co/DQC6RLq/Grupo-32.png" alt="EachOne logo"
+      style="margin: 25px auto; text-decoration: none;">
+    </div>
+
+
+</body>
+
+</html>

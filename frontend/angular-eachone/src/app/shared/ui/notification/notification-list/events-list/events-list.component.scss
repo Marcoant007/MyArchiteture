@@ -1,0 +1,12 @@
+@import "../../../../../../variable.scss";
+
+::ng-deep div.description {
+  font-weight: 300;
+  span {
+    color: $dark-color;
+  }
+  strong {
+    font-weight: 600;
+    color: $focus-color;
+  }
+}

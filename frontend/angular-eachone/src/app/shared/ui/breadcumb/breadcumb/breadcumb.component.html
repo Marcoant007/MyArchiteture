@@ -1,0 +1,18 @@
+<div class="breadcump-container">
+    <div *ngFor="let item of breadcrumb; let i = index" class="breadcump-item">
+        <h1 *ngIf="item != breadcrumb[breadcrumb.length -1]" [appAuthorized]="[item.permission]"
+            (click)="handleNavigateTo(item.route)">
+            {{item.name}}
+
+        </h1>
+
+        <h2 *ngIf="item == breadcrumb[breadcrumb.length -1]" [appAuthorized]="[item.permission]"
+            (click)="handleNavigateTo(item.route)">
+            {{item.name}}
+        </h2>
+
+        <h1 *ngIf="item != breadcrumb[breadcrumb.length -1]" [appAuthorized]="[item.permission]">
+            <i class="fas fa-chevron-right"></i>
+        </h1>
+    </div>
+</div>

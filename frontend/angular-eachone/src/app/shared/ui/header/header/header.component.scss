@@ -1,0 +1,93 @@
+@import "../../../../../variable.scss";
+
+.breakerMenu {
+  max-height: 3rem;
+}
+
+body {
+  max-height: 6rem;
+}
+.search{
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.divTitle {
+  margin: auto 0px;
+}
+
+.container {
+  height: 6rem;
+  margin: 1rem 0px;
+  flex-wrap: wrap;
+  .intern{
+    margin: auto 0px;
+    margin-top: 1rem;
+  }
+}
+
+.rightContainer {
+  margin: auto;
+  margin-right: 1rem;
+}
+
+.rightContainerAddButton {
+  margin: auto;
+  margin-right: 1rem;
+}
+
+.intern {
+  color: var(--title-color);
+  margin-top: 1rem;
+}
+
+.PeriodButton{
+  white-space: nowrap;
+  margin: auto;
+}
+
+
+.addButton{
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+
+@media only screen and (max-width: $max-md) {
+
+  body {
+    margin-top: 2rem;
+    height: 8rem;
+  }
+
+  .breakerMenu {
+    margin: 1.5rem 0px;
+  }
+}
+
+@media only screen and (max-width: $min-xmd) {
+  body {
+    margin-bottom: 5rem;
+  }
+
+  .breakerPeriod{
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width : $min-xmd){
+
+  .rightContainer {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .addButton {
+    margin-left: auto;
+  }
+
+  .breakerMenu{
+    margin: 1rem auto;
+  }
+}

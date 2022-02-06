@@ -1,0 +1,57 @@
+@import "../../../../../variable.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  label.label {
+    font-size: $fs4;
+    font-family: $font1;
+    color: $dark-color;
+    margin: 5px 5px 0px 5px;
+    font-weight: 300;
+    display: inline-flex;
+  }
+
+  .description {
+    font-size: $fs5;
+    font-family: $font1;
+    color: #666666;
+    margin: 5px 5px 0px 5px;
+    font-weight: 300;
+    display: inline-flex;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+
+    label.option {
+      display: flex;
+      flex-direction: row;
+      margin-top: 5px;
+
+      input {
+        width: 20px;
+        height: 20px;
+        margin-right: 0.4rem;
+
+        &:disabled {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+.required_field {
+  margin-left: 3px;
+  color: $error-color;
+}
+
+.error-message {
+  margin-top: 5px;
+  color: $error-color;
+  font-size: $fs5;
+  font-weight: 200;
+}

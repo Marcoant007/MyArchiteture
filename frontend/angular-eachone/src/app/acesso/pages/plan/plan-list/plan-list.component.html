@@ -1,0 +1,11 @@
+<app-header [title]="'Planos'" [hasAddButton]="true" [permission]="['add-plan']" (clickEvent)="redirectToNewCharge()">
+</app-header>
+
+<div *ngIf="planList" class="container">
+    <app-with-plan [limit]="limit" (deleteEmitter)="clickDelete($event)" (paginatorEmitter)="paginatorChange($event)"
+        [actualPage]="actualPage" (viewEmitter)="clickEdit($event)" [totalCount]="totalCount" [planList]="planList">
+    </app-with-plan>
+</div>
+<div *ngIf="!planList">
+    <app-without-plan></app-without-plan>
+</div>

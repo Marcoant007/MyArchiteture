@@ -1,0 +1,55 @@
+<body class="body">
+  <app-header class="headerTitle" [permission]="['add-user']" [breadcrumb]="breadcrumb" [hasAddButton]="true"
+    (clickEvent)="addNewUser()">
+  </app-header>
+
+  <!-- <app-modal-table (exitEvent)="exit()" *ngIf="modalIsOn"></app-modal-table> -->
+
+  <div class="container">
+    <div class="headerText" *ngIf="!hideHeader">
+      <div class="title">
+        Usuários da Instituição
+      </div>
+      <br>
+      <div class="subtitle">
+        Aqui você visualiza os usuários desta instituição.
+      </div>
+    </div>
+    <div class="headerPage">
+      <div class="fieldsSelects">
+        <div class="userSearch">
+          <app-dropdown-search [titleDropbox]="'Procurar usuário'" [listSearch]="usersList"
+            (dropdownValueSelect)="clickDropdownValue($event)" (inputValueEmitter)="searchAutocomplete($event)">
+            <i class="far fa-user userIcon"></i>
+          </app-dropdown-search>
+        </div>
+        <div class="filterUser">
+          <app-select class="selectClass" [items]="itemsSelect" [placeholder]="'Filtrar por...'" [isSimple]="true"
+            (selectElement)="selectItemEvent($event)">
+            <i class="fas fa-filter userIcon"></i>
+          </app-select>
+        </div>
+      </div>
+      <div class="buttons">
+        <div class="button_print" (click)="exportUserprint()" [appAuthorized]="['print-user']">
+          <app-button-radius>
+            <i class="fas fa-print img_icon printIcon"></i>
+          </app-button-radius>
+        </div>
+        <div class="button_file" (click)="exportAsXLSX()" [appAuthorized]="['export-user']">
+          <app-button-radius>
+            <i class="fas fa-file img_icon fileIcon"></i>
+          </app-button-radius>
+        </div>
+      </div>
+    </div>
+    <app-table-user [usersList]="users" (deleteEmitter)="delete($event)" [editPermission]="['read-user-detail']"
+      [deletePermission]="['delete-user']">
+    </app-table-user>
+    <div class="paginator">
+      <app-pagination *ngIf="users && totalCount>limit" [actualPage]="actualPage" (goToPageEmitter)="goToPage($event)"
+        [totalCount]="totalCount" [limit]="limit" [range]="10">
+      </app-pagination>
+    </div>
+  </div>
+</body>

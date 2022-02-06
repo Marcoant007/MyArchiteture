@@ -1,0 +1,131 @@
+<div>
+    <app-header [breadcrumb]='breadcrumb'></app-header>
+    <div class="container">
+        <div class="flex spaceBetween">
+            <div class="headId">
+                <span>ID: </span>
+            </div>
+            <div (click)="backToList()" class="headImg">
+                <img src="../../../../../assets/imgs/bt_back.svg" alt="">
+            </div>
+        </div>
+        <div class="subHeader">
+            <div class="headerGroup">
+                <div>
+                    <h1 class="title">Cadastrar Plano de cobrança</h1>
+                    <p class="subtitle">Para cadastrar um novo usuário preencha corretamente os campos
+                        abaixo,<br> ou
+                        importe uma lista válida.</p>
+                </div>
+                <div class="buttonsActions">
+                    <app-button-radius class="edit-class-btn" [isEdit]="true" (click)="editMode()">
+                        <i class="far fa-edit iconEdit"></i>
+                    </app-button-radius>
+                    <app-button-radius [isDelete]="true" (click)="clickDelete()">
+                        <i class="far fa-trash-alt iconDelete"></i>
+                    </app-button-radius>
+                </div>
+            </div>
+        </div>
+        <form>
+            <div class="rowName">
+                <div class="col wrap minsizeStatus">
+                    <div class="title-left">
+                        <app-input label="Nome" type="text" [inline]="true" [formControl]="formGroup.controls['name']"
+                            [showRequired]="false" placeholder="Insira o nome do usuário">
+                        </app-input>
+                    </div>
+                </div>
+                <div class="col wrap minsize">
+                    <div class="zone-input">
+                        <div class="status-zone">
+                            <h2 class="status-title">Status</h2>
+                            <div class="status">
+                                <app-circle-status [disabled]="disable" [status]="currentStatus"
+                                    (statusUserEmit)="changeStatus($event)">
+                                </app-circle-status>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row wrap">
+                <div class="col wrap minsize">
+                    <div class="title-left">
+                        <app-input label="Número de usuários" type="text" [inline]="true"
+                            [formControl]="formGroup.controls['users']" [showRequired]="false"
+                            placeholder="Defina o limite de usuários ativos.">
+                        </app-input>
+                    </div>
+                </div>
+                <div class="col wrap minsize">
+                    <app-input label="Valor do Plano (mensal)" type="text" [inline]="true"
+                        [formControl]="formGroup.controls['monthly_value']" [showRequired]="false"
+                        placeholder="Ex: R$ 120,00">
+                    </app-input>
+                </div>
+            </div>
+            <div class="row wrap">
+                <div class="col wrap minsize">
+                    <div class="suportClass">
+                        <app-input label="Suporte técnico" type="text" [inline]="true"
+                            [formControl]="formGroup.controls['suport']"
+                            placeholder="Defina o perfil do suporte para este plano." [showRequired]="false">
+                        </app-input>
+                    </div>
+                </div>
+                <div class="col wrap minsize">
+                    <app-input label="Vigência do Plano (em meses)" type="date" [inline]="true"
+                        [formControl]="formGroup.controls['validity']" placeholder="Ex: 12 meses"
+                        [showRequired]="false"></app-input>
+                </div>
+            </div>
+            <div class="row wrap">
+                <div class="col wrap minsize">
+                    <div class="zone-input">
+                        <h2>Idiomas</h2>
+                        <app-languages-select [disabled]="disable" [countryList]="list_country"></app-languages-select>
+                    </div>
+                </div>
+                <div class="col wrap minsize">
+                    <div>
+                        <app-input label="Valor do Plano (à vista)" type="text" [inline]="true"
+                            [formControl]="formGroup.controls['value']" [showRequired]="false"
+                            placeholder="Ex: R$ 1000,00">
+                        </app-input>
+                    </div>
+                </div>
+            </div>
+            <div class="row wrap">
+                <div class="col wrap minsize">
+                    <div class="zone-input">
+                        <h2>Descrição</h2>
+                        <div class="inputAreaRight">
+                            <div class="title-left">
+                                <app-text-area-multiline [lineWidht]="75" [lineQuantity]="9"
+                                    [placeholder]="'Conte-nos um pouco sobre sua instituição de ensino.'"
+                                    [formControl]="formGroup.controls['description']">
+                                </app-text-area-multiline>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col wrap minsize">
+                    <app-attach-area class="attachArea" [isForEditingUser]="true">
+                        Arraste o arquivo do seu avatar para dentro da área (Apenas arquivos .BMP; PNG; GIF e JPEG)
+                    </app-attach-area>
+                </div>
+            </div>
+        </form>
+        <div class="buttonsForm">
+            <app-button-area [isCancel]="true" (click)="backToList()">
+                Cancelar
+            </app-button-area>
+            <div class="btnConfirm">
+                <app-button-area [isConfirm]="true" (click)="submit()">
+                    Confirmar
+                </app-button-area>
+            </div>
+        </div>
+    </div>
+</div>

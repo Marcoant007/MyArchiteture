@@ -1,0 +1,97 @@
+<div class="grid-container">
+
+    <header class="header">
+        <div class="navbar-toggle">
+            <div class="navbar-logo">
+                <div class="logo">
+                    <img src="../../../../../assets/img/logo-min.svg" alt="Logo">
+                </div>
+                <div class="menu-icon" (click)="handleViewNavMenu()">
+                    <div class="name">{{profile.userName}}</div>
+                    <div class="avatar" [style.background-image]="'url(\'' + profile.userImg + '\')'"></div>
+                    <i class="fa fa-caret-down" [class.rotate]="!hideDropdownMobile"></i>
+                </div>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <div class="nav-menu">
+                        <p>Navegação</p>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <div class="nav-link">
+                        <ng-container *ngFor="let menu of menus_painel">
+                            <li *ngIf="menu.canAccess(permissions)" [ngClass]="{active: isRouteActive(menu.link)}">
+                                <a [routerLink]="menu.link">
+                                    <i class="fas" [ngClass]="menu.icon"></i>
+                                    {{menu.name}}
+                                </a>
+                            </li>
+                        </ng-container>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="navbar-collapse">
+            <div class="navbar-nav">
+                <div class="dropdown-menu order-2">
+                </div>
+                <div class="dropdown-menu order-1">
+                    <button class="dropuser-btn" (click)="handledropdownProfile()">
+                        <div class="name">{{profile.userName}}</div>
+                        <div class="avatar" [style.background-image]="'url(\'' + profile.userImg + '\')'"></div>
+                        <i class="fa fa-caret-down" [class.rotate]="!hideDropdownProfile"></i>
+                    </button>
+                    <ul class="dropdown-content" [class.hide]="hideDropdownProfile">
+                        <ng-container *ngFor="let menu of menus_user">
+                            <li *ngIf="menu.canAccess(permissions) && menu.canViewByUserType(profile.userType)">
+                                <a [routerLink]="menu.link" (click)="onClick(menu.onClick)"
+                                    (click)="handledropdownProfile()">
+                                    <i class="fas" [ngClass]="menu.icon"></i>
+                                    {{menu.name}}
+                                </a>
+                            </li>
+                        </ng-container>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="navMobile" [class.navOpen]="viewNavMenu">
+            <button class="title" (click)="handledropdownNav()">
+                <i class="fas fa-ellipsis-h"></i>
+                Navegação
+                <i class="fa fa-caret-down" [class.rotate]="!hideDropdownNav"></i>
+            </button>
+            <ul class="" [class.hide]="hideDropdownNav">
+                <ng-container *ngFor="let menu of menus_painel">
+                    <li *ngIf="menu.canAccess(permissions)" [ngClass]="{active: isRouteActive(menu.link)}">
+                        <a [routerLink]="menu.link">
+                            <i class="fas" [ngClass]="menu.icon"></i>
+                            {{menu.name}}
+                        </a>
+                    </li>
+                </ng-container>
+            </ul>
+            <button class="title" (click)="handledropdownProfile()">
+                <i class="fas fa-users"></i>
+                Perfil
+                <i class="fa fa-caret-down" [class.rotate]="!hideDropdownProfile"></i>
+            </button>
+            <ul class="" [class.hide]="hideDropdownProfile">
+                <ng-container *ngFor="let menu of menus_user">
+                    <li *ngIf="menu.canAccess(permissions)">
+                        <a [routerLink]="menu.link">
+                            <i class="fas" [ngClass]="menu.icon"></i>
+                            {{menu.name}}
+                        </a>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+
+    </header>
+    <main class="main">
+        <div class="main-content">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+</div>

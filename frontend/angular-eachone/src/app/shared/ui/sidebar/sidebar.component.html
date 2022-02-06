@@ -1,0 +1,19 @@
+<div class="sideBody" [ngClass]="{'hideSideBar': hideSideBar, 'unhideSideBar': (!hideSideBar && !clicked)}">
+  <div class="logo flex">
+    <p [ngClass]="{'LogoContent': rotateIconSidebar}">{{logo}}</p>
+  </div>
+
+  <a *ngFor="let item of menu" [ngClass]="{'mini-Icon': rotateIconSidebar}" class="flex displayRow menuItem"
+    routerLinkActive="activeLink" routerLink={{item.route}}>
+    <div class="barSpace"></div>
+    <div class="flex">
+      <i class="icon" class="{{item.icon}}"></i>
+      <h1>{{item.name}}</h1>
+    </div>
+  </a>
+  <div class="slideIcon"
+    [ngClass]="{'rotateIconSidebar': rotateIconSidebar, 'desrotateIconSidebar': (!rotateIconSidebar && !clicked)}"
+    (click)="expand()">
+    <i class="far fa-chevron-left"></i>
+  </div>
+</div>

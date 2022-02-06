@@ -1,0 +1,52 @@
+<body class="allContainer">
+  <div class="titleContainer">
+    <h1 class="title">
+      Configurar meu perfil de usuário
+    </h1>
+  </div>
+
+  <div class="box">
+    <div class="backContainer" (click)="back()">
+      <img class="backImg" src="../../../../../../assets/imgs/bt_back.svg" alt="botão de retorno">
+    </div>
+
+    <div class="flex spaceAround formsContainer">
+      <div class="leftForm">
+        <app-attach-area class="attachArea" [isForEditingUser]="true" [imgUrl]='imgUrl'>
+          Arraste o arquivo do seu avatar para dentro da área (Apenas arquivos .BMP; PNG; GIF e JPEG)
+        </app-attach-area>
+      </div>
+      <form class="rigthForm">
+        <app-input label="Nome" [showRequired]="false" [formControl]="formGroup.controls['name']" [inline]="true"
+          class="input"></app-input>
+        <fieldset class="fieldset" [disabled]="disabled">
+          <label class="label">Perfil</label>
+          <app-select [isInline]="true" [formControl]="formGroup.controls['userType']"
+            [placeholder]="'Selecione o perfil do usuário'" [items]="itemsSelect" [isDisabled]="disabled"
+            class="input select">
+          </app-select>
+        </fieldset>
+        <app-input [showRequired]="false" label="Melhor email" [formControl]="formGroup.controls['email']"
+          [inline]="true" class="input email"
+          pattern="^[a-zA-Z0-9_+&*-]+(?:.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+.)+[a-zA-Z]{2,7}$">
+        </app-input>
+        <app-input label="Senha" [formControl]="formGroup.controls['password']" [inline]="true" class="input"
+          [type]="'password'">
+        </app-input>
+      </form>
+    </div>
+
+    <div class="footer">
+      <div class="flex buttonsForm">
+        <app-button-area (click)="back()" [isCancel]="true" [ngClass]="{'hidden': hidden, 'noHidden': !hidden}">
+          Cancelar
+        </app-button-area>
+        <div class="btnCancel">
+          <app-button-area (click)="submit()" [isConfirm]="true" [ngClass]="{'hidden': hidden, 'noHidden': !hidden}">
+            Confirmar
+          </app-button-area>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

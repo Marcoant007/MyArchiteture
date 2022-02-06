@@ -1,0 +1,134 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    background: $secundary-color;
+    .title {
+        text-align: center;
+        font-family: $font1;
+        font-size: $fs1;
+        font-weight: 300;
+        margin: 0px 0 15px 0;
+        color: $primary-color;
+    }
+    .subtitle {
+        text-align: center;
+        font-size: $fs2;
+        font-weight: 200;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        color: #707070;
+    }
+    .left {
+        background-color: $login-left;
+        width: 525px;
+        z-index: 1;
+        margin: auto;
+        .logo {
+        width: 118px;
+        height: 155px;
+        margin: 0px auto 40px auto;
+        
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("/assets/img/logo.png");
+
+        @media (max-width: $max-sm) {
+            margin-right: auto;
+            margin-left: auto;
+        }
+        }
+        .forgot-password {
+        color:$primary-color;
+        font-size: $fs5;
+        text-align: center;
+        text-decoration: underline;
+        margin-top: 0px;
+        font-weight: 300;
+        &:hover {
+            cursor: pointer;
+            font-weight: 400;
+            font-size: $fs4;
+        }
+        }
+        .bottom-text {
+        margin-top: 5px;
+        font-weight: 300;
+        }
+        .register {
+        margin: 25px auto 0px auto;
+        font-weight: 200;
+        margin-bottom:20px;
+            span {
+                margin-left: 5px;
+                font-weight: 500;
+                color:$primary-color;
+                &:hover {
+                cursor: pointer;
+                }
+            }
+        }
+        button{ 
+            font-size: $fs6;
+        }
+        @media (max-width: $max-md) {
+            width:100vw;
+        }
+    }
+    .right {
+      position: relative;
+      margin-left: auto;
+      width: 100%;
+      min-height: 100vh;
+      background-image: linear-gradient(to bottom right, #41C3CA, #5292d3);
+      bottom: 0;
+      right: 0;
+      z-index: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      .box-img{    
+        position: absolute;
+        left: -60px;
+        width: min(30vw);
+        height: min(30vw);
+        -o-object-fit: cover;
+        object-fit: cover;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("/assets/img/desenho-logo.png");
+        z-index: 1;
+      
+        
+        @media (max-width: $max-lg) {
+          display: none;
+        }
+      }
+      .box-right{
+        width: 311px;
+        margin:auto;
+        z-index: 2;
+        text-align: center;
+        .title{
+            font-family: $font1;
+            font-size: $fs0;
+            color:$secundary-color;
+            margin-bottom:40px;
+        }
+        .text{
+            color:$secundary-color;
+            line-height: 1.3em;
+            font-size: $fs6;
+            font-family: $font1;
+        }
+      }
+      
+      @media (max-width: $max-md) {
+        display: none;
+      }
+    }
+    &.stretch{
+        align-items: stretch;
+    }
+}

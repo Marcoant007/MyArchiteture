@@ -1,0 +1,21 @@
+<div class="container" [ngClass]="{'disabled': disabled}">
+
+  <div class="disabled status" (click)="update('D')">
+    <div class="circle" [ngClass]="{'active' : status === 'D'}"></div>
+    <span class="title">Desabilitado</span>
+  </div>
+
+  <span class="line"></span>
+
+  <div class="enable status" (click)="update('H')">
+    <div class="circle" [ngClass]="{'active' : status === 'H'}"></div>
+    <span class="title">Habilitado</span>
+  </div>
+
+  <span class="line"></span>
+
+  <div class="blocked status" (click)="update('B')">
+    <div class="circle" [ngClass]="{'active' : status === 'B'}"></div>
+    <span class="title">Bloqueado</span>
+  </div>
+</div>

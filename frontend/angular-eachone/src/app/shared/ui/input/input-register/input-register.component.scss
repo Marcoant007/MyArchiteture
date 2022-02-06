@@ -1,0 +1,32 @@
+@import "../../../../../variable.scss";
+
+.inputClass{
+  background-color: transparent;
+  color: $color-input-default;
+  outline: none;
+  outline-style: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  border-bottom: solid $color-input-default 1px;
+  padding: 3px;
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 0.4rem;
+}
+.conteinerInput{
+padding-bottom: 1rem;
+}
+
+.inputClass::placeholder{
+  color: var(--text-white-to-gray);
+  font-weight: 200;
+}
+
+.error-message {
+  margin-top: 5px;
+  color: $error-color;
+  font-size: $fs5;
+  font-weight: 200;
+}

@@ -1,0 +1,66 @@
+.body {
+  .ulContainer {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #808080;
+    margin: auto;
+    .arrowDown {
+      font-size: 1.7rem;
+      position: relative;
+      &:hover {
+        cursor: pointer;
+      }
+      .profileItems {
+        font-size: 0.8rem;
+        position: absolute;
+        display: none;
+        background-color: var(--drop-menu-profile);
+        width: 14rem;
+        border-radius: 0.2rem;
+        transform: translateX(-14rem);
+        margin: 2rem;
+        .arrow {
+          height: 0px;
+          width: 0px;
+          display: block;
+          &:before {
+            margin-left: 12.1rem;
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 0.2rem;
+            width: 0;
+            height: 0;
+            margin-top: auto;
+            background-color: transparent;
+            border-left: 0.625rem solid transparent;
+            border-right:  0.625rem solid transparent;
+            border-bottom: 1.063rem solid var(--drop-menu-profile);
+            transform: translateY(-1rem);
+          }
+        }
+        .classProfile {
+          font-family: Arial, Helvetica, sans-serif;
+          color: white;
+          opacity: 0.5;
+          margin: 0.5rem 0rem 0rem 0.5rem;
+        }
+        .items {
+          font-family: Arial, Helvetica, sans-serif;
+          color: var(--title-color);
+          margin: 0.3rem 0px 0.3rem;
+          padding: 0.6rem;
+          list-style: none;
+          &:last-child {
+            color: var(--leave-text);
+          }
+          &:last-child:hover {
+            background-color: var(--leave-background);
+          }
+          &:hover {
+            background-color: var(--drop-menu-profile-item-background);
+          }
+        }
+      }
+    }
+  }
+}

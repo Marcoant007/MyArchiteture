@@ -1,0 +1,47 @@
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>
+
+<div class="attachContent defaultVersion" appDrag [ngClass]="{disabled : disabled}"
+  (fileDropped)="attachDropDrag($event)" *ngIf="!isForEditingUser">
+  <div class="attachImg">
+    <img src="../../../../../assets/imgs/boxDown.svg" alt="caixa">
+  </div>
+  <div class="attachText">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </div>
+  <div class="flex lineOrLine">
+    <span class="flex orContainer">
+      <hr class="dividerFirst"> <b class="dividerText">OU</b>
+      <hr class="dividerSecond">
+    </span>
+  </div>
+  <div class="buttonAttachComponent">
+    <input type="file" hidden #uploader (change)="attachClick($event)" [disabled]="disabled">
+    <app-button-attach (click)="uploader.click()"></app-button-attach>
+  </div>
+</div>
+
+<div class="attachContent editProfile" appDrag [ngClass]="{disabled : disabled}" (fileDropped)="attachDropDrag($event)"
+  *ngIf="isForEditingUser">
+  <div class="editButtonContainer">
+    <div (click)="uploader.click()">
+      <i class="far fa-edit iconEdit"></i>
+    </div>
+  </div>
+  <div class="attachImg">
+    <img id="imageElement" class="userImg" [src]="imgUrl" alt="imagem do usuário">
+  </div>
+  <div class="attachText">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </div>
+  <div class="flex lineOrlineContainer">
+    <div class="dividerFirst"></div>
+    <b class="dividerText">OU</b>
+    <div class="dividerSecond"></div>
+  </div>
+  <div class="buttonAttachComponent">
+    <input type="file" hidden #uploader (change)="attachClick($event)" [disabled]="disabled">
+    <app-button-attach (click)="uploader.click()"></app-button-attach>
+  </div>
+</div>

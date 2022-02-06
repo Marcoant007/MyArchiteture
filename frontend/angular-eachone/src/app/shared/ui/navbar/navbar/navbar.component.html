@@ -1,0 +1,24 @@
+<div class="navbody flex">
+  <i (click)="handleOpenMenu()" class="fas fa-bars dropMednuIcon"></i>
+  <div class="logoBox flex">
+    <img class="logo" *ngIf="!darkTheme" src="../../../../../assets/imgs/eachoneLogoNav.svg" alt="logo da eachOne" />
+
+    <img class="logo" *ngIf="darkTheme" src="../../../../../assets/imgs/eachoneLogoNavLightTheme.svg"
+      alt="logo da eachOne" />
+  </div>
+
+  <div class="whitebar"></div>
+
+  <div class="searchIcon flex">
+    <i class="far fa-search magnify"></i>
+    <div>
+      <input class="inputSearch" placeholder="Pesquisar..." type="text" />
+    </div>
+  </div>
+
+  <div class="whitebar left"></div>
+
+  <div class="cockpit">
+    <app-cockpit-profile></app-cockpit-profile>
+  </div>
+</div>

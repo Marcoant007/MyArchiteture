@@ -1,0 +1,11 @@
+<div *ngIf="message" class="modal">
+    <div class="modal-content">
+        <span class="close" (click)="closeMessage()">&times;</span>
+        <h1 class="title">{{message?.title}}</h1>
+        <h3 class="message" [innerHTML]="message?.message"></h3>
+        <p class="submessage">{{message?.submessage}}</p>
+        <div class="buttons">
+            <button class="default rigth" (click)="closeMessage()">  <p class="texto">Fechar</p> </button>
+        </div>
+    </div>
+</div>

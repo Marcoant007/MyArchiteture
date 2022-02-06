@@ -1,0 +1,7 @@
+<label id="switch" [class]="classLabel">
+    <input *ngIf="formControl" [formControl]="formControl" type="checkbox" [checked]="checked"
+        (click)="toogleSwitchClick()">
+
+    <input *ngIf="!formControl" type="checkbox" [checked]="checked" (click)="toogleSwitchClick()">
+    <span class="slider round" [class]="classSpan"></span>
+</label>

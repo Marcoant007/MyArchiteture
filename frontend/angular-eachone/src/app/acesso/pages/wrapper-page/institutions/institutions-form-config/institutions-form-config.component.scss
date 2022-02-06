@@ -1,0 +1,355 @@
+@import "../../../../../../variable.scss";
+
+// Estrutura antiga
+
+body {
+  color: var(--font-color);
+}
+
+.form-body {
+  padding: 20px;
+}
+
+.container {
+  min-height: calc(100vh - 14rem);
+  background-color: var(--background-color-2);
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.minsize {
+  min-width: 200px;
+  flex: 2 1 200px;
+}
+
+.minsizeStatus {
+  width: 200px;
+  flex: 2 1 200px;
+}
+
+.bodyContainer {
+  padding: 1rem;
+}
+
+.archor-section-area {
+  display: flex;
+}
+.archor-section-element {
+  margin: auto;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.buttonsForm {
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+  margin: 1rem auto auto auto;
+}
+
+.btnConfirm {
+  margin-left: 3rem;
+}
+
+.headImg {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.head-titles {
+  margin-left: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.buttons-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+.subtitleHeader {
+  color: $color-subtitle;
+  width: auto;
+}
+
+.iconEdit {
+  color: $icon-edit;
+  margin-top: 0.7rem;
+  font-size: 21px;
+  margin-left: 0.2rem;
+}
+.iconDelete {
+  margin-top: 0.8rem;
+  font-size: 21px;
+  color: $icon-delete;
+}
+
+.inputArea {
+  width: auto;
+  margin-right: 2.5rem;
+}
+
+.inputAreaRight {
+  width: auto;
+  margin-right: 2.5rem;
+}
+
+.multiline {
+  margin-top: 1.4rem;
+}
+
+.left-body {
+  margin-left: 1rem;
+  margin-right: 1.5rem;
+  width: 50%;
+}
+
+.status-zone {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.status {
+  margin: auto;
+}
+
+::ng-deep.edit {
+  margin-right: 0.5rem;
+}
+
+h1 {
+  color: $border-text-color;
+  word-break: keep-all;
+}
+
+h2 {
+  color: $border-text-color;
+  word-break: keep-all;
+  margin-top: 1rem;
+}
+
+.divider {
+  margin-top: 4rem;
+  width: 98%;
+}
+
+.right-body {
+  width: 50%;
+}
+
+.zone-input {
+  margin-top: 2.5rem;
+}
+
+.container-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.head-logo {
+  margin-top: 5rem;
+  margin-bottom: 6rem;
+}
+
+.head-notifications {
+  margin-top: 5rem;
+}
+
+.attach-area {
+  margin: auto;
+  height: 21rem;
+  width: 40%;
+}
+
+.filterUser {
+  margin-left: 1rem;
+}
+
+.buttons {
+  display: flex;
+  margin-left: 4rem;
+  .downdocumentBtn {
+    margin-left: 1rem;
+  }
+}
+
+.buttonsAlternative {
+  display: flex;
+  margin-left: 4rem;
+  .downdocumentBtn {
+    margin-left: 1rem;
+  }
+}
+
+.button_print {
+  margin-right: 0.75rem;
+}
+
+.img_icon {
+  margin-top: 0.95rem;
+  color: $color-img-icon;
+}
+
+.actions-notifications {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem;
+}
+
+.table-area {
+  margin-top: 1.2rem;
+}
+
+.userIcon {
+  margin-left: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+.pagination-container {
+  margin-top: 2rem;
+  margin-bottom: 7rem;
+}
+
+.head-charge {
+  margin-top: 5rem;
+}
+
+.actions-charge {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem;
+}
+
+.head-users {
+  margin-top: 5rem;
+}
+
+.actions-users-institutions {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem;
+}
+
+.userSearch {
+  color: white;
+  margin-right: 2.5rem;
+}
+
+.head-course-institutions {
+  margin-top: 5rem;
+}
+
+.actions-courses-institutions {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem;
+}
+
+.status-title {
+  position: relative;
+  bottom: 3rem;
+}
+
+.userIcon {
+  color: white;
+}
+
+@media screen and (max-width: $max-xmd) {
+  .container-form {
+    flex-direction: column;
+  }
+  .left-body {
+    width: 100%;
+  }
+  .right-body {
+    width: 100%;
+  }
+  .archor-section-element {
+    margin: 0;
+  }
+  .archor-section-area {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .attach-area {
+    height: auto;
+    width: auto;
+  }
+}
+
+.rowName {
+  display: flex;
+}
+
+@media screen and (max-width: $max-md) {
+  .rowName {
+    display: flex;
+    flex-direction: column;
+  }
+  .minsizeStatus {
+    width: auto;
+  }
+  .buttons {
+    margin-left: auto;
+  }
+
+  .actions-users-institutions {
+    flex-direction: column-reverse;
+    .filterUser {
+      margin-bottom: 1rem;
+    }
+    .userSearch {
+      margin-left: 1rem;
+      margin-right: 0rem;
+    }
+  }
+
+  .actions-courses-institutions {
+    flex-direction: column-reverse;
+    .filterUser {
+      margin-bottom: 1rem;
+    }
+    .userSearch {
+      margin-left: 1rem;
+      margin-right: 0rem;
+    }
+  }
+
+  .buttonsAlternative {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: $min-md) {
+  .status {
+    position: relative;
+    margin: auto;
+    margin-left: -5rem;
+    transform: scale(0.75);
+    width: 14.5rem;
+  }
+
+  .actions-notifications {
+    flex-direction: column-reverse;
+  }
+
+  .actions-charge {
+    flex-direction: column-reverse;
+  }
+
+  .buttons {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0rem;
+  }
+}

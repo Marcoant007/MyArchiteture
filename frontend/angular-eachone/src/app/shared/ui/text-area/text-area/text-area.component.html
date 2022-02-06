@@ -1,0 +1,24 @@
+<div class="input"
+    [ngClass]="{'inline': inline, 'onFocus': onFocus && !inline, 'withContent': (txValue!= undefined && txValue!='') && !inline, 'error': touched && formControl.errors}">
+    <label for="{{label}}" (click)="click()">
+        {{label}}
+        <span *ngIf="formControl?.hasError('required') && showRequired" class="required_field">
+            *
+        </span>
+        <app-tooltip *ngIf="tooltip">
+            <ng-content select="[tooltip]"></ng-content>
+        </app-tooltip>
+    </label>
+
+    <textarea [rows]="rows" [ngClass]="{'inline': inline}" [class]="class" [value]="txValue" [disabled]="disabled"
+        (click)="click()" (blur)="blur()" [placeholder]="placeholder" (keyup)="onKey($event)" (focus)="focus()"
+        (focusout)="focusout()" [pattern]="pattern" [formControl]="formControl"></textarea>
+
+    <ng-content></ng-content>
+</div>
+<p *ngIf="touched && formControl.errors?.required" class="error-message">{{requirementMessage}}</p>
+<p *ngIf="touched && formControl.errors?.minlength" class="error-message">{{minLengthMessage}}</p>
+<p *ngIf="touched && formControl.errors?.maxlength" class="error-message">{{maxLengthMessage}}</p>
+<p *ngIf="touched && formControl.errors?.pattern" class="error-message">{{patternMessage}} </p>
+<p *ngIf="touched && formControl.errors?.email" class="error-message">{{emailMessage}} </p>
+<p *ngIf="touched && formControl.errors?.notEquivalent" class="error-message">{{notEquivalentMessage}} </p>

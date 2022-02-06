@@ -1,0 +1,128 @@
+@import "../../../../../variable.scss";
+
+.header{
+  color: var(--font-color);
+}
+
+.left{
+  width: 48%;
+}
+
+.externalBoxHead{
+  padding: 5px;
+}
+
+.boxheader{
+  background-color: var(--background-color);
+  height: 4rem;
+  padding: 0px 10px;
+
+  .fa-bell{
+    font-size: 1.5rem;
+    &.status1{
+      color: #42D595;
+    }
+    &.status2{
+      color: #FA9600;
+    }
+    &.status3{
+      color: red;
+    }
+  }
+
+  i{
+    color:  var(--linkColor);
+    margin: auto 0px auto 1rem;
+  }
+
+  .exitIcon{
+    margin: 5px 5px auto auto;
+    font-size: 1.5rem;
+    color: var(--font-color-grey);
+  }
+}
+
+.box{
+  width: 100%;
+  height: 80vh;
+  max-height: 78vh;
+  background-color: var(--background-color-2) ;
+}
+
+.notificationShowArea{
+  max-height: calc(77vh - 4rem);
+  overflow-y: auto;
+}
+
+.right{
+  width: 48%;
+}
+
+.title{
+  margin: auto 0px  auto 1rem;
+  font-size: 1.5rem;
+  color: var(--font-color);
+}
+
+.date{
+  margin: 5px 5px auto auto;
+  color: var(--font-color);
+}
+
+
+.content{
+  margin: 1rem 1rem;
+  font-size: 1.3rem;
+  font-family: Helvetica;
+  color: var(--font-color);
+}
+
+.iconNotification{
+    margin: auto 0px;
+}
+
+.dateContent{
+  display: none;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+
+@media only screen and (max-width : $max-md){
+  .body{
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  .dateVanish{
+    display: none;
+  }
+
+  .boxheader{
+    height: max-content;
+    min-height: 4rem;
+    align-content: center;
+  }
+
+  .dateContent{
+    display: inline;
+  }
+
+  .iconRight{
+    margin: auto 5px;
+  }
+
+  .title{
+    padding: 0px 10px;
+  }
+}
+
+@media only screen and (max-width : $max-lg){
+  .right{
+    width: 100%;
+  }
+
+  .left{
+    width: 100%;
+  }
+}

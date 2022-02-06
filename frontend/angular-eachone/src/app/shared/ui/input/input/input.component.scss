@@ -1,0 +1,112 @@
+@import "~breakpoint-sass/stylesheets/breakpoint";
+@import "../../../../../variable.scss";
+
+.input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1px;
+  height: 5rem;
+  &.margin-disable {
+    margin-bottom: 0px;
+  }
+  label {
+    font-size: $fs4;
+    font-family: $font1;
+    color: $border-text-color;
+    margin: 5px 5px 0px 5px;
+    display: inline-flex;
+    font-weight: 400;
+    padding-bottom: 1rem;
+    &.login {
+      color: $primary-color;
+    }
+  }
+
+  input {
+    font-size: $fs3;
+    padding: 8px 5px 5px 30px;
+    border: 1px solid #e0e0e0;
+    color: $terceary-color;
+
+    background: $secundary-color;
+    height: 50px;
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+
+    //-webkit-box-shadow: 5px 5px 10px 0px #d6d6d8;
+    //-moz-box-shadow: 5px 5px 10px 0px #d6d6d8;
+    //box-shadow: 5px 5px 10px 0px #d6d6d8;
+
+    &::placeholder {
+      font-size: 1rem;
+      color: $terceary-color;
+      font-family: $font1;
+    }
+    &::-ms-input-placeholder {
+      opacity: 0.2;
+      color: $terceary-color;
+      font-family: $font1;
+    }
+    &::-ms-input-placeholder {
+      opacity: 0.2;
+      color: $terceary-color;
+      font-family: $font1;
+    }
+    &:disabled {
+      opacity: 0.2;
+      cursor: no-drop;
+    }
+    &:focus {
+      border: 2px solid $focus-color;
+    }
+    &.center {
+      text-align: center;
+    }
+    &.noIcon {
+      padding: 8px 5px 5px 10px;
+    }
+    &.agendamento {
+      padding: 0;
+    }
+  }
+  &.inline {
+    input {
+      background-color: transparent;
+      color: var(--inlineInputColor);
+      outline: none;
+      outline-style: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      width: 100%;
+      height: 100%;
+      border-bottom: solid var(--inlineInputColor) 1px;
+      padding: 3px;
+      font-size: 18px;
+      font-weight: 300;
+      margin-top: 0.4rem;
+      margin-bottom: 3px;
+    }
+    input::placeholder {
+      color: var(--inlineInputColor);
+    }
+  }
+  .required_field {
+    margin-left: 3px;
+    color: $error-color;
+  }
+}
+.error-message {
+  min-height: 1rem;
+  color: $error-color;
+  font-size: $fs5;
+  font-weight: 200;
+}
+
+.errorDiv {
+  margin-top: 5px;
+  min-height: 2rem;
+}

@@ -1,0 +1,218 @@
+@import "../../../../../variable.scss";
+
+.allContainer {
+  &.modalOn {
+    .containerControl {
+      display: block;
+      position: absolute;
+      background-color: var(--modal-background-color);
+      height: 15rem;
+      width: 35rem;
+      border-radius: 2.5rem;
+      box-shadow: 7px 7px 10px var(--modal-box-shadow);
+      z-index: 10;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--modal-sucess-pattern-color);
+      .xContainer {
+        position: absolute;
+        height: 2.5rem;
+        width: 2.5rem;
+        top: 5%;
+        right: 3%;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+          color: var(--modal-exit-sucess-button-hover);
+          transition: all 100ms ease;
+        }
+        .exitIcon {
+          position: absolute;
+          transform: scale(2);
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 2rem;
+        }
+      }
+      .titleContainer {
+        position: absolute;
+        width: 100%;
+        height: 3rem;
+        text-align: center;
+        top: 15%;
+        border-bottom: 1px solid var(--modal-sucess-pattern-color);
+
+        .title {
+          font-size: 2.5rem;
+        }
+      }
+      .modalContentContainer {
+        position: absolute;
+        height: 50%;
+        width: 80%;
+        left: 50%;
+        transform: translate(-50%);
+        top: 45%;
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: var(--modal-content);
+      }
+
+      .decoratorBorderBottom {
+        position: absolute;
+        height: 0.5rem;
+        width: 85%;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 0%;
+        background-color: transparent;
+        .timer {
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%);
+          width: 0%;
+          height: 100%;
+          background-color: var(--modal-sucess-pattern-color);
+          border-radius: 1rem;          animation: timerAnimation var(--modal-dialog-time) ease-in-out;
+
+        }
+      }
+    }
+
+    .errorModalContainer {
+      color: var(--modal-error-pattern-color);
+      .xContainer {
+        position: absolute;
+        height: 2.5rem;
+        width: 2.5rem;
+        top: 5%;
+        right: 3%;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+          color: var(--modal-exit-error-button-hover);
+          transition: all 100ms ease-out;
+        }
+        .exitIcon {
+          position: absolute;
+          transform: scale(2);
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 2rem;
+        }
+      }
+      .titleContainer {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        top: 15%;
+        border-bottom: 1px solid var(--modal-error-pattern-color);
+        .title {
+          width: 80%;
+          font-size: 2.2rem;
+          word-break: keep-all;
+          margin: auto;
+          padding-bottom: 0.5rem;
+        }
+      }
+
+      .modalContentContainer {
+        position: absolute;
+        height: 50%;
+        width: 80%;
+        left: 50%;
+        transform: translate(-50%);
+        top: 45%;
+        text-align: left;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--modal-content);
+        margin-top: 1rem;
+      }
+
+      .decoratorBorderBottom {
+        position: absolute;
+        height: 0.5rem;
+        width: 85%;
+        background-color: transparent;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 0%;
+        .timer {
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%);
+          width: 0%;
+          height: 100%;
+          background-color: var(--modal-error-pattern-color);
+          border-radius: 1rem;
+          animation: timerAnimation var(--modal-dialog-time) ease-in-out;
+        }
+      }
+    }
+  }
+  background-color: var(--modal-external-background);
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  position: absolute;
+
+  &.modalOff {
+    display: none;
+  }
+}
+
+@keyframes timerAnimation {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+@media only screen and (max-width: $max-xmd) {
+  .allContainer {
+    &.modalOn {
+      .containerControl {
+        width: 27rem;
+        .xContainer {
+          .exitIcon {
+            font-size: clamp(1em, calc(1em + 2vw), 2em);
+          }
+        }
+        .titleContainer {
+          .title {
+            font-size: clamp(1em, calc(1em + 2vw), 2em);
+          }
+        }
+        .modalContentContainer {
+          font-size: clamp(0.5em, calc(1em + 2vw), 1.5em);
+        }
+      }
+        .titleContainer {
+          .title {
+            font-size: clamp(1.75em, calc(1em + 3vw), 2.5em);
+          }
+        }
+    }
+  }
+}
+
+@media only screen and (max-width: $min-md) {
+  .allContainer {
+    &.modalOn {
+      .containerControl {
+        width: 80%;
+      }
+        .decoratorBorderBottom {
+          width: 60%;
+      }
+    }
+  }
+}

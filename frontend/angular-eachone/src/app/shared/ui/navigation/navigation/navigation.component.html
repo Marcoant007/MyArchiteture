@@ -1,0 +1,45 @@
+<div class="return">
+  <h1>
+    <i class="fas fa-arrow-left"></i>
+    Home
+  </h1>
+
+  <h4 *ngIf="userPermissions.includes('organization-list')">
+    <i class="fas fa-chevron-right"></i>
+    Exibir Empresas
+  </h4>
+  <h4 *ngIf="userPermissions.includes('organization-create')">
+    <i class="fas fa-chevron-right"></i>
+    Cadastrar Empresa
+  </h4>
+  <h4 *ngIf="userPermissions.includes('organization-update')">
+    <i class="fas fa-chevron-right"></i>
+    Editar Empresa
+  </h4>
+
+  <h4 *ngIf="userPermissions.includes('organization-list')">
+    <i class="fas fa-chevron-right"></i>
+    Exibir Clínicas
+  </h4>
+  <h4 *ngIf="userPermissions.includes('organization-create')">
+    <i class="fas fa-chevron-right"></i>
+    Cadastrar Clínica
+  </h4>
+  <h4 *ngIf="userPermissions.includes('organization-update')">
+    <i class="fas fa-chevron-right"></i>
+    Editar Clínica
+  </h4>
+
+  <h4 *ngIf="userPermissions.includes('organization-list')">
+    <i class="fas fa-chevron-right"></i>
+    Exibir Unidades
+  </h4>
+  <h4 *ngIf="userPermissions.includes('organization-create')">
+    <i class="fas fa-chevron-right"></i>
+    Cadastrar Unidade
+  </h4>
+  <h4 *ngIf="userPermissions.includes('organization-update')">
+    <i class="fas fa-chevron-right"></i>
+    Editar Unidade
+  </h4>
+</div>

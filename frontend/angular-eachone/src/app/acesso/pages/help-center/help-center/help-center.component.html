@@ -1,0 +1,15 @@
+<app-header [breadcrumb]="breadcrumb" class="header" [hasSearch]=true id="title"></app-header>
+<div class="body">
+
+<div class="anchorContainer">
+  <app-archor-section class="anchor size2x" [isStatic]="false" [list_archor]='anchorArray'
+    (newItemEvent)="findHelpCenterById($event)"></app-archor-section>
+</div>
+<br>
+
+<div [innerHTML]="helpCenter" class="markDownClass"></div>
+
+</div>
+<div>
+  <app-anchor-button [anchor]='anchor'></app-anchor-button>
+</div>

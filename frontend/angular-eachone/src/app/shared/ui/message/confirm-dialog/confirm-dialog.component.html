@@ -1,0 +1,7 @@
+<span class="close" (click)="cancel()">&times;</span>
+<h1 class="title">{{data.title}}</h1>
+<h3 class="message" [innerHTML]="data?.message"></h3>
+<div class="buttons">
+    <button class="default rigth" (click)="cancel()">{{data.cancelText}}</button>
+    <button class="focus rigth" (click)="confirm()">{{data.confirmText}}</button>
+</div>

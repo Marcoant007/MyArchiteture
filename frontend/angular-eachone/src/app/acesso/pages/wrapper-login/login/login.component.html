@@ -1,0 +1,54 @@
+<div class="wrapperLogin loginBox">
+  <div class="loginTitle"><b>Conecte-se</b> ao EachOne</div>
+  <p class="loginSubTitle"></p>
+
+  <form class="inputs">
+    <div class="loginMin">
+      <div class="inputLogin">
+        <app-input name="email" type="email" [formControl]="formGroup.controls['email']"
+          requirementMessage="O e-mail é obrigatório!" maxLengthMessage="O e-mail não pode ter mais que 256 caracteres"
+          placeholder="E-Mail" [showRequired]="false">
+          <i class="fas fa-envelope input"></i>
+        </app-input>
+      </div>
+    </div>
+
+    <div class="loginMin">
+      <div class="inputLogin">
+        <app-input #password class="password input margin-disable" name="Senha" type="password"
+          [formControl]="formGroup.controls['senha']" requirementMessage="A senha é obrigatória!"
+          maxLengthMessage="A senha não pode ter mais que 256 caracteres"
+          minLengthMessage="A senha não pode ter menos que 5 caracteres" placeholder="Senha" [showRequired]="false">
+          <i class="fas fa-lock input"></i>
+          <i class="fas fa-eye right-i input" (click)="viewPassword(password)"></i>
+        </app-input>
+      </div>
+    </div>
+  </form>
+  <br />
+
+  <div class="checkboxContainer">
+    <input class="checkboxConected" type="checkbox" name="conected" />
+    <label class="labelcheckBox">
+      <b class="checkboxKeepConnected"> Mantenha me conectado </b>
+    </label>
+  </div>
+
+  <div class="buttonContainer">
+    <button (click)="submit()" class="loginBtn"><b>Entrar</b></button>
+  </div>
+  <div class="flex spaceAround forgotten">
+    <a (click)="recoverUserEmail()"> <u> Esqueceu o e-mail de usuário?</u></a>
+    <a (click)="recoverUserPassword()">
+      <u id="password"> Esqueceu a senha?</u></a>
+  </div>
+
+  <div class="flex rightsContainer">
+    <p class="rights">
+      Todos os direitos reservados.EachOne é uma marca registrada.
+      <a (click)="redirectToTerms()">
+        <u>Preferência, privacidade e termos de cookies.</u>
+      </a>
+    </p>
+  </div>
+</div>

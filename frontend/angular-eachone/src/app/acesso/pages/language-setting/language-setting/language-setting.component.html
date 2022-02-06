@@ -1,0 +1,5 @@
+<app-header [breadcrumb]="breadcrumb" class="header" id="title"></app-header>
+
+<div class="body">
+  <app-switch-list (newLanguageEvent)="changeStatusLanguage($event)" [switchs]="listLanguages"></app-switch-list>
+</div>

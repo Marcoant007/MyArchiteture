@@ -1,0 +1,79 @@
+<div class="wrapperLogin loginBox">
+  <div class="changePassTitle"> <b>Alteração</b> de Senha</div>
+  <div class="flex infoUser">
+    <img src="https://i.ibb.co/cc8qCZ4/919832.png" class="imgUser" alt="imgPeople">
+    <div class="infoText">
+      <span> <b> {{userProfile.email}} </b> </span>
+    </div>
+  </div>
+  <div class="flex subNotification">
+    <i class="fas fa-key"></i>
+    <p class="subNotificationText">Enviamos uma chave de validação para o seu e-mail.</p>
+  </div>
+  <form class="formContainer">
+    <div class="inputNewPassContainer">
+      <app-input #password id="password" type="password" [formControl]="formGroup.controls['password']"
+        maxLengthMessage="A senha não pode ter mais que 256 caracteres"
+        minLengthMessage="A senha não pode ter menos que 5 caracteres" placeholder="Nova senha" [showRequired]="false">
+        <i class="fas fa-eye right-i input" (click)="viewPassword(password)"></i>
+        <i class="fas fa-lock input"></i>
+      </app-input>
+    </div>
+    <div class="inputConfirmPassContainer">
+      <app-input #confirmPassword id="password_confirm" class="password input margin-disable" type="password"
+        [formControl]="formGroup.controls['password_confirm']" [formControl]="formGroup.controls['password_confirm']"
+        requirementMessage="É preciso confirmar a senha para prosseguir"
+        maxLengthMessage="A senha não pode ter mais que 256 caracteres"
+        minLengthMessage="A senha não pode ter menos que 5 caracteres" placeholder="Confirmar nova senha"
+        [showRequired]="false">
+        <i class="fas fa-lock input"></i>
+        <i class="fas fa-eye right-i input" (click)="viewPassword(confirmPassword)"></i>
+        <p *ngIf="formGroup.controls['password_confirm'].touched && formGroup.controls['password_confirm'].errors?.differentPasswords"
+          class="error-message" erros>Senhas estão diferentes</p>
+      </app-input>
+    </div>
+  </form>
+  <div class="passRequired">
+    <div class="flex infoTextStyleContainer">
+      <p class="infoTextStyle">
+        <app-tooltip [titleToolTip]="titleToolTip" class="passRequiredTooltip">
+          <ul class="mustHave requiredPassList">
+            <li>Mínimo de 8 Caracteres</li>
+            <li>1 número</li>
+            <li>1 Letra minúscula</li>
+            <li>1 Letra maiúscula</li>
+          </ul>
+        </app-tooltip>
+      </p>
+    </div>
+    <div class="flex textStyleContainer">
+      <ul class="mustHave textStyle">
+        <div class="leftItens">
+          <li>Mínimo de 8 Caractéres</li>
+          <li>1 número</li>
+        </div>
+        <div class="rightsItens">
+          <li>1 Letra minúscula</li>
+          <li>1 Letra maiúscula</li>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <br />
+  <div class="flex spaceAround buttonContainer">
+    <div class="backContainer"> <i class="fas fa-chevron-left"></i><a (click)="redirectToLogin()"> <b
+          class="back">Voltar</b></a>
+    </div>
+    <button (click)="submit()" class="spaceAround loginBtn">
+      <div class="btnContent">
+        <span>Cadastrar Nova senha <i class="fas fa-chevron-right"></i></span>
+      </div>
+    </button>
+  </div>
+  <div class="rightsContainer">
+    <p class="rights">
+      Todos os direitos reservados.EachOne é uma marca registrada.
+      <a href=""> Preferência, privacidade e termos de cookies. </a>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="countryLanguage" [ngClass]="{disabled: disabled}">
+    <div *ngFor="let country of countryList">
+        <img [src]="country.imgIco" [ngClass]="{'active': !country.active}" (click)="selectLanguage(country)"
+            alt="country.name">
+    </div>
+</div>

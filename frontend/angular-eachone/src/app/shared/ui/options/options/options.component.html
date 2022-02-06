@@ -1,0 +1,14 @@
+<div class="space">
+    <p
+    class="options"
+    id="options"
+    [ngClass]="{
+    'options-off': !actioned,
+    'options-on': actioned
+  }"
+    (click)="dropToolsAction()"
+    > . . .
+
+    <app-drop-tools class="tools" id="droopTools" [tools]="toolListWithIcon"> </app-drop-tools>
+  </p>
+</div>

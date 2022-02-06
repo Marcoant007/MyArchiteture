@@ -1,0 +1,17 @@
+<div class="containerModal">
+    <div class="container">
+        <div class="text flex displayColumn">
+          <i (click)="exit()" class="icon far fa-times"></i>
+                <h1 class="title">
+                    Houve um problema no cadastro
+                </h1>
+            <p class="subtitle">Esses dados não puderam ser cadastrados</p>
+        </div>
+        <div class="scroll">
+            <app-table-eachone *ngIf="false"  [error]="true"  [dataList]="institutionsList" [isInstitution]="true">
+            </app-table-eachone>
+            <app-table-user [error]="true" [usersList]="users" [isErrorWarningScreen]="true">
+            </app-table-user>
+        </div>
+    </div>
+</div>

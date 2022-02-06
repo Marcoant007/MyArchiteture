@@ -1,0 +1,180 @@
+<div class="body">
+  <app-header [title]="title"></app-header>
+  <div class="container">
+    <div class="bodyContainer">
+      <div class="headerNew">
+        <div class="flex spaceBetween">
+          <div class="headId">
+            <span>ID: {{user.name}}[{{user.id}}]</span>
+          </div>
+          <div class="headImg" (click)="backList()">
+            <img src="../../../../../../assets/imgs/bt_back.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="subHeader">
+        <div class="subHeaderText">
+          <div class="headerGroup">
+            <h1 class="title">Cadastrar usuário</h1>
+            <div class="buttonsActions">
+              <app-button-radius (click)="editMode()" [isEdit]="true" [appAuthorized]="['edit-user']">
+                <i class="far fa-edit iconEdit"></i>
+              </app-button-radius>
+              <app-button-radius [isDelete]="true" (click)="delete()" [appAuthorized]="['delete-user']"
+                [disable]="!disabled">
+                <i class="far fa-trash-alt iconDelete"></i>
+              </app-button-radius>
+            </div>
+          </div>
+          <p class="subtitle">Para cadastrar um novo usuário preencha corretamente os campos
+            abaixo,<br> ou
+            importe uma lista válida.</p>
+        </div>
+      </div>
+      <form>
+        <div class="row wrap">
+          <div class="col wrap minsize">
+            <div class="title-left">
+              <app-input class="inputName" label="Nome" type="text" [inline]="true" [showRequired]="false"
+                placeholder="Insira o nome do usuário" [formControl]="formGroup.controls['name']">
+              </app-input>
+            </div>
+          </div>
+          <div class="col wrap minsize colUserType">
+            <h2 class="inputText">Perfil</h2>
+            <div class="select-input">
+              <app-select [isInline]="true" (selectElement)="selectUserType($event)"
+                [formControl]="formGroup.controls['userType']" [placeholder]="'Selecione o perfil do usuário'"
+                [items]="itemsSelect" [isDisabled]="disabled" class="select"></app-select>
+            </div>
+          </div>
+        </div>
+        <div class="row wrap">
+          <div class="col wrap minsize">
+            <div class="row wrap">
+              <div class="col wrap minsize">
+                <div class="input-area-cpf">
+                  <app-input class="inputCpf" label="CPF" mask="000.000.000-00" type="text" [showRequired]="false"
+                    [inline]="true" placeholder="Insira o CPF do usuário" [formControl]="formGroup.controls['cpf']">
+                  </app-input>
+                </div>
+              </div>
+            </div>
+            <div class="row wrap">
+              <div class="col wrap minsize">
+                <div class="input-area">
+                  <app-input class="inputRegistration" label="Matrícula" type="text" [showRequired]="false"
+                    [inline]="true" placeholder="Insira a matrícula do usuário"
+                    [formControl]="formGroup.controls['registration']">
+                  </app-input>
+                </div>
+              </div>
+            </div>
+            <div class="row wrap">
+              <div class="col wrap minsize">
+                <div class="input-area">
+                  <app-input class="inputRegistration" label="Telefone" mask="00 0 0000-0000" type="text"
+                    [showRequired]="false" [inline]="true" placeholder="DDD + Número"
+                    [formControl]="formGroup.controls['cellPhone']">
+                  </app-input>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col wrap minsize">
+            <div class="row wrap">
+              <div class="col wrap minsize">
+                <div class="status-area-container">
+                  <h2 class="title-right">Status</h2>
+                  <div class="statusContainer">
+                    <app-circle-status class="status" [status]="currentStatus" [disabled]="disabled"
+                      (statusUserEmit)="changeStatus($event)">
+                    </app-circle-status>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row wrap">
+              <div class="col wrap minsize">
+                <div class="downModel">
+                  <div class="buttonDownArea">
+                    <div (click)="clickDownModel()">
+                      <app-button-down-model></app-button-down-model>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row wrap">
+          <div class="col wrap minsize">
+            <div class="row wrap">
+              <div class="col wrap minsize">
+                <div class="input-area-email">
+                  <app-input class="inputRegistration" label="Email" type="text" [showRequired]="false" [inline]="true"
+                    pattern="^[a-zA-Z0-9_+&*-]+(?:.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+.)+[a-zA-Z]{2,7}$"
+                    placeholder="Insira e-mail do usuário" [formControl]="formGroup.controls['email']">
+                  </app-input>
+                </div>
+              </div>
+            </div>
+            <div class="row wrap">
+              <div class="col wrap minsize">
+                <div class="input-area-margin">
+                  <app-input class="inputRegistration" label="Logradouro" type="text" [showRequired]="false"
+                    [inline]="true" placeholder="Rua" [formControl]="formGroup.controls['streetName']">
+                  </app-input>
+                </div>
+              </div>
+            </div>
+            <div class="row wrap alignItemsEnd ">
+              <div class="col wrap minsize">
+                <div>
+                  <app-input class="numInput" type="text" [showRequired]="false" [inline]="true" placeholder="Número"
+                    [formControl]="formGroup.controls['numberAddress']">
+                  </app-input>
+                </div>
+              </div>
+              <div class="col wrap minsize">
+                <div class="input-area-margin">
+                  <app-input class="complementInput" type="text" [showRequired]="false" [inline]="true"
+                    placeholder="Complemento" [formControl]="formGroup.controls['complement']">
+                  </app-input>
+                </div>
+              </div>
+            </div>
+            <div class="row wrap">
+              <div class="col wrap minsize">
+                <div class="input-area-margin">
+                  <app-input class="complementInput" type="text" [showRequired]="false" [inline]="true"
+                    placeholder="CEP" mask="00000-000" [formControl]="formGroup.controls['zipCode']">
+                  </app-input>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col wrap minsize" id="attach">
+            <div class="attachArea">
+              <app-attach-area (clickEvent)="clickAttach($event)" [disabled]="disabled" [isForEditingUser]="false"
+                (dragDropEvent)="dragDropEvent($event)">
+                Arraste o arquivo da sua lista de usuários para dentro da área.
+                <br> (Apenas arquivos.CSV)
+              </app-attach-area>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="buttonsForm">
+        <app-button-area (click)="cancel()" [isCancel]="true" [ngClass]="{'hidden': hidden, 'noHidden': !hidden}">
+          Cancelar
+        </app-button-area>
+        <div class="btnCancel">
+          <app-button-area (click)="submit()" [isConfirm]="true" [ngClass]="{'hidden': hidden, 'noHidden': !hidden}">
+            Confirmar
+          </app-button-area>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

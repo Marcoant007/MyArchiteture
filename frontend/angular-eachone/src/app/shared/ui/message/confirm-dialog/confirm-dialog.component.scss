@@ -1,0 +1,56 @@
+@import "../../../../../variable.scss";
+
+  .title {
+    text-align: center;
+    font: $font1;
+    font-size: $fs1;
+    font-weight: 400;
+    margin: 20px 0 0 0;
+    color: $primary-color;
+  }
+
+  .message {
+    text-align: center;
+    font-size: $fs3;
+    font-weight: 200;
+    margin-bottom: 15px;
+    margin: 0;
+    color: $primary-color;
+
+  }
+
+  .submessage {
+    text-align: center;
+    font-weight: 200;
+    font-size: $fs4;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: $terceary-color;
+  }
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      padding: 5px 30px;
+        & + button {
+            margin-left: 5px;
+        }
+    }
+}

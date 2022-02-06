@@ -1,0 +1,20 @@
+@import "../../../../../variable.scss";
+
+.theme{
+  color: $stars-color ;
+  margin: auto 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  min-width: 3rem;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+
+@media only screen and (max-width :$min-xmd) {
+  .theme{
+   font-size: 1rem;
+  }
+
+}

@@ -1,0 +1,18 @@
+<body class="body">
+    <app-header class="headerTitle" [title]="'Instituições'" [hasAddButton]="true" [permission]="['add-institution']"
+        (clickEvent)="addNewInstitutions()">
+    </app-header>
+    <div class="tableContainer">
+        <div class="listContainer">
+            <app-table-eachone (eventEditEmitter)="clickEdit($event)" [editPermission]="['read-institution-detail']"
+                (eventDeleteEmitter)="clickDelete($event)" [dataList]="institutions"
+                [deletePermission]="['delete-institution']" [isInstitution]="true">
+            </app-table-eachone>
+        </div>
+        <div class="paginationContainer">
+            <app-pagination *ngIf="institutions && totalCount>limit" (goToPageEmitter)="goToPage($event)"
+                [totalCount]="totalCount" [limit]="limit" [actualPage]="actualPage" [range]="10">
+            </app-pagination>
+        </div>
+    </div>
+</body>

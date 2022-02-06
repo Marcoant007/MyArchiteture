@@ -1,0 +1,16 @@
+@import "../../../../../variable.scss";
+
+.header, .header-space, .footer, .footer-space {}
+.header { position: fixed; top: 0; }
+.footer { position: fixed; bottom: 0; }
+@media screen {
+  :host {
+    display: none;
+  }
+}
+.header-space{
+  text-align: center;
+  img{
+    margin:auto;
+  }
+}

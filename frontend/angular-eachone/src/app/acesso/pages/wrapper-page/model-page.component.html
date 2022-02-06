@@ -1,0 +1,10 @@
+<div [ngClass]="{'grid-template-areas-closed': sideOpen}" class="grid-template-areas">
+  <app-navbar class="gridNav"></app-navbar>
+  <app-sidebar [logo]="logo" [menu]="menu"[ngClass]="{'gridSidenavClosed': sideOpen}" class="gridSidenav"></app-sidebar>
+
+  <body class="gridContent">
+    <div class="gridCard">
+      <router-outlet> </router-outlet>
+    </div>
+  </body>
+</div>

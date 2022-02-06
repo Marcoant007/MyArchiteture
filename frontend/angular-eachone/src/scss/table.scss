@@ -1,0 +1,122 @@
+table {
+    width: 100%;
+    margin-bottom: 1rem;
+    position: relative;
+    thead {
+        background-color: $button-color;
+        tr {
+            border-bottom: 1px solid $terceary-color;
+            th {
+                font-weight: 500;
+                text-align: left;
+                margin-bottom: 10px;
+                padding: 10px;
+                color: $secundary-color;
+                &:first-child {
+                    border-top-left-radius: 7px;
+                    border-bottom-left-radius: 7px;
+                }
+                &:last-child {
+                    border-top-right-radius: 7px;
+                    border-bottom-right-radius: 7px;
+                }
+                &.center {
+                    text-align: center;
+                }
+                &.right {
+                    text-align: right;
+                }
+            }
+        }
+    }
+    tbody {
+        tr {
+            border-bottom: 1px solid var(--background-color-2);
+            &:nth-of-type(odd) {
+                background-color: $odd-row-color;
+            }
+            td {
+                padding: 0.75rem;
+                vertical-align: center;
+                border-top: 1px solid none;
+                color: $td-row-text;
+                &.center {
+                    text-align: center;
+                }
+                &.right {
+                    text-align: right;
+                }
+                &.tdPointer {
+                    cursor: pointer;
+                }
+                &.ellipsis {
+                    max-width: 95px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+                i {
+                    cursor: pointer;
+                }
+                &:first-child {
+                    border-top-left-radius: 7px;
+                    border-bottom-left-radius: 7px;
+                }
+                &:last-child {
+                    border-top-right-radius: 7px;
+                    border-bottom-right-radius: 7px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    table {
+        border: 0;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tr {
+        margin-bottom: 10px;
+        display: block;
+        border-radius: 15px;
+    }
+    table tbody tr:nth-of-type(odd) {
+        background-color: #fff;
+    }
+    table td {
+        display: block;
+        text-align: left;
+        font-size: 13px;
+        border-bottom: none;
+    }
+    table td i {
+        font-size: $fs8;
+        &.status{
+            font-size: 12px;
+        }
+    }
+    table tbody tr td {
+        border-top: none;
+        min-height: 32px;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+    table td:first-child {
+        padding-top: 19px;
+    }
+    table td::before {
+        content: attr(data-label);
+        float: right;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $dark-color;
+    }
+}

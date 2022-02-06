@@ -1,0 +1,24 @@
+@import "../../../../../variable.scss";
+
+.smallCard{
+  height: 12rem;
+  background-color: var(--cards-background);
+  border-radius: 4px;
+}
+
+.extra{
+  height: 13rem;
+}
+
+@media only screen and (max-width : $max-lg) {
+  .extra{
+    height: 12rem;
+  }
+}
+
+@media only screen and (max-width : $max-md) {
+  .smallCard{
+    width: 100%;
+    margin: 1.5rem 0px;
+  }
+}

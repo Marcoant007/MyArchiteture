@@ -1,0 +1,90 @@
+@import "../../../../../variable.scss";
+
+.modal {
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: rgba(126, 66, 66, 0.4);
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .default{
+      margin: 0;
+    }
+  }
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: fit-content;
+  // width: 80vw;
+  border-radius: 8px;
+  border: 5px solid $primary-color;
+  //Shadows
+
+  background: #fff;
+  color: rgba(0,0,0,.87);
+  @media (max-width: $max-sm) {
+    width: 80%;
+  }
+  @media (max-width: $max-md) {
+    width: 75%;
+    flex-direction: column;
+  }
+  .title {
+    text-align: center;
+    font-family: $font1;
+    font-size: $fs0;
+    font-weight: 700;
+    margin: 15px 0px 0px 0px;
+    color: $primary-color;
+    margin-bottom: 5px;
+  }
+  .message {
+    text-align: center;
+    font-size: $fs8;
+    font-weight: 300;
+    margin-bottom: 5px;
+    color: $primary-color;
+  }
+  .submessage {
+    text-align: center;
+    font-weight: 200;
+    font-size: $fs6;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    color:$dark-color;
+  }
+  img{
+    width: 100%;
+    margin: auto;
+  }
+  .flex{
+    flex:1;
+  }
+}
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,0 +1,12 @@
+<div *ngIf="!isStatic" class="archor-container">
+  <div class="archor-item" [ngClass]="{'active': active == item.code}" (click)="clickItem(item)"
+    *ngFor="let item of list_archor">
+    <a>{{item.title}}</a>
+  </div>
+</div>
+
+<div *ngIf="isStatic" class="archor-container">
+  <div class="archor-item" (click)="clickItem(item)" *ngFor="let item of list_archor">
+    <a>{{item.title}}</a>
+  </div>
+</div>

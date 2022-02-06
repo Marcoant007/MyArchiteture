@@ -1,0 +1,17 @@
+@import "../../../../../variable.scss";
+
+.buttonAttach{
+    color: $color-text;
+    border: solid 0.5rem $blue-white-color;
+    border-radius: 0.3rem;
+    background-color: $blue-white-color;
+    width: 8rem;
+    cursor: pointer;
+    height: 2.7rem;
+
+}
+
+.textAttach{
+    font-weight: 300;
+    margin-top: 0.28rem;
+}

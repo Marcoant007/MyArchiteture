@@ -1,0 +1,8 @@
+<label class="checkbox" [ngClass]="{'ativo': checked, 'button': customClass == 'button', 'disabled': desabilitado}">
+  <input type="checkbox" (click)="onChecked($event)" [disabled]="desabilitado">
+  {{label}}
+  <ng-content select="[customLabel]"></ng-content>
+  <app-tooltip *ngIf="tooltip">
+    <ng-content select="[tooltip]"></ng-content>
+  </app-tooltip>
+</label>

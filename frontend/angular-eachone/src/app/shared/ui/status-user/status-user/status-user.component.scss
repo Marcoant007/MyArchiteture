@@ -1,0 +1,33 @@
+@import "../../../../../variable.scss";
+
+.smallCircle{
+    height: 0.563rem;
+    width: 0.563rem;
+    background-color: $color-status-enable;
+    margin-right: 0.5rem;
+    margin-bottom: 0.1rem;
+    border-radius: 50%;
+    display: inline-block;
+
+    &.circleDisable{
+        background-color: $gray-color-table;
+    }
+    &.circleEnable{
+        background-color: $color-status-enable;
+    }
+    &.circleBlocked{
+        background-color: $color-status-disable;
+    }
+}
+
+.enable{
+    color: $color-status-enable;
+}
+
+.disable{
+     color: $gray-color-table;
+}
+
+.blocked{
+    color: $color-status-disable;
+}

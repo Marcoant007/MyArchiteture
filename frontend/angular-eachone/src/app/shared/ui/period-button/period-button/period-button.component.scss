@@ -1,0 +1,21 @@
+@import "../../../../../variable.scss";
+
+body{
+  background-color: var(--period-background);
+  padding: 1px;
+  border-radius: 5px;
+  height: 3rem;
+  button{
+    color: var(--title-color);
+    background-color: var(--background-gray-1-to-white);
+    min-width: 5rem;
+    min-height: 2.8rem;
+    border: 0px solid black;
+    border-radius: 5px;
+    margin: 1px;
+  }
+  .active{
+    background-color: var(--button-active) ;
+  }
+}
+

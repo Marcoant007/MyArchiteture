@@ -1,0 +1,201 @@
+@import "../../../../../variable.scss";
+
+.attachContent {
+  border: dashed 0.13rem $border-text-color;
+  border-radius: 0.7rem;
+  font-weight: 0;
+  height: 100%;
+  text-align: center;
+  width: auto;
+  padding: 1rem;
+
+  &.editProfile{
+    position: relative;
+    .editButtonContainer{
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      top: 1rem;
+      right:1rem;
+      border-radius: 50%;
+      background-color: var(--edit-background-color);
+      border: solid 0.1rem var(--border-edit-button);
+      .iconEdit{
+        position: absolute;
+        font-size: 1.5rem;
+        color: var(--icon-edit);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    .attachImg {
+      position: relative;
+      width: 40%;
+      height: 40%;
+      margin: 2rem auto;
+      .userImg{
+        position: absolute;
+        border-radius: 50%;
+        height: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+      }
+    }
+    .attachText {
+      position: absolute;
+      color: $border-text-color;
+      width: 80%;
+      left: 50%;
+      transform: translate(-50%);
+      top: 59%;
+    }
+    .lineOrlineContainer {
+      position: absolute;
+      width: 50%;
+      margin: 1rem auto;
+      height: 2rem;
+      top: 67%;
+      left: 50%;
+      transform: translate(-50%);
+      .dividerFirst {
+        position: absolute;
+        width: 40%;
+        height: 2px;
+        background-color: var(--dividr-color);
+        margin: auto;
+        top: 50%;
+        right: 0%;
+      }
+      .dividerText {
+        position: absolute;
+        color: var(--dividr-color);
+        width: 10%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .dividerSecond {
+        position: absolute;
+        width: 40%;
+        height: 2px;
+        background-color: var(--dividr-color);
+        margin: auto;
+        top: 50%;
+      }
+    }
+    .buttonAttachComponent {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      top: 83%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &.disabled {
+    opacity: 0.3;
+  }
+  .attachImg {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .attachText {
+    color: $border-text-color;
+    height: auto;
+    display: block;
+  }
+  .orContainer {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1rem;
+    .dividerFirst {
+      margin: 2rem 0.5rem 3rem 0rem;
+      width: 6.5vw;
+      color:  var(--light-background-color);
+      opacity: 0.7;
+    }
+    .dividerText {
+      margin-top: 1.5rem;
+      font-weight: 600;
+      color: $border-text-color;
+      opacity: 0.6;
+    }
+    .dividerSecond {
+      margin: 2rem 0rem 3rem 0.5rem;
+      width: 6.5vw;
+      color:  var(--light-background-color);
+      opacity: 0.7;
+    }
+  }
+  .buttonAttachComponent {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: $max-xmd){
+  .attachContent{
+    &.editProfile{
+      .attachText{
+        margin-top: -1rem;
+        font-size: 1rem;
+        top: 55%;
+      }
+      .lineOrlineContainer {
+        width: 70%;
+        .dividerText {
+          width: 10%;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: $max-sm){
+  .attachContent{
+    &.editProfile{
+      .editButtonContainer{
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+        .iconEdit{
+          position: absolute;
+          font-size: 1.5rem;
+          color: --icon-edit;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      .attachText{
+        margin-top: 1rem;
+        width: 95%;
+        font-size: 0.8rem;
+      }
+      .lineOrlineContainer {
+        width: 80%;
+        .dividerFirst {
+          width: 40%;
+        }
+        .dividerText{
+          font-size: 0.9rem;
+        }
+        .dividerSecond {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
